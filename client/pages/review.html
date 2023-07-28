@@ -14,25 +14,35 @@
   </head>
   <body>
     <main>
-      <section>
+      <section class="p-1.5">
         <h1 class="absolute h-1 w-1 overflow-hidden">
           리뷰 테마 만들기 페이지
         </h1>
-        <h2 class="inline">테마</h2>
-        <span>1</span>
-        <ul>
-          <li>
+        <div class="p-1">
+          <h2 class="inline font-semibold">테마</h2>
+          <span class="font-semibold">1</span>
+        </div>
+        <ul class="flex gap-x-3">
+          <li class="h-[184px] w-[148px] rounded-xl bg-slate-500">
             <a href="">
-              <span>임시저장</span>
-              <span>연남/합정 데이트</span>
-              <span>장소</span>
-              <span>2</span>
-              <span>아이콘</span>
-              <span>7</span>
               <img src="" alt="" /><img src="" alt="" />
+              <span class="absolute rounded-[4px] bg-white py-1">임시저장</span>
+              <div class="absolute ml-[9px] mt-[65px]">
+                <span class="block font-semibold">연남/합정 데이트</span>
+                <div class="flex items-center gap-x-[3px]">
+                  <div>
+                    <span class="text-[12.003px]">장소</span>
+                    <span class="text-[12.003px]">2</span>
+                  </div>
+                  <span
+                    class="inline-block h-3 w-3 bg-[url('/assets/icons/Icon/Group.svg')]"
+                  ></span>
+                  <span class="pt-[2.5px] text-[12.003px]">7</span>
+                </div>
+              </div>
             </a>
           </li>
-          <li>
+          <li class="h-[184px] w-[148px] rounded-xl bg-slate-500">
             <a href="">
               <span>추가하기</span>
               <span>내 리뷰만 모아 테마만들기</span>
