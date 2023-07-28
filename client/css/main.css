@@ -543,16 +543,12 @@ video {
   margin-right: auto;
 }
 
-.mt-\[65px\] {
-  margin-top: 65px;
-}
-
 .ml-\[9px\] {
   margin-left: 9px;
 }
 
-.mt-1 {
-  margin-top: 0.25rem;
+.mt-\[65px\] {
+  margin-top: 65px;
 }
 
 .block {
@@ -571,32 +567,28 @@ video {
   display: flex;
 }
 
-.inline-flex {
-  display: inline-flex;
-}
-
 .h-1 {
   height: 0.25rem;
-}
-
-.h-\[184px\] {
-  height: 184px;
 }
 
 .h-3 {
   height: 0.75rem;
 }
 
+.h-\[184px\] {
+  height: 184px;
+}
+
 .w-1 {
   width: 0.25rem;
 }
 
-.w-\[148px\] {
-  width: 148px;
-}
-
 .w-3 {
   width: 0.75rem;
+}
+
+.w-\[148px\] {
+  width: 148px;
 }
 
 .items-center {
@@ -617,12 +609,12 @@ video {
   overflow: hidden;
 }
 
-.rounded-xl {
-  border-radius: 0.75rem;
-}
-
 .rounded-\[4px\] {
   border-radius: 4px;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 
 .bg-slate-500 {
@@ -635,20 +627,12 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-gradient-to-r {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-}
-
-.bg-\[url\(\'\/client\/assets\/icons\/Icon\/Group\.svg\'\)\] {
-  background-image: url('/client/assets/icons/Icon/Group.svg');
-}
-
-.bg-\[url\(\'\/client\/assets\/icons\/Icon\/Group\.png\'\)\] {
-  background-image: url('/client/assets/icons/Icon/Group.png');
-}
-
 .bg-\[url\(\'\/assets\/icons\/Icon\/Group\.svg\'\)\] {
   background-image: url('/assets/icons/Icon/Group.svg');
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
 .from-cyan-500 {
@@ -679,44 +663,8 @@ video {
   padding-bottom: 0.25rem;
 }
 
-.pt-1 {
-  padding-top: 0.25rem;
-}
-
-.pt-\[3px\] {
-  padding-top: 3px;
-}
-
-.pt-\[2px\] {
-  padding-top: 2px;
-}
-
-.pt-\[1px\] {
-  padding-top: 1px;
-}
-
-.pt-\[1\.5px\] {
-  padding-top: 1.5px;
-}
-
-.pt-\[2\.1px\] {
-  padding-top: 2.1px;
-}
-
-.pt-\[2\.3px\] {
-  padding-top: 2.3px;
-}
-
 .pt-\[2\.5px\] {
   padding-top: 2.5px;
-}
-
-.pt-\[23px\] {
-  padding-top: 23px;
-}
-
-.pt-\[2\.4px\] {
-  padding-top: 2.4px;
 }
 
 .text-7xl {
@@ -734,10 +682,6 @@ video {
 
 .font-semibold {
   font-weight: 600;
-}
-
-.font-normal {
-  font-weight: 400;
 }
 
 .text-indigo-500 {
