@@ -10,6 +10,7 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css"
     />
+    <script src="../js/pages/review.js" type="module"></script>
     <title>LionPlace - Review</title>
   </head>
   <body class="h-[722px] w-80">
@@ -29,7 +30,7 @@
           <li class="relative">
             <a
               href=""
-              class="saveTheme block h-[184px] w-[148px] rounded-xl bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(255,255,255,1),rgba(255,255,255,1)),url('/assets/icons/Icon/foods.jpg')] bg-cover"
+              class="saveTheme block h-[184px] w-[148px] rounded-xl bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(255,255,255,1),rgba(255,255,255,1)),url('/assets/images/foods.jpg')] bg-cover"
             >
               <span
                 class="saveDraft absolute ml-[9px] mt-[9px] rounded-[4px] -bg--lion-white px-1 text-[12.003px] font-semibold -text--lion-contents-content-secondary"
@@ -48,7 +49,7 @@
                   >
                   <span
                     aria-hidden="true"
-                    class="h-3 w-3 bg-[url('/assets/icons/Icon/Group.svg')] bg-cover"
+                    class="h-3 w-3 bg-[url('/assets/icons/Icon/views_review.svg')] bg-cover"
                   ></span>
                   <span class="sr-only">조회 수</span>
                   <span class="saveTheme__views text-[12.003px] font-semibold"
@@ -59,10 +60,10 @@
 
               <ul class="absolute bottom-3.5 left-[9px] flex gap-x-0.5">
                 <li
-                  class="h-[42px] w-[42px] rounded-[4px] bg-[url('/assets/icons/Icon/foods.jpg')] bg-cover"
+                  class="h-[42px] w-[42px] rounded-[4px] bg-[url('/assets/images/foods.jpg')] bg-cover"
                 ></li>
                 <li
-                  class="h-[42px] w-[42px] rounded-[4px] bg-[url('/assets/icons/Icon/foods.jpg')] bg-cover"
+                  class="h-[42px] w-[42px] rounded-[4px] bg-[url('/assets/images/foods.jpg')] bg-cover"
                 ></li>
               </ul>
             </a>
@@ -74,7 +75,7 @@
               class="flex h-[184px] w-[148px] flex-col items-center justify-center gap-y-[14px] rounded-xl -bg--lion-white"
             >
               <span
-                class="makeThemeButton h-[46px] w-[46px] bg-[url('/assets/icons/Icon/activeTrue.svg')] bg-cover"
+                class="makeThemeButton h-[46px] w-[46px] bg-[url('/assets/icons/Icon/addTheme_review_default.svg')] bg-cover"
                 aria-hidden="true"
               ></span>
               <span
@@ -87,35 +88,38 @@
       </section>
 
       <section>
-        <div class="flex justify-between p-3">
-          <div class="flex items-center gap-x-2">
+        <div class="relative flex justify-between p-3">
+          <div class="flex items-center gap-x-4">
             <button
-              class="showAllList flex gap-x-2 text-[12.003px] font-semibold -text--lion-gray-300"
+              class="showAllList showAllList__text flex text-[12.003px] font-semibold -text--lion-gray-300"
             >
               <span
                 aria-hidden="true"
-                class="block h-[18px] w-[18px] bg-[url('/assets/icons/Icon/hamburgerFalse.svg')] bg-cover"
+                class="showAllList__icon mr-2 block h-[18px] w-[18px] bg-[url('/assets/icons/Icon/hamburger_review_default.svg')] bg-cover"
               ></span>
               전체<span class="sr-only">보기</span>
             </button>
             <button
-              class="showPhotoList flex gap-x-2 text-[12.003px] font-semibold"
+              class="showPhotoList showPhotoList__text flex text-[12.003px] font-semibold"
             >
               <span
                 aria-hidden="true"
-                class="h-[18px] w-[18px] bg-[url('/assets/icons/Icon/photo.svg')] bg-cover"
+                class="showPhotoList__icon mr-2 h-[18px] w-[18px] bg-[url('/assets/icons/Icon/camera_review_clicked.svg')] bg-cover pt-px -text--lion-black"
               ></span>
               사진<span class="sr-only">보기</span>
             </button>
           </div>
           <button
             aria-label="정렬 기준 변경"
-            class="changeSortButton flex h-[26px] w-[72px] justify-around rounded-[10px] -bg--lion-primary py-1 pl-2 text-[12.003px] font-semibold -text--lion-white"
+            class="changeArrangeButton absolute right-3 top-2 z-10 flex h-[26px] w-[72px] transform justify-around overflow-hidden rounded-[10px] -bg--lion-primary py-1 pl-2 text-[12.003px] font-semibold -text--lion-white transition-all ease-linear"
           >
-            최신순
+            <div class="arrangeWrapper flex h-full flex-col justify-around">
+              <span class="arrangeNew">최신순</span>
+              <span class="arrangeViews hidden">조회순</span>
+            </div>
             <span
               aria-hidden="true"
-              class="h-[18px] w-[18px] bg-[url('/assets/icons/Icon/viewCategory.svg')] bg-cover"
+              class="test h-[18px] w-[18px] bg-[url('/assets/icons/Icon/arrow_review_down.svg')] bg-cover"
             ></span>
           </button>
         </div>
@@ -124,11 +128,11 @@
           <li>
             <a
               href=""
-              class="relative block w-[145px] rounded-[3px] bg-[url('/assets/icons/Icon/foods.jpg')] bg-cover p-2"
+              class="relative block w-[145px] rounded-[3px] bg-[url('/assets/images/foods.jpg')] bg-cover p-2"
             >
               <button
                 aria-label="상단 고정"
-                class="pinButton absolute right-1.5 h-6 w-6 bg-[url('/assets/icons/Icon/favoriteFalse.svg')] bg-cover"
+                class="pinButton absolute right-1.5 h-6 w-6 bg-[url('/assets/icons/Icon/favorite_review_default.svg')] bg-cover"
               ></button>
               <div class="flex flex-col gap-y-0.5 pt-20">
                 <span
@@ -144,11 +148,11 @@
           <li>
             <a
               href=""
-              class="relative block w-[145px] rounded-[3px] bg-[url('/assets/icons/Icon/foods.jpg')] bg-cover p-2"
+              class="relative block w-[145px] rounded-[3px] bg-[url('/assets/images/foods.jpg')] bg-cover p-2"
             >
               <button
                 aria-label="상단 고정"
-                class="absolute right-1.5 h-6 w-6 bg-[url('/assets/icons/Icon/favoriteFalse.svg')] bg-cover"
+                class="absolute right-1.5 h-6 w-6 bg-[url('/assets/icons/Icon/favorite_review_default.svg')] bg-cover"
               ></button>
               <div class="flex flex-col gap-y-0.5 pt-20">
                 <span
@@ -164,11 +168,11 @@
           <li>
             <a
               href=""
-              class="relative block w-[145px] rounded-[3px] bg-[url('/assets/icons/Icon/foods.jpg')] bg-cover p-2"
+              class="relative block w-[145px] rounded-[3px] bg-[url('/assets/images/foods.jpg')] bg-cover p-2"
             >
               <button
                 aria-label="상단 고정"
-                class="absolute right-1.5 h-6 w-6 bg-[url('/assets/icons/Icon/favoriteFalse.svg')] bg-cover"
+                class="absolute right-1.5 h-6 w-6 bg-[url('/assets/icons/Icon/favorite_review_default.svg')] bg-cover"
               ></button>
               <div class="flex flex-col gap-y-0.5 pt-20">
                 <span
@@ -184,11 +188,11 @@
           <li>
             <a
               href=""
-              class="relative block w-[145px] rounded-[3px] bg-[url('/assets/icons/Icon/foods.jpg')] bg-cover p-2"
+              class="relative block w-[145px] rounded-[3px] bg-[url('/assets/images/foods.jpg')] bg-cover p-2"
             >
               <button
                 aria-label="상단 고정"
-                class="absolute right-1.5 h-6 w-6 bg-[url('/assets/icons/Icon/favoriteFalse.svg')] bg-cover"
+                class="absolute right-1.5 h-6 w-6 bg-[url('/assets/icons/Icon/favorite_review_default.svg')] bg-cover"
               ></button>
               <div class="flex flex-col gap-y-0.5 pt-20">
                 <span
@@ -204,11 +208,11 @@
           <li>
             <a
               href=""
-              class="relative block w-[145px] rounded-[3px] bg-[url('/assets/icons/Icon/foods.jpg')] bg-cover p-2"
+              class="relative block w-[145px] rounded-[3px] bg-[url('/assets/images/foods.jpg')] bg-cover p-2"
             >
               <button
                 aria-label="상단 고정"
-                class="absolute right-1.5 h-6 w-6 bg-[url('/assets/icons/Icon/favoriteFalse.svg')] bg-cover"
+                class="absolute right-1.5 h-6 w-6 bg-[url('/assets/icons/Icon/favorite_review_default.svg')] bg-cover"
               ></button>
               <div class="flex flex-col gap-y-0.5 pt-20">
                 <span
@@ -224,11 +228,11 @@
           <li>
             <a
               href=""
-              class="relative block w-[145px] rounded-[3px] bg-[url('/assets/icons/Icon/foods.jpg')] bg-cover p-2"
+              class="relative block w-[145px] rounded-[3px] bg-[url('/assets/images/foods.jpg')] bg-cover p-2"
             >
               <button
                 aria-label="상단 고정"
-                class="absolute right-1.5 h-6 w-6 bg-[url('/assets/icons/Icon/favoriteFalse.svg')] bg-cover"
+                class="absolute right-1.5 h-6 w-6 bg-[url('/assets/icons/Icon/favorite_review_default.svg')] bg-cover"
               ></button>
               <div class="flex flex-col gap-y-0.5 pt-20">
                 <span
@@ -244,11 +248,11 @@
           <li>
             <a
               href=""
-              class="relative block w-[145px] rounded-[3px] bg-[url('/assets/icons/Icon/foods.jpg')] bg-cover p-2"
+              class="relative block w-[145px] rounded-[3px] bg-[url('/assets/images/foods.jpg')] bg-cover p-2"
             >
               <button
                 aria-label="상단 고정"
-                class="absolute right-1.5 h-6 w-6 bg-[url('/assets/icons/Icon/favoriteFalse.svg')] bg-cover"
+                class="absolute right-1.5 h-6 w-6 bg-[url('/assets/icons/Icon/favorite_review_default.svg')] bg-cover"
               ></button>
               <div class="flex flex-col gap-y-0.5 pt-20">
                 <span
@@ -264,11 +268,11 @@
           <li>
             <a
               href=""
-              class="relative block w-[145px] rounded-[3px] bg-[url('/assets/icons/Icon/foods.jpg')] bg-cover p-2"
+              class="relative block w-[145px] rounded-[3px] bg-[url('/assets/images/foods.jpg')] bg-cover p-2"
             >
               <button
                 aria-label="상단 고정"
-                class="absolute right-1.5 h-6 w-6 bg-[url('/assets/icons/Icon/favoriteFalse.svg')] bg-cover"
+                class="absolute right-1.5 h-6 w-6 bg-[url('/assets/icons/Icon/favorite_review_default.svg')] bg-cover"
               ></button>
               <div class="flex flex-col gap-y-0.5 pt-20">
                 <span
