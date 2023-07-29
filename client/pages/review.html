@@ -72,14 +72,13 @@
           <li>
             <a
               href=""
-              class="flex h-[184px] w-[148px] flex-col items-center justify-center gap-y-[14px] rounded-xl -bg--lion-white"
+              class="makeThemeButton flex h-[184px] w-[148px] flex-col items-center justify-center gap-y-[14px] rounded-xl -bg--lion-white"
             >
+              <svg aria-hidden="true" class="h-[46px] w-[46px]">
+                <use xlink:href="#addtheme-review-default"></use>
+              </svg>
               <span
-                class="makeThemeButton h-[46px] w-[46px] bg-[url('/assets/icons/Icon/addTheme_review_default.svg')] bg-cover"
-                aria-hidden="true"
-              ></span>
-              <span
-                class="w-[68px] text-center text-[12.003px] font-semibold -text--lion-gray-300"
+                class="makeThemeButton__text w-[68px] text-center text-[12.003px] font-semibold -text--lion-gray-300"
                 >내 리뷰만 모아 테마만들기</span
               >
             </a>
@@ -115,16 +114,27 @@
 
           <button
             aria-label="정렬 기준 변경"
-            class="changeArrangeButton absolute right-3 top-2 z-10 flex h-[26px] w-[72px] transform justify-around rounded-[10px] -bg--lion-primary py-1 pl-2 text-[12.003px] font-semibold -text--lion-white transition-all ease-linear"
+            class="changeArrangeButton absolute right-3 top-2 z-10 flex h-[26px] w-[72px] transform items-center rounded-[10px] -bg--lion-primary text-[12.003px] font-semibold -text--lion-white transition-all ease-linear"
           >
-            <div class="arrangeWrapper flex h-full flex-col justify-around">
-              <span class="arrangeNew">최신순</span>
-              <span class="arrangeViews hidden">조회순</span>
+            <div
+              class="arrangeWrapper pointer-events-none flex h-full w-full flex-col rounded-[10px] pl-2"
+            >
+              <span
+                class="arrangeNew inline-flex h-full items-center rounded-[10px]"
+                >최신순</span
+              >
+              <span
+                class="arrangeViews inline-flex hidden h-full items-center rounded-[10px]"
+                >조회순</span
+              >
             </div>
-            <span
+            <svg
               aria-hidden="true"
-              class="test h-[18px] w-[18px] bg-[url('/assets/icons/Icon/arrow_review_down.svg')] bg-cover"
-            ></span>
+              class="arrowIcon absolute right-1.5 h-[18px] w-[18px]"
+            >
+              <use xlink:href="#arrow-review-down"></use>
+            </svg>
+            <span aria-hidden="true" class=""></span>
           </button>
         </div>
 
