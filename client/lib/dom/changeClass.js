@@ -1,4 +1,5 @@
 import { typeError } from '../error/typeError.js';
+import { attr } from './attr.js';
 import { addClass, removeClass } from './css.js';
 import { getNode } from './getNode.js';
 
@@ -20,20 +21,16 @@ export function changeClass(node, deleteClass, makeClass) {
   }
 }
 
-export function toggleIcon(node, removeIcon, addIcon) {
-  if (typeof node === 'string') {
-    node = getNode(node);
-  }
+export function changeImageClicked(icon) {
+  let directory = attr(icon, 'xlink:href');
+  const result = directory.replace('default', 'clicked');
 
-  if (typeof removeIcon !== 'string' && typeof addIcon !== 'string') {
-    typeError('toggleIcon 함수에서 icon의 값은 문자형이어야 합니다.');
-  }
+  return attr(icon, 'xlink:href', result);
+}
 
-  if (node.classList.contains(removeIcon)) {
-    removeClass(node, removeIcon);
-    addClass(node, addIcon);
-  } else {
-    removeClass(node, addIcon);
-    addClass(node, removeIcon);
-  }
+export function changeImageDefault(icon) {
+  let directory = attr(icon, 'xlink:href');
+  const result = directory.replace('clicked', 'default');
+
+  return attr(icon, 'xlink:href', result);
 }
