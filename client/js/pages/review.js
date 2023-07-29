@@ -1,60 +1,33 @@
 import {
   addClass,
   changeClass,
-  changeImageClicked,
-  changeImageDefault,
+  changeImageName,
   getNode,
   removeClass,
 } from '../../lib/index.js';
 
 const showListWrapper = getNode('.showListWrapper');
-const showAllListButton = getNode('.showAllList');
-const showPhotoListButton = getNode('.showPhotoList');
 const changeArrangeButton = getNode('.changeArrangeButton');
-
-function handleAllList() {
-  const showAllListIcon = getNode('.showAllList__icon');
-  const showAllListText = getNode('.showAllList__text');
-
-  changeClass(showAllListText, '-text--lion-black', '-text--lion-gray-300');
-  changeClass(
-    showAllListIcon,
-    `bg-[url('/assets/icons/Icon/hamburger_review_default.svg')]`,
-    `bg-[url('/assets/icons/Icon/hamburger_review_clicked.svg')]`
-  );
-}
-const showPhotoListText = getNode('.showPhotoList__text');
-
-function handlePhotoList() {
-  const showPhotoListIcon = getNode('.showPhotoList__icon');
-
-  changeClass(showPhotoListText, '-text--lion-gray-300', '-text--lion-black');
-  changeClass(
-    showPhotoListIcon,
-    `bg-[url('/assets/icons/Icon/camera_review_clicked.svg')]`,
-    `bg-[url('/assets/icons/Icon/camera_review_default.svg')]`
-  );
-}
 
 function handleShowMethod(e) {
   const target = e.target.closest('button');
-  const icon = target.querySelector('use');
-  const buttonList = showListWrapper.querySelectorAll('button');
-
   if (!target) {
     return;
   }
 
+  const buttonList = showListWrapper.querySelectorAll('button');
+
   buttonList.forEach((item) => {
     removeClass(item, '-text--lion-black');
     addClass(item, '-text--lion-gray-300');
-
-    changeImageDefault(item.querySelector('use'));
+    changeImageName(item.querySelector('use'), 'clicked', 'default');
   });
+
+  const icon = target.querySelector('use');
 
   if (target.classList.contains('-text--lion-gray-300')) {
     changeClass(target, '-text--lion-gray-300', '-text--lion-black');
-    changeImageClicked(icon);
+    changeImageName(icon, 'default', 'clicked');
   }
 }
 
@@ -66,12 +39,13 @@ function handleChangeArrange(e) {
   addClass(arrangeViews, 'hidden');
 
   if (changeArrangeButton.classList.contains('h-[52px]')) {
-    removeClass(arrangeViews, 'hidden');
     removeClass(arrangeNew, 'hidden');
-  } else {
+    removeClass(arrangeViews, 'hidden');
+  } else if (changeArrangeButton.classList.contains('h-[26px]')) {
     if (e.target !== arrangeNew && e.target !== arrangeViews) {
       return;
     }
+
     addClass(arrangeNew, 'hidden');
     addClass(arrangeViews, 'hidden');
     removeClass(e.target, 'hidden');

@@ -21,16 +21,9 @@ export function changeClass(node, deleteClass, makeClass) {
   }
 }
 
-export function changeImageClicked(icon) {
+export function changeImageName(icon, beforeName, AfterName) {
   let directory = attr(icon, 'xlink:href');
-  const result = directory.replace('default', 'clicked');
-
-  return attr(icon, 'xlink:href', result);
-}
-
-export function changeImageDefault(icon) {
-  let directory = attr(icon, 'xlink:href');
-  const result = directory.replace('clicked', 'default');
+  const result = directory.replace(beforeName, AfterName);
 
   return attr(icon, 'xlink:href', result);
 }
