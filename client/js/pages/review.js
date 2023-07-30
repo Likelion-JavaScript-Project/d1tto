@@ -1,6 +1,7 @@
 import {
   addClass,
   changeClass,
+  changeClickImageName,
   changeImageName,
   getNode,
   removeClass,
@@ -68,18 +69,19 @@ function handleMakeTheme(e) {
   const icon = document.querySelector('.makeThemeButton use');
   e.preventDefault();
 
-  removeClass(makeThemeButton, '-bg--lion-white');
-  addClass(makeThemeButton, '-bg--lion-primary');
-  addClass(makeThemeButtonText, '-text--lion-white');
-  changeImageName(icon, 'default', 'clicked');
+  changeClass(makeThemeButton, '-bg--lion-white', '-bg--lion-primary');
+  changeClass(makeThemeButtonText, '-text--lion-gray-300', '-text--lion-white');
+  changeClickImageName(icon, 'default', 'clicked');
 
   setTimeout(() => {
     removeClass(makeThemeButton, '-bg--lion-primary');
     removeClass(makeThemeButtonText, '-text--lion-white');
+
     addClass(makeThemeButton, '-bg--lion-white');
     addClass(makeThemeButtonText, '-text--lion-gray-300');
+
     changeImageName(icon, 'clicked', 'default');
-  }, 200);
+  }, 300);
 }
 
 showListWrapper.addEventListener('click', handleShowMethod);
