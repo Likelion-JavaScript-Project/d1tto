@@ -9,7 +9,6 @@ import {
 } from '../../lib/index.js';
 
 const showListWrapper = getNode('.showListWrapper');
-const changeArrangeButton = getNode('.changeArrangeButton');
 const body = getNode('body');
 const makeThemeButton = getNode('.makeThemeButton');
 const makeThemeButtonText = getNode('.makeThemeButton__text');
@@ -112,7 +111,22 @@ function handleMakeTheme(e) {
     changeImageName(icon, 'clicked', 'default');
   }, 300);
 }
+
+const reviewList = getNode('.reviewList');
+
+function handleTogglePin(e) {
+  e.preventDefault();
+  const target = e.target.closest('.reviewList .pinButton');
+
+  if (!target) {
+    return;
+  }
+
+  changeClickImageName(target, 'default', 'clicked');
+}
+
 showListWrapper.addEventListener('click', handleShowMethod);
 arrangeContainer.addEventListener('click', handleOpenMenu);
 body.addEventListener('click', handleCloseMenu);
 makeThemeButton.addEventListener('click', handleMakeTheme);
+reviewList.addEventListener('click', handleTogglePin);

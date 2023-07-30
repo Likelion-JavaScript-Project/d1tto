@@ -743,6 +743,14 @@ html {
   width: 100%;
 }
 
+.w-\[19\.2px\] {
+  width: 19.2px;
+}
+
+.w-\[19\.21px\] {
+  width: 19.21px;
+}
+
 .scale-\[1\.3\] {
   --tw-scale-x: 1.3;
   --tw-scale-y: 1.3;
