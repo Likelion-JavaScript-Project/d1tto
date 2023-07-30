@@ -41,37 +41,40 @@ function handleShowMethod(e) {
 
 const arrangeViews = getNode('.arrangeViews');
 const arrangeNew = getNode('.arrangeNew');
+const icon = getNode('.arrowIcon');
 
 function handleOpenMenu(e) {
   const target = e.target.closest('.arrangeContainer');
-  const icon = getNode('.arrowIcon');
   if (!target) {
     return;
   }
 
-  changeClickImageName(icon, 'down', 'up');
-  if (css(arrangeViews, 'display') === 'none') {
-    removeClass(arrangeViews, 'hidden');
+  changeImageName(icon, 'down', 'up');
+  if (css(arrangeViews, 'visibility') === 'hidden') {
+    removeClass(arrangeViews, 'invisible');
     removeClass(arrangeViews, 'h-0');
     addClass(arrangeViews, 'h-[26px]');
     e.stopPropagation();
-  } else if (css(arrangeNew, 'display') === 'none') {
-    removeClass(arrangeNew, 'hidden');
+  } else if (css(arrangeNew, 'visibility') === 'hidden') {
+    removeClass(arrangeNew, 'invisible');
     removeClass(arrangeNew, 'h-0');
     addClass(arrangeNew, 'h-[26px]');
     e.stopPropagation();
   }
 }
 
-function handleChangeMenuItem(e) {
+function handleCloseMenu(e) {
   const target = e.target;
   const isItem = target.closest('.changeArrangeButton li');
   const menuItem = [...arrangeWrapper.children];
 
+  changeImageName(icon, 'up', 'down');
   if (!isItem) {
     menuItem.forEach((item) => {
       if (!item.classList.contains('order-first')) {
-        addClass(item, 'hidden');
+        addClass(item, 'invisible');
+        removeClass(item, 'h-[26px]');
+        addClass(item, 'h-0');
       }
     });
     return;
@@ -81,7 +84,9 @@ function handleChangeMenuItem(e) {
     menuItem.forEach((item) => {
       removeClass(item, 'order-first');
       if (!item.contains(event.target)) {
-        addClass(item, 'hidden');
+        addClass(item, 'invisible');
+        removeClass(item, 'h-[26px]');
+        addClass(item, 'h-0');
       } else {
         addClass(item, 'order-first');
       }
@@ -109,7 +114,5 @@ function handleMakeTheme(e) {
 }
 showListWrapper.addEventListener('click', handleShowMethod);
 arrangeContainer.addEventListener('click', handleOpenMenu);
-body.addEventListener('click', handleChangeMenuItem);
+body.addEventListener('click', handleCloseMenu);
 makeThemeButton.addEventListener('click', handleMakeTheme);
-
-// 동작 순서대로 하위 요소부터 이벤트를 적용하고 stopPropagation?
