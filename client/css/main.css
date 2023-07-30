@@ -859,8 +859,8 @@ html {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-\[linear-gradient\(to_bottom\2c rgba\(0\2c 0\2c 0\2c 0\)\2c rgba\(255\2c 255\2c 255\2c 1\)\2c rgba\(255\2c 255\2c 255\2c 1\)\)\2c url\(\'\/assets\/images\/foods\.jpg\'\)\] {
-  background-image: linear-gradient(to bottom,rgba(0,0,0,0),rgba(255,255,255,1),rgba(255,255,255,1)),url('/assets/images/foods.jpg');
+.bg-\[linear-gradient\(to_bottom\2c rgba\(0\2c 0\2c 0\2c 0\)\2c rgba\(255\2c 255\2c 255\2c 1\)\2c rgba\(255\2c 255\2c 255\2c 1\)\)\2c url\(\'\/assets\/images\/yedam_review\.jpg\'\)\] {
+  background-image: linear-gradient(to bottom,rgba(0,0,0,0),rgba(255,255,255,1),rgba(255,255,255,1)),url('/assets/images/yedam_review.jpg');
 }
 
 .bg-\[url\(\'\/assets\/icons\/Icon\/views_review\.svg\'\)\] {
@@ -869,6 +869,10 @@ html {
 
 .bg-\[url\(\'\/assets\/images\/foods\.jpg\'\)\] {
   background-image: url('/assets/images/foods.jpg');
+}
+
+.bg-\[url\(\'\/assets\/images\/yedam_review\.jpg\'\)\] {
+  background-image: url('/assets/images/yedam_review.jpg');
 }
 
 .bg-gradient-to-r {

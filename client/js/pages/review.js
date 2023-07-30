@@ -1,3 +1,4 @@
+import { renderReviewCard } from '../../lib/dom/userList.js';
 import {
   addClass,
   changeClass,
@@ -6,6 +7,7 @@ import {
   css,
   getNode,
   removeClass,
+  tiger,
 } from '../../lib/index.js';
 
 const makeThemeButton = getNode('.makeThemeButton');
@@ -117,13 +119,27 @@ function handleCloseMenu(e) {
 }
 
 function handleTogglePin(e) {
-  e.preventDefault();
-  const target = e.target.closest('.reviewList .pinButton');
+  const target = e.target.closest('li');
   if (!target) {
     return;
   }
+  const isSvg = e.target.closest('svg');
+  const isUse = e.target.closest('use');
+  const icon = target.querySelector('use');
 
-  changeClickImageName(target, 'default', 'clicked');
+  if (isSvg || isUse) {
+    e.preventDefault();
+    changeClickImageName(icon, 'default', 'clicked');
+  }
+}
+
+async function renderReviewList() {
+  const response = await tiger.get('http://localhost:3000/reviews');
+  const userData = response.data;
+
+  userData.forEach((item) => {
+    renderReviewCard(reviewList, item);
+  });
 }
 
 makeThemeButton.addEventListener('click', handleMakeTheme);
@@ -134,3 +150,5 @@ changeArrangeButton.addEventListener('click', handleOpenMenu);
 body.addEventListener('click', handleCloseMenu);
 
 reviewList.addEventListener('click', handleTogglePin);
+
+renderReviewList();
