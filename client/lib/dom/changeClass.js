@@ -1,5 +1,4 @@
 import { typeError } from '../error/typeError.js';
-import { attr } from './attr.js';
 import { addClass, removeClass } from './css.js';
 import { getNode } from './getNode.js';
 
@@ -19,24 +18,4 @@ export function changeClass(node, deleteClass, makeClass) {
     removeClass(node, makeClass);
     addClass(node, deleteClass);
   }
-}
-
-export function changeImageName(icon, beforeName, AfterName) {
-  const directory = attr(icon, 'xlink:href');
-  const result = directory.replace(beforeName, AfterName);
-
-  return attr(icon, 'xlink:href', result);
-}
-
-export function changeClickImageName(icon, beforeName, AfterName) {
-  let directory = attr(icon, 'xlink:href');
-  let result = directory.replace(beforeName, AfterName);
-
-  if (directory.includes(AfterName)) {
-    result = directory.replace(AfterName, beforeName);
-
-    return attr(icon, 'xlink:href', result);
-  }
-
-  return attr(icon, 'xlink:href', result);
 }

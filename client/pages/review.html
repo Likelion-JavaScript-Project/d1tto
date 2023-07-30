@@ -4,16 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/main.css" />
-    <link
-      rel="stylesheet"
-      as="style"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css"
-    />
     <script src="../js/pages/review.js" type="module"></script>
     <title>LionPlace - Review</title>
   </head>
-  <body class="h-[722px] w-80">
+  <body class="h-[722px] w-80 overflow-hidden">
     <main>
       <section class="-bg--lion-gray-100 px-1.5 pb-8 pt-2">
         <h1 class="sr-only">리뷰 테마 만들기</h1>
@@ -112,31 +106,31 @@
             </button>
           </div>
 
-          <button
-            aria-label="정렬 기준 변경"
+          <div
             class="changeArrangeButton absolute right-3 top-2 z-10 w-[72px] rounded-[10px] -bg--lion-primary"
           >
-            <div class="arrangeContainer">
-              <ul class="arrangeWrapper z-10 flex w-full flex-col">
-                <li
-                  class="arrangeNew order-first flex h-[26px] items-center pl-3 text-[12.003px] font-semibold -text--lion-white transition-all"
-                >
-                  최신순
-                </li>
-                <li
-                  class="arrangeViews invisible flex h-0 items-center pl-3 text-[12.003px] font-semibold -text--lion-white transition-all"
-                >
-                  조회순
-                </li>
-              </ul>
-              <svg
-                aria-hidden="true"
-                class="absolute right-0.5 top-0 h-full w-[22px]"
+            <button
+              aria-label="정렬 기준 변경"
+              class="arrangeWrapper z-10 flex w-full cursor-pointer flex-col"
+            >
+              <span
+                class="arrangeNew order-first flex h-[26px] items-center pl-3 text-[12.003px] font-semibold -text--lion-white transition-all"
               >
-                <use class="arrowIcon" xlink:href="#arrow-review-down"></use>
-              </svg>
-            </div>
-          </button>
+                최신순
+              </span>
+              <span
+                class="arrangeViews invisible flex h-0 items-center pl-3 text-[12.003px] font-semibold -text--lion-white transition-all"
+              >
+                조회순
+              </span>
+            </button>
+            <svg
+              aria-hidden="true"
+              class="absolute right-0.5 top-0 h-full w-[22px]"
+            >
+              <use class="arrowIcon" xlink:href="#arrow-review-down"></use>
+            </svg>
+          </div>
         </div>
 
         <ul class="reviewList flex flex-wrap gap-x-1.5 gap-y-2 px-3">
@@ -145,14 +139,14 @@
               href=""
               class="relative block w-[145px] rounded-[3px] bg-[url('/assets/images/foods.jpg')] bg-cover p-2"
             >
-              <button aria-label="상단 고정" class="absolute right-1.5 h-6 w-6">
+              <span aria-label="상단 고정" class="absolute right-1.5 h-6 w-6">
                 <svg aria-hidden="true" class="absolute right-0 top-0 h-6 w-6">
                   <use
                     class="pinButton"
                     xlink:href="#favorite-review-default"
                   ></use>
                 </svg>
-              </button>
+              </span>
               <div class="flex flex-col gap-y-0.5 pt-20">
                 <span
                   class="block text-[12.003px] font-semibold -text--lion-white"
@@ -169,14 +163,14 @@
               href=""
               class="relative block w-[145px] rounded-[3px] bg-[url('/assets/images/foods.jpg')] bg-cover p-2"
             >
-              <button aria-label="상단 고정" class="absolute right-1.5 h-6 w-6">
+              <span aria-label="상단 고정" class="absolute right-1.5 h-6 w-6">
                 <svg aria-hidden="true" class="absolute right-0 top-0 h-6 w-6">
                   <use
                     class="pinButton"
                     xlink:href="#favorite-review-default"
                   ></use>
                 </svg>
-              </button>
+              </span>
               <div class="flex flex-col gap-y-0.5 pt-20">
                 <span
                   class="block text-[12.003px] font-semibold -text--lion-white"
@@ -193,14 +187,14 @@
               href=""
               class="relative block w-[145px] rounded-[3px] bg-[url('/assets/images/foods.jpg')] bg-cover p-2"
             >
-              <button aria-label="상단 고정" class="absolute right-1.5 h-6 w-6">
+              <span aria-label="상단 고정" class="absolute right-1.5 h-6 w-6">
                 <svg aria-hidden="true" class="absolute right-0 top-0 h-6 w-6">
                   <use
                     class="pinButton"
                     xlink:href="#favorite-review-default"
                   ></use>
                 </svg>
-              </button>
+              </span>
               <div class="flex flex-col gap-y-0.5 pt-20">
                 <span
                   class="block text-[12.003px] font-semibold -text--lion-white"
@@ -217,14 +211,14 @@
               href=""
               class="relative block w-[145px] rounded-[3px] bg-[url('/assets/images/foods.jpg')] bg-cover p-2"
             >
-              <button aria-label="상단 고정" class="absolute right-1.5 h-6 w-6">
+              <span aria-label="상단 고정" class="absolute right-1.5 h-6 w-6">
                 <svg aria-hidden="true" class="absolute right-0 top-0 h-6 w-6">
                   <use
                     class="pinButton"
                     xlink:href="#favorite-review-default"
                   ></use>
                 </svg>
-              </button>
+              </span>
               <div class="flex flex-col gap-y-0.5 pt-20">
                 <span
                   class="block text-[12.003px] font-semibold -text--lion-white"
@@ -241,14 +235,14 @@
               href=""
               class="relative block w-[145px] rounded-[3px] bg-[url('/assets/images/foods.jpg')] bg-cover p-2"
             >
-              <button aria-label="상단 고정" class="absolute right-1.5 h-6 w-6">
+              <span aria-label="상단 고정" class="absolute right-1.5 h-6 w-6">
                 <svg aria-hidden="true" class="absolute right-0 top-0 h-6 w-6">
                   <use
                     class="pinButton"
                     xlink:href="#favorite-review-default"
                   ></use>
                 </svg>
-              </button>
+              </span>
               <div class="flex flex-col gap-y-0.5 pt-20">
                 <span
                   class="block text-[12.003px] font-semibold -text--lion-white"
@@ -265,14 +259,14 @@
               href=""
               class="relative block w-[145px] rounded-[3px] bg-[url('/assets/images/foods.jpg')] bg-cover p-2"
             >
-              <button aria-label="상단 고정" class="absolute right-1.5 h-6 w-6">
+              <span aria-label="상단 고정" class="absolute right-1.5 h-6 w-6">
                 <svg aria-hidden="true" class="absolute right-0 top-0 h-6 w-6">
                   <use
                     class="pinButton"
                     xlink:href="#favorite-review-default"
                   ></use>
                 </svg>
-              </button>
+              </span>
               <div class="flex flex-col gap-y-0.5 pt-20">
                 <span
                   class="block text-[12.003px] font-semibold -text--lion-white"
@@ -289,14 +283,14 @@
               href=""
               class="relative block w-[145px] rounded-[3px] bg-[url('/assets/images/foods.jpg')] bg-cover p-2"
             >
-              <button aria-label="상단 고정" class="absolute right-1.5 h-6 w-6">
+              <span aria-label="상단 고정" class="absolute right-1.5 h-6 w-6">
                 <svg aria-hidden="true" class="absolute right-0 top-0 h-6 w-6">
                   <use
                     class="pinButton"
                     xlink:href="#favorite-review-default"
                   ></use>
                 </svg>
-              </button>
+              </span>
               <div class="flex flex-col gap-y-0.5 pt-20">
                 <span
                   class="block text-[12.003px] font-semibold -text--lion-white"
@@ -313,14 +307,14 @@
               href=""
               class="relative block w-[145px] rounded-[3px] bg-[url('/assets/images/foods.jpg')] bg-cover p-2"
             >
-              <button aria-label="상단 고정" class="absolute right-1.5 h-6 w-6">
+              <span aria-label="상단 고정" class="absolute right-1.5 h-6 w-6">
                 <svg aria-hidden="true" class="absolute right-0 top-0 h-6 w-6">
                   <use
                     class="pinButton"
                     xlink:href="#favorite-review-default"
                   ></use>
                 </svg>
-              </button>
+              </span>
               <div class="flex flex-col gap-y-0.5 pt-20">
                 <span
                   class="block text-[12.003px] font-semibold -text--lion-white"
@@ -372,7 +366,7 @@
         />
         <defs>
           <filter
-            id="a"
+            id="b"
             width="23"
             height="21.5"
             x=".5"
@@ -451,7 +445,7 @@
         />
         <defs>
           <filter
-            id="a"
+            id="c"
             width="23"
             height="21.5"
             x=".5"
