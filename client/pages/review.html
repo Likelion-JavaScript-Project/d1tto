@@ -112,20 +112,30 @@
             </button>
           </div>
 
-          <button aria-label="정렬 기준 변경"  class="changeArrangeButton -bg--lion-primary w-[72px] rounded-[10px] relative  ">
-            
-            <ul class="w-full flex flex-col pl-3 arrangeWrapper">
-              <li class="arrangeNew items-center flex -text--lion-white text-[12.003px] font-semibold  h-[26px] ">최신순</li>
-              <li class="arrangeViews hidden items-center flex -text--lion-white text-[12.003px] font-semibold  h-[26px] ">조회순</li>
-            </ul>
-           
-            <svg
-              aria-hidden="true"
-              class="arrowIcon absolute top-0 right-0 w-[22px] h-full"
-            >
-              <use xlink:href="#arrow-review-down"></use>
-            </svg>
-          </button>
+          <button
+            aria-label="정렬 기준 변경"
+            class="changeArrangeButton absolute right-3 top-2 z-10 w-[72px] rounded-[10px] -bg--lion-primary"
+          >
+            <div class="arrangeContainer">
+              <ul class="arrangeWrapper z-10 flex w-full flex-col">
+                <li
+                  class="arrangeNew order-first flex h-[26px] items-center pl-3 text-[12.003px] font-semibold -text--lion-white transition-all"
+                >
+                  최신순
+                </li>
+                <li
+                  class="arrangeViews flex hidden h-0 items-center pl-3 text-[12.003px] font-semibold -text--lion-white transition-all"
+                >
+                  조회순
+                </li>
+              </ul>
+              <svg
+                aria-hidden="true"
+                class="absolute right-0.5 top-0 h-full w-[22px]"
+              >
+                <use class="arrowIcon" xlink:href="#arrow-review-down"></use>
+              </svg>
+            </div>
           </button>
         </div>
 

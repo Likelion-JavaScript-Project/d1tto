@@ -3,6 +3,7 @@ import {
   changeClass,
   changeClickImageName,
   changeImageName,
+  css,
   getNode,
   removeClass,
 } from '../../lib/index.js';
@@ -12,6 +13,8 @@ const changeArrangeButton = getNode('.changeArrangeButton');
 const body = getNode('body');
 const makeThemeButton = getNode('.makeThemeButton');
 const makeThemeButtonText = getNode('.makeThemeButton__text');
+const arrangeWrapper = getNode('.arrangeWrapper');
+const arrangeContainer = getNode('.arrangeContainer');
 
 function handleShowMethod(e) {
   const target = e.target.closest('button');
@@ -36,32 +39,53 @@ function handleShowMethod(e) {
   }
 }
 
-function handleChangeArrange(e) {
-  const arrangeNew = getNode('.arrangeNew');
-  const arrangeViews = getNode('.arrangeViews');
-  const arrowIcon = document.querySelector('.arrowIcon use');
-  const arrangeWrapper = getNode('.arrangeWrapper');
-  const checkClicked = changeArrangeButton.contains(e.target);
-  e.stopPropagation();
+const arrangeViews = getNode('.arrangeViews');
+const arrangeNew = getNode('.arrangeNew');
 
-  console.log(target);
-  changeClass(changeArrangeButton, 'h-[26px]', 'h-[52px]');
-  addClass(arrangeNew, 'hidden');
-  changeImageName(arrowIcon, 'up', 'down');
+function handleOpenMenu(e) {
+  const target = e.target.closest('.arrangeContainer');
+  const icon = getNode('.arrowIcon');
+  if (!target) {
+    return;
+  }
 
-  if (changeArrangeButton.classList.contains('h-[52px]')) {
-    removeClass(arrangeNew, 'hidden');
+  changeClickImageName(icon, 'down', 'up');
+  if (css(arrangeViews, 'display') === 'none') {
     removeClass(arrangeViews, 'hidden');
-    changeImageName(arrowIcon, 'down', 'up');
+    removeClass(arrangeViews, 'h-0');
+    addClass(arrangeViews, 'h-[26px]');
+    e.stopPropagation();
+  } else if (css(arrangeNew, 'display') === 'none') {
+    removeClass(arrangeNew, 'hidden');
+    removeClass(arrangeNew, 'h-0');
+    addClass(arrangeNew, 'h-[26px]');
+    e.stopPropagation();
+  }
+}
+
+function handleChangeMenuItem(e) {
+  const target = e.target;
+  const isItem = target.closest('.changeArrangeButton li');
+  const menuItem = [...arrangeWrapper.children];
+
+  if (!isItem) {
+    menuItem.forEach((item) => {
+      if (!item.classList.contains('order-first')) {
+        addClass(item, 'hidden');
+      }
+    });
     return;
-  } else if (changeArrangeButton.classList.contains('h-[26px]')) {
-    if (e.target !== arrangeNew && e.target !== arrangeViews) {
-      return;
-    }
-    addClass(arrangeNew, 'hidden');
-    addClass(arrangeViews, 'hidden');
-    removeClass(e.target, 'hidden');
-    return;
+  }
+
+  if (isItem) {
+    menuItem.forEach((item) => {
+      removeClass(item, 'order-first');
+      if (!item.contains(event.target)) {
+        addClass(item, 'hidden');
+      } else {
+        addClass(item, 'order-first');
+      }
+    });
   }
 }
 
@@ -83,7 +107,9 @@ function handleMakeTheme(e) {
     changeImageName(icon, 'clicked', 'default');
   }, 300);
 }
-
 showListWrapper.addEventListener('click', handleShowMethod);
-// body.addEventListener('click', handleChangeArrange);
+arrangeContainer.addEventListener('click', handleOpenMenu);
+body.addEventListener('click', handleChangeMenuItem);
 makeThemeButton.addEventListener('click', handleMakeTheme);
+
+// 동작 순서대로 하위 요소부터 이벤트를 적용하고 stopPropagation?
