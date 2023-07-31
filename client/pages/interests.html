@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+      type="image/xml+svg"
+    />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/pages/interests.js" type="module"></script>
+    <title>Lion Place - Select Places</title>
+  </head>
+
+  <body>
+    <div class="wrapper relative">
+      <button
+        class="closeButton mb-1 ml-[283px] mr-[13px] mt-1 h-6 w-6 bg-[url('../assets/icons/Icon/close_interests.svg')]"
+      ></button>
+      <div class="searchContainer mx-[17px]">
+        <h1
+          class="search__title mb-3 mt-[13px] block -text--lion-label-large font-medium -text--lion-black"
+        >
+          관심지역을 설정해 주세요
+        </h1>
+        <div class="search__inputContainer relative">
+          <input
+            type="text"
+            class="searchInput mb-1 h-[40px] w-[286px] rounded-lg border-[0.5px] -border--lion-contents-content-primary px-3 py-2 -text--lion-label-small -text--lion-contents-content-tertiary"
+            placeholder="원하는 지역을 검색해 보세요"
+          />
+          <img
+            class="search__icon absolute inset-y-2 left-[255px]"
+            src="../assets/icons/Icon/search_interests.svg"
+            alt="검색"
+          />
+        </div>
+      </div>
+      <div class="myPlacesContainer mx-[15px] my-2">
+        <h2
+          class="myPlaces__title mb-3 -text--lion-label-medium font-medium -text--lion-black"
+        >
+          내 관심지역<span
+            class="myPlaces__title__count -text--lion-lightblue-400"
+          >
+            0</span
+          >
+        </h2>
+        <div
+          class="myPlaces__listContainer h-[70px] w-[290px] rounded-lg -bg--lion-gray-50 px-[38px] py-4"
+        >
+          <p
+            class="myPlaces__listContainer__placeholder text-center -text--lion-paragraph-small -text--lion-contents-content-secondary"
+          >
+            자주 찾는 동네, 가고 싶은 여행지를 추가하고
+            <span class="font-bold">최신 리뷰</span>를 모아보세요!
+          </p>
+        </div>
+      </div>
+      <div class="recommendedTitleContainer mx-4">
+        <h2
+          class="recommendedTitle__title mb-2 mt-4 block -text--lion-label-medium font-medium -text--lion-black"
+        >
+          이런 지역 어때요
+        </h2>
+        <p
+          class="recommendedTitle__description mb-1 block -text--lion-label-small -text--lion-black"
+        >
+          <span class="font-semibold">👀 COOLION </span>님 좋아하실 것 같아요
+        </p>
+      </div>
+      <div class="recommendedContainer mx-3 my-1">
+        <ul class="recommended__list flex w-[296px] flex-row flex-wrap gap-3">
+          <li
+            class="recommended__items relative block h-[66px] w-[141px] shrink-0 rounded-lg -bg--lion-gray-100 p-3"
+          >
+            <p
+              class="recommnended__items__desc block -text--lion-label-small -text--lion-contents-content-secondary"
+            >
+              자주 방문한
+              <span
+                class="recommended__items__location block -text--lion-label-medium font-medium -text--lion-black"
+                >부천 상동</span
+              >
+            </p>
+            <button
+              class="recommended__items__button absolute bottom-6 right-3 top-6 h-[18px] w-[18px] bg-[url('../assets/icons/Icon/plus_interests.svg')]"
+            ></button>
+          </li>
+          <li
+            class="recommended__items relative block h-[66px] w-[141px] shrink-0 rounded-lg -bg--lion-gray-100 p-3"
+          >
+            <p
+              class="recommnended__items__desc block -text--lion-label-small -text--lion-contents-content-secondary"
+            >
+              자주 방문한
+              <span
+                class="recommended__items__location block -text--lion-label-medium font-medium -text--lion-black"
+                >부천 상동</span
+              >
+            </p>
+            <button
+              class="recommended__items__button absolute bottom-6 right-3 top-6 h-[18px] w-[18px] bg-[url('../assets/icons/Icon/plus_interests.svg')]"
+            ></button>
+          </li>
+          <li
+            class="recommended__items relative block h-[66px] w-[141px] shrink-0 rounded-lg -bg--lion-gray-100 p-3"
+          >
+            <p
+              class="recommnended__items__desc block -text--lion-label-small -text--lion-contents-content-secondary"
+            >
+              자주 방문한
+              <span
+                class="recommended__items__location block -text--lion-label-medium font-medium -text--lion-black"
+                >부천 상동</span
+              >
+            </p>
+            <button
+              class="recommended__items__button absolute bottom-6 right-3 top-6 h-[18px] w-[18px] bg-[url('../assets/icons/Icon/plus_interests.svg')]"
+            ></button>
+          </li>
+          <li
+            class="recommended__items relative block h-[66px] w-[141px] shrink-0 rounded-lg -bg--lion-gray-100 p-3"
+          >
+            <p
+              class="recommnended__items__desc block -text--lion-label-small -text--lion-contents-content-secondary"
+            >
+              자주 방문한
+              <span
+                class="recommended__items__location block -text--lion-label-medium font-medium -text--lion-black"
+                >부천 상동</span
+              >
+            </p>
+            <button
+              class="recommended__items__button absolute bottom-6 right-3 top-6 h-[18px] w-[18px] bg-[url('../assets/icons/Icon/plus_interests.svg')]"
+            ></button>
+          </li>
+          <li
+            class="recommended__items relative block h-[66px] w-[141px] shrink-0 rounded-lg -bg--lion-gray-100 p-3"
+          >
+            <p
+              class="recommnended__items__desc block -text--lion-label-small -text--lion-contents-content-secondary"
+            >
+              자주 방문한
+              <span
+                class="recommended__items__location block -text--lion-label-medium font-medium -text--lion-black"
+                >부천 상동</span
+              >
+            </p>
+            <button
+              class="recommended__items__button absolute bottom-6 right-3 top-6 h-[18px] w-[18px] bg-[url('../assets/icons/Icon/plus_interests.svg')]"
+            ></button>
+          </li>
+          <li
+            class="recommended__items relative block h-[66px] w-[141px] shrink-0 rounded-lg -bg--lion-gray-100 p-3"
+          >
+            <p
+              class="recommnended__items__desc block -text--lion-label-small -text--lion-contents-content-secondary"
+            >
+              자주 방문한
+              <span
+                class="recommended__items__location block -text--lion-label-medium font-medium -text--lion-black"
+                >부천 상동</span
+              >
+            </p>
+            <button
+              class="recommended__items__button absolute bottom-6 right-3 top-6 h-[18px] w-[18px] bg-[url('../assets/icons/Icon/plus_interests.svg')]"
+            ></button>
+          </li>
+          <li
+            class="recommended__items relative block h-[66px] w-[141px] shrink-0 rounded-lg -bg--lion-gray-100 p-3"
+          >
+            <p
+              class="recommnended__items__desc block -text--lion-label-small -text--lion-contents-content-secondary"
+            >
+              자주 방문한
+              <span
+                class="recommended__items__location block -text--lion-label-medium font-medium -text--lion-black"
+                >부천 상동</span
+              >
+            </p>
+            <button
+              class="recommended__items__button absolute bottom-6 right-3 top-6 h-[18px] w-[18px] bg-[url('../assets/icons/Icon/plus_interests.svg')]"
+            ></button>
+          </li>
+          <li
+            class="recommended__items relative block h-[66px] w-[141px] shrink-0 rounded-lg -bg--lion-gray-100 p-3"
+          >
+            <p
+              class="recommnended__items__desc block -text--lion-label-small -text--lion-contents-content-secondary"
+            >
+              자주 방문한
+              <span
+                class="recommended__items__location block -text--lion-label-medium font-medium -text--lion-black"
+                >부천 상동</span
+              >
+            </p>
+            <button
+              class="recommended__items__button absolute bottom-6 right-3 top-6 h-[18px] w-[18px] bg-[url('../assets/icons/Icon/plus_interests.svg')]"
+            ></button>
+          </li>
+          <li
+            class="recommended__items relative block h-[66px] w-[141px] shrink-0 rounded-lg -bg--lion-gray-100 p-3"
+          >
+            <p
+              class="recommnended__items__desc block -text--lion-label-small -text--lion-contents-content-secondary"
+            >
+              자주 방문한
+              <span
+                class="recommended__items__location block -text--lion-label-medium font-medium -text--lion-black"
+                >부천 상동</span
+              >
+            </p>
+            <button
+              class="recommended__items__button absolute bottom-6 right-3 top-6 h-[18px] w-[18px] bg-[url('../assets/icons/Icon/plus_interests.svg')]"
+            ></button>
+          </li>
+          <li
+            class="recommended__items relative block h-[66px] w-[141px] shrink-0 rounded-lg -bg--lion-gray-100 p-3"
+          >
+            <p
+              class="recommnended__items__desc block -text--lion-label-small -text--lion-contents-content-secondary"
+            >
+              자주 방문한
+              <span
+                class="recommended__items__location block -text--lion-label-medium font-medium -text--lion-black"
+                >부천 상동</span
+              >
+            </p>
+            <button
+              class="recommended__items__button absolute bottom-6 right-3 top-6 h-[18px] w-[18px] bg-[url('../assets/icons/Icon/plus_interests.svg')]"
+            ></button>
+          </li>
+          <li
+            class="recommended__items relative block h-[66px] w-[141px] shrink-0 rounded-lg -bg--lion-gray-100 p-3"
+          >
+            <p
+              class="recommnended__items__desc block -text--lion-label-small -text--lion-contents-content-secondary"
+            >
+              자주 방문한
+              <span
+                class="recommended__items__location block -text--lion-label-medium font-medium -text--lion-black"
+                >부천 상동</span
+              >
+            </p>
+            <button
+              class="recommended__items__button absolute bottom-6 right-3 top-6 h-[18px] w-[18px] bg-[url('../assets/icons/Icon/plus_interests.svg')]"
+            ></button>
+          </li>
+          <li
+            class="recommended__items relative block h-[66px] w-[141px] shrink-0 rounded-lg -bg--lion-gray-100 p-3"
+          >
+            <p
+              class="recommnended__items__desc block -text--lion-label-small -text--lion-contents-content-secondary"
+            >
+              자주 방문한
+              <span
+                class="recommended__items__location block -text--lion-label-medium font-medium -text--lion-black"
+                >부천 상동</span
+              >
+            </p>
+            <button
+              class="recommended__items__button absolute bottom-6 right-3 top-6 h-[18px] w-[18px] bg-[url('../assets/icons/Icon/plus_interests.svg')]"
+            ></button>
+          </li>
+          <li
+            class="recommended__items relative block h-[66px] w-[141px] shrink-0 rounded-lg -bg--lion-gray-100 p-3"
+          >
+            <p
+              class="recommnended__items__desc block -text--lion-label-small -text--lion-contents-content-secondary"
+            >
+              자주 방문한
+              <span
+                class="recommended__items__location block -text--lion-label-medium font-medium -text--lion-black"
+                >부천 상동</span
+              >
+            </p>
+            <button
+              class="recommended__items__button absolute bottom-6 right-3 top-6 h-[18px] w-[18px] bg-[url('../assets/icons/Icon/plus_interests.svg')]"
+            ></button>
+          </li>
+          <li
+            class="recommended__items relative block h-[66px] w-[141px] shrink-0 rounded-lg -bg--lion-gray-100 p-3"
+          >
+            <p
+              class="recommnended__items__desc block -text--lion-label-small -text--lion-contents-content-secondary"
+            >
+              자주 방문한
+              <span
+                class="recommended__items__location block -text--lion-label-medium font-medium -text--lion-black"
+                >부천 상동</span
+              >
+            </p>
+            <button
+              class="recommended__items__button absolute bottom-6 right-3 top-6 h-[18px] w-[18px] bg-[url('../assets/icons/Icon/plus_interests.svg')]"
+            ></button>
+          </li>
+          <li
+            class="recommended__items relative block h-[66px] w-[141px] shrink-0 rounded-lg -bg--lion-gray-100 p-3"
+          >
+            <p
+              class="recommnended__items__desc block -text--lion-label-small -text--lion-contents-content-secondary"
+            >
+              자주 방문한
+              <span
+                class="recommended__items__location block -text--lion-label-medium font-medium -text--lion-black"
+                >부천 상동</span
+              >
+            </p>
+            <button
+              class="recommended__items__button absolute bottom-6 right-3 top-6 h-[18px] w-[18px] bg-[url('../assets/icons/Icon/plus_interests.svg')]"
+            ></button>
+          </li>
+          <li
+            class="recommended__items relative block h-[66px] w-[141px] shrink-0 rounded-lg -bg--lion-gray-100 p-3"
+          >
+            <p
+              class="recommnended__items__desc block -text--lion-label-small -text--lion-contents-content-secondary"
+            >
+              자주 방문한
+              <span
+                class="recommended__items__location block -text--lion-label-medium font-medium -text--lion-black"
+                >부천 상동</span
+              >
+            </p>
+            <button
+              class="recommended__items__button absolute bottom-6 right-3 top-6 h-[18px] w-[18px] bg-[url('../assets/icons/Icon/plus_interests.svg')]"
+            ></button>
+          </li>
+        </ul>
+      </div>
+      <button
+        class="saveButton fixed left-3 top-[661px] z-10 h-[42px] w-[286px] rounded-lg -bg--lion-primary px-[100px] py-3 -text--lion-label-small -text--lion-white"
+      >
+        이대로 저장할래요
+      </button>
+    </div>
+  </body>
+</html>
