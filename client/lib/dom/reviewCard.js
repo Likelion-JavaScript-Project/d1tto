@@ -16,7 +16,7 @@ function createReviewCard({
   }
 
   const template = /* html */ `
-  <li data-index=${id}>
+  <li data-index=${id} class="swiper-slide reviewList__item">
     <a
       target="_blank"
       noopener noreferrer

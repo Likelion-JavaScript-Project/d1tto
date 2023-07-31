@@ -27,7 +27,7 @@ const arrangeViews = getNode('.arrangeViews');
 
 const reviewList = getNode('.reviewList');
 
-new Swiper('.swiper', {
+new Swiper('.swiperTheme', {
   direction: 'horizontal',
   slidesPerView: '2',
   width: '320',
@@ -35,6 +35,17 @@ new Swiper('.swiper', {
   freeMode: {
     enabled: true,
     sticky: true,
+  },
+});
+
+new Swiper('.swiperReview', {
+  direction: 'vertical',
+  slidesPerView: '3',
+  // spaceBetween: 8,
+  // autoHeight: true,
+  height: '430',
+  grid: {
+    rows: 2,
   },
 });
 
