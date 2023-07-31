@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+      type="image/xml+svg"
+    />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/pages/interests2.js" type="module"></script>
+    <title>Lion Place - Select Cities</title>
+  </head>
+
+  <body>
+    <div
+      class="visitedWrapper h-[404px] w-[320px] -bg--lion-gray-100 px-3 py-6"
+    >
+      <h1 class="class sr-only">방문목록</h1>
+      <h2 class="vistedMonth -text--lion-label-medium font-medium">3월 방문</h2>
+      <div
+        class="reviewedContainer relative my-4 rounded-lg -bg--lion-white p-3"
+      >
+        <div class="reviewed__title mb-1">
+          <p class="restaurantsName -text--lion-label-medium font-medium">
+            비건 베이커리 구떼
+            <span
+              class="dateCount -text--lion-paragraph-small -text--lion-contents-content-tertiary"
+              >3.8.수 • 1번째 방문</span
+            >
+          </p>
+        </div>
+        <div class="reviewed__reviewContainer flex gap-4">
+          <div class="reviewed__reviewSet">
+            <p
+              class="reviewed__reveiw text-ellipsis -text--lion-paragraph-small -text--lion-contents-content-secondary"
+            >
+              진짜 맨날 근처오면 와서 4-5개씩은 사가는 곳입니다. 비건 디저트
+              특유의 어쩌구 저쩌구
+            </p>
+            <div class="reviewed__tagSet flex flex-nowrap gap-[2px]">
+              <div
+                class="reviewed__summary w-[110px] rounded -bg--lion-gray-50 px-2 py-[2px] text-center -text--lion-paragraph-small -text--lion-contents-content-secondary"
+              >
+                ✨ 매장이 청결해요
+              </div>
+              <div
+                class="reviewed__summaryCount w-[50px] rounded -bg--lion-gray-50 px-2 py-[2px] text-center -text--lion-paragraph-small -text--lion-contents-content-secondary"
+              >
+                ✨ +2
+              </div>
+            </div>
+          </div>
+          <img
+            class="mr-[7px]"
+            src="../assets/images/bakery_visited.png"
+            alt="쿠키 2개"
+          />
+        </div>
+        <p
+          class="reviewed__receipt mt-[11px] -text--lion-paragraph-small -text--lion-contents-content-tertiary"
+        >
+          파운드 외 2 • 12,300원
+        </p>
+        <button
+          class="heart absolute right-[30px] top-[15px] h-[18px] w-[18px] bg-[url('../assets/icons/Icon/heart_visited.svg')]"
+        ></button>
+        <button
+          class="more absolute right-[12px] top-[15px] h-[18px] w-[18px] bg-[url('../assets/icons/Icon/more_visited.svg')]"
+        ></button>
+      </div>
+      <h2 class="vistedMonth -text--lion-label-medium font-medium">2월 방문</h2>
+      <div
+        class="reviewNeededContainer relative my-4 rounded-lg -bg--lion-white p-3"
+      >
+        <div class="reviewNeeded__title mb-1">
+          <p class="restaurantsName -text--lion-label-medium font-medium">
+            비건 베이커리 구떼
+            <span
+              class="dateCount -text--lion-paragraph-small -text--lion-contents-content-tertiary"
+              >3.8.수 • 1번째 방문</span
+            >
+          </p>
+        </div>
+        <p
+          class="reviewNeeded__receipt mb-1 -text--lion-paragraph-small -text--lion-contents-content-tertiary"
+        >
+          파운드 외 2 • 12,300원
+        </p>
+        <button
+          class="write h-[30px] w-[262px] rounded-lg -bg--lion-lightblue-800 -text--lion-label-small -text--lion-white"
+        >
+          리뷰 쓰기
+        </button>
+        <button
+          class="heart absolute right-[30px] top-[15px] h-[18px] w-[18px] bg-[url('../assets/icons/Icon/heart_visited.svg')]"
+        ></button>
+        <button
+          class="more absolute right-[12px] top-[15px] h-[18px] w-[18px] bg-[url('../assets/icons/Icon/more_visited.svg')]"
+        ></button>
+      </div>
+    </div>
+  </body>
+</html>
