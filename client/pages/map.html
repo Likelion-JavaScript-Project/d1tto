@@ -1,12 +1,153 @@
-<!DOCTYPE html>
-<html lang="ko-KR">
-<head>
-    
-    <meta charset="UTF-8" />
+<!doctype html>
+<html lang="ko-KR"></html>
+  <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="../css/main.css"/>
+    <link rel="stylesheet" href="../css/map.css"/>
+    <script src="./map.js"></script>
+    <title>map</title>
+
+  </head>
+  <body>
+    <section class=" w-full map_Wrap">
+     <!-- <h3 class="a11yHidden">지도</h3> -->
+      
+          <div class="flex-auto map__bar">
+            <span
+              type="button"
+              class=""
+              aria-label="뒤로 가기 버튼"
+              onclick="history.back()" 
+            ><img src="./../assets/icons/Icon/icon-left.svg"></span> 
+            <span class="text-base">연남/합정 데이트</span>
+            <span type="button" class="border-solid border-black border 
+            rounded-full text-xs font-semibold button tempSave__Button">임시저장</span>
+            <span type="button" class="button more__Button">
+                <img src="./../assets/icons/Icon/icon-more.svg"></span>
+            </button>
+          </div>
+          
+          <!-- 현재 위치로 가기 버튼, 로드뷰 버튼-->
+          <div class="mapoption_control">
+            <button class=""></button>
+            <button id="roadViewBtn" class="roadView__button"><img src="../assets/icons/Icon/present.svg"></button>
+          </div>
+          
+          <!--지도 확대 축소 버튼-->
+      <div class="custom_zoomcontrol radius_border"> 
+        <button class="w-30px h-30px shadow p-1" onclick="zoomIn()" ><img src="../assets/icons/Icon/icon-plus.svg" alt="확대"></button>  
+        <button class="w-30px h-30px shadow p-1" onclick="zoomOut()" ><img src="../assets/icons/Icon/icon-minus.png" alt="축소"></button>
+    </div>
+</div>
+    <!-- 지도를 표시할 div 입니다 -->
+    <div class="h-full" id="map" style="width: 100%; height: 700px"></div>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d6dc76a7451cb67d233217452abb62de"
+    ></script>
+      <script>
+      let mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+        mapOption = { 
+        center: new kakao.maps.LatLng(37.5519, 126.9148), // 지도의 중심좌표
+        level: 4 // 지도의 확대 레벨
+        };
+
+  // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+     var map = new kakao.maps.Map(mapContainer, mapOption); 
+    //  var imageSrc = './../assets/icons/Icon/markerImg1.svg', // 마커이미지의 주소입니다    
+    // imageSize = new kakao.maps.Size(24, 24), // 마커이미지의 크기입니다
+    // imageOption = {offset: new kakao.maps.Point(24, 24)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+      
+    // 지도에 로드뷰 정보가 있는 도로를 표시하도록 지도타입을 추가합니다
+    function addRoadview(){ 
+      map.addOverlayMapTypeId(kakao.maps.MapTypeId.ROADVIEW);    
+    }
+
+  // 아래 코드는 위에서 추가한 로드뷰 도로 정보 지도타입을 제거합니다
+    function removeRoadview() {
+      map.removeOverlayMapTypeId(kakao.maps.MapTypeId.ROADVIEW); 
+    }   
+
+    // var count=0;
+    // function increase() {
+    //   count=count+1;
+    //   document.querySelector("roadViewBtn").innerText=count;
+    //   return count;
+    // }
+    let count=0
+    let roadviewButton=document.querySelector('roadViewBtn');
+    roadViewBtn.addEventListener('click', function(){
+      count+=1;
+      return count;
+      console.log(count);
+    })
+
+    function roadView(count) {
+        if(count%2 ===0){
+          addRoadview()
+        }else{
+          removeRoadview()
+        }
+        console.log(count);
+      }
+      
+  
+      //마커 생성부분
+    var positions = [
+      {
+        title: '홍대 디디치',
+          latlng: new kakao.maps.LatLng(37.5540, 126.9135),
+          image: './../assets/icons/Icon/markerImg1.svg'
+      },
+      {
+      title: 'HOTMESS',
+      latlng: new kakao.maps.LatLng(37.5565, 126.9165),
+      image:'./../assets/icons/Icon/markerImg2.svg'
+      }];
+// // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+// var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+//     markerPosition = new kakao.maps.LatLng(37.5540, 126.9135); // 마커가 표시될 위치입니다
+
+// 마커를 생성합니다
+for(var i=0; i<positions.length; i++){
+
+  //마커이미지 크기
+  var imageSize = new kakao.maps.Size(24,35);
+
+  //마커 이미지 생성
+  var markerImage=new kakao.maps.MarkerImage(positions[i].image, imageSize);
+
+  var marker = new kakao.maps.Marker({
+      map:map,
+      position: positions[i].latlng, 
+      title:positions[i].title,
+      image: markerImage // 마커이미지 설정 
+  });
+
+// 커스텀 오버레이가 표시될 위치입니다 
+  var position = positions[i].latlng;  
+
+  // 커스텀 오버레이를 생성합니다
+  var customOverlay = new kakao.maps.CustomOverlay({
+      map: map,
+      position: position,
+      content: content,
+      yAnchor: 1 
+  });
+}
+// 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+var content = '<div class="customoverlay">' +
+    '  <a href="https://map.kakao.com/link/map/11394059" target="_blank">' +
+    '    <span class="title">구의야구공원</span>' +
+    '  </a>' +
+    '</div>';
+
+
+
+// 마커가 지도 위에 표시되도록 설정합니다
+  marker.setMap(map);  
+    </script>
+    </section>
+  </body>
 </html>
