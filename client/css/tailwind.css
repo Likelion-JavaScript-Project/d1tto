@@ -4,8 +4,3 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  html {
-    @apply -font--lion-family;
-  }
-}
