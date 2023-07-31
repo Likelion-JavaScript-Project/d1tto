@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+      type="image/xml+svg"
+    />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/pages/login.js" type="module"></script>
+    <title>Lion Place - Login</title>
+  </head>
+
+  <body class="">
+    <div
+      class="wrapper h-[722px] w-80 flex-col items-center -bg--lion-primary px-[34.5px] pb-[149px] pt-[62px]"
+    >
+      <a href="../index.html">
+        <div class="iconWrapper">
+          <img
+            src="../assets/icons/Icon/mapPin_login.svg"
+            alt=""
+            class="mainIcon not-sr-only mx-auto h-[31.126px] w-[23.769px]"
+          />
+          <h1
+            class="mx-auto mt-[5.659px] text-center -text--lion-heading-large -text--lion-white"
+          >
+            Lion Place
+          </h1>
+        </div>
+      </a>
+      <h2
+        class="mb-[24px] mt-[100.21px] -text--lion-label-xl -text--lion-white"
+      >
+        로그인
+      </h2>
+      <form action="/" class="loginForm" method="POST">
+        <input
+          type="text"
+          class="inputId mb-[12px] h-[43px] w-[251px] rounded border -border--lion-white -bg--lion-primary px-[20px] py-[12px] -text--lion-paragraph-small -text--lion-white"
+          placeholder="아이디를 입력해주세요"
+          maxlength="12"
+          required
+        />
+        <input
+          type="password"
+          class="inputPw mb-[59px] h-[43px] w-[251px] rounded border -border--lion-white -bg--lion-primary px-[20px] py-[12px] -text--lion-paragraph-small -text--lion-white"
+          placeholder="비밀번호를 입력해주세요"
+          maxlength="12"
+          required
+        />
+
+        <button
+          type="button"
+          class="loginButton mx-auto mb-[12px] block h-[54px] w-[251px] rounded border -border--lion-white -bg--lion-primary px-[100px] py-[17.5px] text-center -text--lion-paragraph-small -text--lion-white"
+          disabled
+        >
+          로그인
+        </button>
+        <button
+          type="button"
+          class="joinButton mx-auto block h-[54px] w-[251px] rounded border -border--lion-white -bg--lion-primary px-[100px] py-[17.5px] text-center -text--lion-paragraph-small -text--lion-white"
+        >
+          회원가입
+        </button>
+
+        <div class="wrapper absolute left-[156px] top-[406px] flex flex-row">
+          <a
+            href="/"
+            class="findId block -text--lion-paragraph-small -text--lion-white"
+            >아이디 찾기</a
+          >
+          <div
+            class="divider not-sr-only mx-1 my-[4px] w-[1px] bg-[#333]"
+          ></div>
+          <a
+            href="/"
+            class="findPw block -text--lion-paragraph-small -text--lion-white"
+            >비밀번호 찾기</a
+          >
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
