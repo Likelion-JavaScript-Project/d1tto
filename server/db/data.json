@@ -27,6 +27,13 @@
       "name": "yamoo",
       "email": "yamoo@asdfasdf",
       "pw": "asdfasdf!"
+    },
+    {
+      "id": "5",
+      "token": "3a786450b8415",
+      "name": "asdf",
+      "email": "asdf@asdfasdf",
+      "pw": "asdfasdf!"
     }
   ],
   "reviews": [
@@ -179,17 +186,23 @@
     {
       "id": 2,
       "token": "ceca1a1f950fb",
-      "restaurants": [{}]
+      "restaurants": [
+        {}
+      ]
     },
     {
       "id": 3,
       "token": "4cca95d5a8386",
-      "restaurants": [{}]
+      "restaurants": [
+        {}
+      ]
     },
     {
       "id": 4,
       "token": "b24582dab4219",
-      "restaurants": [{}]
+      "restaurants": [
+        {}
+      ]
     }
   ]
 }
