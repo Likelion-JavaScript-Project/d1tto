@@ -27,6 +27,17 @@ const arrangeViews = getNode('.arrangeViews');
 
 const reviewList = getNode('.reviewList');
 
+new Swiper('.swiper', {
+  direction: 'horizontal',
+  slidesPerView: '2',
+  width: '320',
+  grabCursor: true,
+  freeMode: {
+    enabled: true,
+    sticky: true,
+  },
+});
+
 function handleMakeTheme(e) {
   e.preventDefault();
 
