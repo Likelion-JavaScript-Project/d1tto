@@ -1,35 +1,35 @@
 {
   "users": [
     {
-      "id": "1",
+      "id": 1,
       "token": "5c542cf3e0f0a",
       "name": "ditto",
       "email": "ditto@gmail.com",
       "pw": "asdfasdf!"
     },
     {
-      "id": "2",
+      "id": 2,
       "token": "ceca1a1f950fb",
       "name": "tiger",
       "email": "tiger@gmail.com",
       "pw": "asdfasdf!"
     },
     {
-      "id": "3",
+      "id": 3,
       "token": "4cca95d5a8386",
       "name": "seulbi",
       "email": "seulbi@gmail.com",
       "pw": "asdfasdf!"
     },
     {
-      "id": "4",
+      "id": 4,
       "token": "b24582dab4219",
       "name": "yamoo",
       "email": "yamoo@asdfasdf",
       "pw": "asdfasdf!"
     },
     {
-      "id": "5",
+      "id": 5,
       "token": "3a786450b8415",
       "name": "asdf",
       "email": "asdf@asdfasdf",
@@ -186,22 +186,59 @@
     {
       "id": 2,
       "token": "ceca1a1f950fb",
-      "restaurants": [
-        {}
-      ]
+      "restaurants": [{}]
     },
     {
       "id": 3,
       "token": "4cca95d5a8386",
-      "restaurants": [
-        {}
-      ]
+      "restaurants": [{}]
     },
     {
       "id": 4,
       "token": "b24582dab4219",
-      "restaurants": [
-        {}
+      "restaurants": [{}]
+    }
+  ],
+  "interests": [
+    {
+      "id": 1,
+      "token": "5c542cf3e0f0a",
+      "location": [
+        {
+          "id": 1,
+          "name": "부천상동"
+        },
+        {
+          "id": 2,
+          "name": "영종도"
+        }
+      ]
+    }
+  ],
+  "visited": [
+    {
+      "id": 1,
+      "token": "5c542cf3e0f0a",
+      "place": [
+        {
+          "id": 1,
+          "name": "비건 베이커리 구떼",
+          "date": "3.8.수",
+          "visitCount": 1,
+          "review": "진짜 맨날 근처오면 와서 4-5개씩은 사가는 곳입니다. 비건디저트 특유의 맛이 느껴지지 않아서 자주 방문합니다!",
+          "reviewTag": [
+            {
+              "id": 1,
+              "tag": "매장이 청결해요"
+            },
+            {
+              "id": 2,
+              "tag": "매장이 예뻐요"
+            }
+          ],
+          "menu": "파운드 외 2",
+          "price": "12,300원"
+        }
       ]
     }
   ]

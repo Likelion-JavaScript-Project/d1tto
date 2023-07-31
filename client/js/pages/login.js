@@ -79,6 +79,7 @@ function handleLogin(e) {
     if (loginCheckResult === 'true') {
       alert('성공');
       tokenPass();
+      window.location.href = '../pages/interests.html';
     } else {
       alert('아이디 또는 비밀번호가 일치하지 않습니다.');
     }
