@@ -534,50 +534,266 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+html {
+  font-family: Pretendard, sans-serif;
+}
+
+.not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.bottom-\[295px\] {
+  bottom: 295px;
+}
+
+.right-\[34\.5px\] {
+  right: 34.5px;
+}
+
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
 
-.bg-gradient-to-r {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+.my-\[4px\] {
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
-.from-cyan-500 {
-  --tw-gradient-from: #06b6d4 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(6 182 212 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+.mb-\[11px\] {
+  margin-bottom: 11px;
 }
 
-.to-indigo-700 {
-  --tw-gradient-to: #4338ca var(--tw-gradient-to-position);
+.mb-\[12px\] {
+  margin-bottom: 12px;
 }
 
-.bg-clip-text {
-  -webkit-background-clip: text;
-          background-clip: text;
+.mb-\[22px\] {
+  margin-bottom: 22px;
 }
 
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
+.mb-\[24px\] {
+  margin-bottom: 24px;
 }
 
-.font-black {
-  font-weight: 900;
+.mb-\[59px\] {
+  margin-bottom: 59px;
 }
 
-.text-indigo-500 {
+.mb-\[64px\] {
+  margin-bottom: 64px;
+}
+
+.mt-\[100\.21px\] {
+  margin-top: 100.21px;
+}
+
+.mt-\[10px\] {
+  margin-top: 10px;
+}
+
+.mt-\[174px\] {
+  margin-top: 174px;
+}
+
+.mt-\[5\.659px\] {
+  margin-top: 5.659px;
+}
+
+.mt-\[74\.21px\] {
+  margin-top: 74.21px;
+}
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-\[31\.126px\] {
+  height: 31.126px;
+}
+
+.h-\[41px\] {
+  height: 41px;
+}
+
+.h-\[43px\] {
+  height: 43px;
+}
+
+.h-\[54px\] {
+  height: 54px;
+}
+
+.h-\[722px\] {
+  height: 722px;
+}
+
+.w-80 {
+  width: 20rem;
+}
+
+.w-\[1px\] {
+  width: 1px;
+}
+
+.w-\[23\.769px\] {
+  width: 23.769px;
+}
+
+.w-\[251px\] {
+  width: 251px;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.-border--lion-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.-bg--lion-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 31 49 / var(--tw-bg-opacity));
+}
+
+.-bg--lion-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#333\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 51 51 / var(--tw-bg-opacity));
+}
+
+.px-\[100px\] {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.px-\[20px\] {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.px-\[34\.5px\] {
+  padding-left: 34.5px;
+  padding-right: 34.5px;
+}
+
+.px-\[35px\] {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.py-\[11px\] {
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
+.py-\[12px\] {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.py-\[17\.5px\] {
+  padding-top: 17.5px;
+  padding-bottom: 17.5px;
+}
+
+.pb-\[149px\] {
+  padding-bottom: 149px;
+}
+
+.pb-\[210px\] {
+  padding-bottom: 210px;
+}
+
+.pb-\[52px\] {
+  padding-bottom: 52px;
+}
+
+.pt-\[179px\] {
+  padding-top: 179px;
+}
+
+.pt-\[62px\] {
+  padding-top: 62px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.-text--lion-heading-large {
+  font-size: 21.33px;
+  line-height: 140%,;
+}
+
+.-text--lion-heading-xxl {
+  font-size: 37.9px;
+  line-height: 140%,;
+}
+
+.-text--lion-label-xl {
+  font-size: 28.43px;
+  line-height: 150%,;
+}
+
+.-text--lion-paragraph-small {
+  font-size: 12px;
+  line-height: 160%,;
+}
+
+.-text--lion-black {
   --tw-text-opacity: 1;
-  color: rgb(99 102 241 / var(--tw-text-opacity));
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.text-transparent {
-  color: transparent;
+.-text--lion-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.drop-shadow-lg {
-  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+.text-\[\#FD8D14\] {
+  --tw-text-opacity: 1;
+  color: rgb(253 141 20 / var(--tw-text-opacity));
 }
-
