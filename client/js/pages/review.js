@@ -1,4 +1,8 @@
-import { renderReviewCard } from '../../lib/dom/userList.js';
+import {
+  renderEmptySvg,
+  renderReviewCard,
+  renderSpinner,
+} from '../../lib/dom/reviewCard.js';
 import {
   addClass,
   changeClass,
@@ -118,7 +122,7 @@ function handleCloseMenu(e) {
   }
 }
 
-async function handleTogglePin(e) {
+function handleTogglePin(e) {
   const target = e.target.closest('li');
   if (!target) {
     return;
@@ -133,25 +137,48 @@ async function handleTogglePin(e) {
   }
 }
 
+// async function modifyDataTogglePin() {
+//   const response = await tiger.put('http://localhost:3000/reviews');
+//   const reviewsData = response.data;
+
+//   console.log(reviewsData);
+// }
+
+// modifyDataTogglePin();
+
 async function renderReviewList() {
-  const users = await tiger.get('http://localhost:3000/users');
-  const response = await tiger.get('http://localhost:3000/reviews');
-  const usersData = users.data;
-  const reviewsData = response.data;
+  renderSpinner(reviewList);
+  const loadingSpinner = getNode('.loadingSpinner');
 
-  usersData.forEach((item, index) => {
-    const usersToken = usersData[index].token;
-
-    reviewsData.forEach((item, index) => {
-      const reviewsToken = reviewsData[index].token;
-
-      if (usersToken === reviewsToken) {
-        reviewsData[index].restaurants.forEach((item) => {
-          renderReviewCard(reviewList, item);
-        });
-      }
+  try {
+    gsap.to(loadingSpinner, {
+      opacity: 0,
+      onComplete() {
+        loadingSpinner.remove();
+      },
     });
-  });
+
+    const users = await tiger.get('http://localhost:3000/users');
+    const response = await tiger.get('http://localhost:3000/reviews');
+    const usersData = users.data;
+    const reviewsData = response.data;
+
+    usersData.forEach((item, index) => {
+      const usersToken = usersData[index].token;
+
+      reviewsData.forEach((item, index) => {
+        const reviewsToken = reviewsData[index].token;
+
+        if (usersToken === reviewsToken && item.restaurants.length > 1) {
+          reviewsData[index].restaurants.forEach((item) => {
+            renderReviewCard(reviewList, item);
+          });
+        }
+      });
+    });
+  } catch (err) {
+    renderEmptySvg(reviewList);
+  }
 }
 
 makeThemeButton.addEventListener('click', handleMakeTheme);

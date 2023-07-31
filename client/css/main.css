@@ -582,14 +582,6 @@ html {
   right: 0.125rem;
 }
 
-.right-1 {
-  right: 0.25rem;
-}
-
-.right-1\.5 {
-  right: 0.375rem;
-}
-
 .right-3 {
   right: 0.75rem;
 }
@@ -663,10 +655,6 @@ html {
   height: 0.75rem;
 }
 
-.h-6 {
-  height: 1.5rem;
-}
-
 .h-\[184px\] {
   height: 184px;
 }
@@ -677,6 +665,10 @@ html {
 
 .h-\[26px\] {
   height: 26px;
+}
+
+.h-\[412px\] {
+  height: 412px;
 }
 
 .h-\[42px\] {
@@ -699,24 +691,20 @@ html {
   max-height: 722px;
 }
 
+.max-h-\[412px\] {
+  max-height: 412px;
+}
+
+.max-h-full {
+  max-height: 100%;
+}
+
 .w-3 {
   width: 0.75rem;
 }
 
-.w-6 {
-  width: 1.5rem;
-}
-
 .w-80 {
   width: 20rem;
-}
-
-.w-\[125px\] {
-  width: 125px;
-}
-
-.w-\[145px\] {
-  width: 145px;
 }
 
 .w-\[148px\] {
@@ -832,26 +820,8 @@ html {
   overflow: hidden;
 }
 
-.truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.text-ellipsis {
-  text-overflow: ellipsis;
-}
-
-.whitespace-nowrap {
-  white-space: nowrap;
-}
-
 .rounded-\[10px\] {
   border-radius: 10px;
-}
-
-.rounded-\[3px\] {
-  border-radius: 3px;
 }
 
 .rounded-\[4px\] {
@@ -916,10 +886,6 @@ html {
   padding: 0.25rem;
 }
 
-.p-2 {
-  padding: 0.5rem;
-}
-
 .p-3 {
   padding: 0.75rem;
 }
@@ -949,10 +915,6 @@ html {
 
 .pt-2 {
   padding-top: 0.5rem;
-}
-
-.pt-20 {
-  padding-top: 5rem;
 }
 
 .text-center {
@@ -1005,6 +967,11 @@ html {
   color: transparent;
 }
 
+.-text--lion-info-error {
+  --tw-text-opacity: 1;
+  color: rgb(240 63 64 / var(--tw-text-opacity));
+}
+
 .drop-shadow-lg {
   --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1018,4 +985,32 @@ html {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.reviewList__image {
+  width: 145px;
+  border-radius: 3px;
+  padding: 0.5rem;
+}
+
+.reviewList__icon {
+  right: 0.375rem;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.reviewList__svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.reviewList__textWrapper {
+  width: 125px;
+  padding-top: 5rem;
+}
+
+.reviewList__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

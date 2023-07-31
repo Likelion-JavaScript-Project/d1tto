@@ -9,3 +9,23 @@
     @apply -font--lion-family;
   }
 }
+
+.reviewList__image {
+  @apply w-[145px] rounded-[3px] p-2;
+}
+
+.reviewList__icon {
+  @apply right-1.5 h-6 w-6;
+}
+
+.reviewList__svg {
+  @apply h-6 w-6;
+}
+
+.reviewList__textWrapper {
+  @apply w-[125px] pt-20;
+}
+
+.reviewList__text {
+  @apply truncate;
+}
