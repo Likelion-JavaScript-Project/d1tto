@@ -39,8 +39,8 @@ new Swiper('.swiperTheme', {
 
 new Swiper('.swiperReview', {
   direction: 'vertical',
-  slidesPerView: '3',
-  height: '430',
+  slidesPerView: '1',
+  height: '144',
   grid: {
     rows: 2,
   },
@@ -290,9 +290,7 @@ async function renderReviewListPhoto() {
           reviewsData[index].restaurants.forEach((item) => {
             renderReviewCardPhoto(reviewList, item);
           });
-        } else {
-          renderEmptySvg(reviewList);
-        }
+        } 
       });
     });
   } catch (err) {
