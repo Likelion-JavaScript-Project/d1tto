@@ -3,7 +3,7 @@ import {
   renderReviewCardAll,
   renderReviewCardPhoto,
   renderSpinner,
-} from '../../lib/dom/reviewCard.js';
+} from '../../lib/dom/renderRivew.js';
 import {
   addClass,
   changeClass,
@@ -86,7 +86,16 @@ function handleShowList(e) {
     changeImageName(icon, 'default', 'clicked');
   }
 
-  return renderMethodFunction(e);
+  return renderShowMethodFunction(e);
+}
+
+function renderShowMethodFunction(e) {
+  const target = e.target.closest('button');
+  if (target.classList.contains('showListWrapper__all')) {
+    renderReviewListAll();
+  } else {
+    renderReviewListPhoto();
+  }
 }
 
 function handleOpenMenu(e) {
@@ -139,6 +148,104 @@ function handleCloseMenu(e) {
       }
     });
   }
+
+  return renderReviewListChange(e);
+}
+
+async function renderReviewListChange(e) {
+  const target = e.target.closest('span');
+  if (!target) {
+    return;
+  }
+
+  const buttonAll = getNode('.showListWrapper__all');
+  const buttonPhoto = getNode('.showListWrapper__photo');
+  if (buttonAll.classList.contains('-text--lion-black')) {
+    if (target.classList.contains('arrangeNew')) {
+      renderReviewListAll();
+    } else if (target.classList.contains('arrangeViews')) {
+      clearContents(reviewList);
+      renderSpinner(reviewList);
+
+      const loadingSpinner = getNode('.loadingSpinner');
+      try {
+        gsap.to(loadingSpinner, {
+          opacity: 0,
+          onComplete() {
+            loadingSpinner.remove();
+          },
+        });
+
+        const users = await tiger.get('http://localhost:3000/users');
+        const response = await tiger.get('http://localhost:3000/reviews');
+        const usersData = users.data;
+        const reviewsData = response.data;
+
+        usersData.forEach((item, index) => {
+          const usersToken = usersData[index].token;
+
+          reviewsData.forEach((item, index) => {
+            const reviewsToken = reviewsData[index].token;
+
+            if (usersToken === reviewsToken && item.restaurants.length > 1) {
+              reviewsData[index].restaurants
+                .slice()
+                .reverse()
+                .forEach((item) => {
+                  renderReviewCardAll(reviewList, item);
+                });
+            } else {
+              renderEmptySvg(reviewList);
+            }
+          });
+        });
+      } catch (err) {
+        renderEmptySvg(reviewList);
+      }
+    }
+  } else if (buttonPhoto.classList.contains('-text--lion-black')) {
+    if (target.classList.contains('arrangeNew')) {
+      renderReviewListPhoto();
+    } else if (target.classList.contains('arrangeViews')) {
+      clearContents(reviewList);
+      renderSpinner(reviewList);
+
+      const loadingSpinner = getNode('.loadingSpinner');
+      try {
+        gsap.to(loadingSpinner, {
+          opacity: 0,
+          onComplete() {
+            loadingSpinner.remove();
+          },
+        });
+        clearContents(reviewList);
+        const users = await tiger.get('http://localhost:3000/users');
+        const response = await tiger.get('http://localhost:3000/reviews');
+        const usersData = users.data;
+        const reviewsData = response.data;
+        usersData.forEach((item, index) => {
+          const usersToken = usersData[index].token;
+
+          reviewsData.forEach((item, index) => {
+            const reviewsToken = reviewsData[index].token;
+
+            if (usersToken === reviewsToken && item.restaurants.length > 1) {
+              reviewsData[index].restaurants
+                .slice()
+                .reverse()
+                .forEach((item) => {
+                  renderReviewCardPhoto(reviewList, item);
+                });
+            } else {
+              renderEmptySvg(reviewList);
+            }
+          });
+        });
+      } catch (err) {
+        renderEmptySvg(reviewList);
+      }
+    }
+  }
 }
 
 function handleTogglePin(e) {
@@ -157,6 +264,7 @@ function handleTogglePin(e) {
 }
 
 async function renderReviewListPhoto() {
+  clearContents(reviewList);
   renderSpinner(reviewList);
 
   const loadingSpinner = getNode('.loadingSpinner');
@@ -231,15 +339,9 @@ async function renderReviewListAll() {
   }
 }
 
-function renderMethodFunction(e) {
-  const target = e.target.closest('button');
-  if (target.classList.contains('showListWrapper__all')) {
-    renderReviewListAll();
-  } else {
-    renderReviewListPhoto();
-  }
-}
-
+document.querySelector('.swiperTheme li').addEventListener('click', (e) => {
+  e.preventDefault();
+});
 makeThemeButton.addEventListener('click', handleMakeTheme);
 showListWrapper.addEventListener('click', handleShowList);
 changeArrangeButton.addEventListener('click', handleOpenMenu);

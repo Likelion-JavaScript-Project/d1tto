@@ -11,9 +11,9 @@
 }
 
 .review .swiper-vertical > .swiper-wrapper {
-  @apply flex-direction: row;
+  @apply flex flex-row gap-y-[5px];
 }
 
-.reviewListGap {
-  @apply row-gap: 8px;
+.review .swiper-vertical .swiper-wrapper > .swiper-slide {
+  @apply h-[138px] !important;
 }

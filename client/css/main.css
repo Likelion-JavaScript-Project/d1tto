@@ -1194,9 +1194,11 @@ html {
 }
 
 .review .swiper-vertical > .swiper-wrapper {
+  display: flex;
   flex-direction: row;
+  row-gap: 5px;
 }
 
-.reviewListGap {
-  row-gap: 8px;
+.review .swiper-vertical .swiper-wrapper > .swiper-slide {
+  height: 138px !important;
 }
