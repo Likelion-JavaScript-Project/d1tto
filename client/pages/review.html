@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/pages/review.js" type="module"></script>
+    <title>LionPlace - Review</title>
+  </head>
+  <body class="h-[722px] w-80 overflow-hidden">
+    <header class="relative -bg--lion-primary p-5 pt-9 -text--lion-white">
+      <h2 class="sr-only">헤더</h2>
+      <span class="userName -text--lion-label-medium">COOLION</span>
+      <img
+        class="userNameShare inline-block pb-[6px]"
+        src="../assets/icons/Icon/btnShare_common.svg"
+        alt="공유하기"
+      />
+      <a
+        href=""
+        class="userLink relative float-left mr-5 inline-block h-[56px] w-[56px] rounded-full border-4 border-solid border-white text-center -text--lion-label-small leading-[44px]"
+        >img
+        <img
+          src="../assets/icons/Icon/userImgPencil_common.svg"
+          alt=""
+          class="absolute bottom-[-4px] right-[-4px] rounded-full -bg--lion-white p-[4px]"
+      /></a>
+      <ul class="userInfo mb-[12px]">
+        <li
+          class="userInfo__tab userInfo__tabReview inline-block h-[37.5px] pl-[10px] text-center"
+        >
+          <a href="" class="uerInfo__title inline-block -text--lion-label-small"
+            >리뷰
+            <span class="userInfo__count userInfo__countReview block">17</span>
+          </a>
+          <span
+            class="userInfo__divider ml-[10px] inline-block h-[28px] w-[1px] -bg--lion-white"
+          ></span>
+        </li>
+        <li
+          class="userInfo__tab userInfo__tabReview inline-block h-[37.5px] pl-[10px] text-center"
+        >
+          <a href="" class="uerInfo__title inline-block -text--lion-label-small"
+            >사진 <span class="userInfo__countPicture block">19</span></a
+          ><span
+            class="userInfo__divider ml-[10px] inline-block h-[28px] w-[1px] -bg--lion-white"
+          ></span>
+        </li>
+        <li
+          class="userInfo__tab userInfo__tabReview inline-block h-[37.5px] pl-[10px] text-center"
+        >
+          <a href="" class="uerInfo__title inline-block -text--lion-label-small"
+            >팔로잉 <span class="userInfo__countFollwing block">0</span></a
+          ><span
+            class="userInfo__divider ml-[10px] inline-block h-[28px] w-[1px] -bg--lion-white"
+          ></span>
+        </li>
+        <li
+          class="userInfo__tab userInfo__tabReview inline-block h-[37.5px] pl-[10px] text-center"
+        >
+          <a href="" class="uerInfo__title inline-block -text--lion-label-small"
+            >팔로워
+            <span class="userInfo__countFollwer block">2</span>
+          </a>
+        </li>
+      </ul>
+      <a
+        href=""
+        class="userInfoReview inline-block w-[187px] rounded-md -bg--lion-lightblue-800 py-[5.41px] text-center -text--lion-paragraph-small"
+        ><img
+          class="userInfoReview__icon inline-block"
+          src="../assets/icons/Icon/btnReview_common.svg"
+          alt=""
+        />
+        리뷰작성</a
+      >
+      <a
+        href=""
+        class="userInfoMisson userInfoMisson box-border inline-block w-[83px] rounded-md -bg--lion-lightblue-800 py-[5.41px] text-center -text--lion-paragraph-small"
+        ><img
+          class="userInfoMisson__icon mr-[10px] inline-block"
+          src="../assets/icons/Icon/btnMission_common.svg"
+          alt=""
+        />미션</a
+      >
+      <a
+        href=""
+        class="coupon absolute right-[20px] top-[11.5px] rounded-[4px] border border-solid border-white pl-[4.5px] pr-[4.5px] -text--lion-paragraph-small"
+        >쿠폰
+        <span
+          class="coupun_count absolute top-[-6px] h-[12px] w-[12px] rounded-[50px] -bg--lion-white text-center -text--lion-paragraph-small leading-3 -text--lion-primary"
+          >1</span
+        ></a
+      >
+    </header>
+    <nav class="headerNav">
+      <h2 class="headerNav__title sr-only">222</h2>
+      <ul
+        class="headerNav__list flex justify-around -bg--lion-primary -text--lion-white"
+      >
+        <li
+          class="headerNav__item border-b-[2px] border-transparent px-[7px] -text--lion-contents-content-tertiary hover:border-b-[2px] hover:-border--lion-lightblue-300 hover:-text--lion-lightblue-300"
+        >
+          <a href="" class="headerNav__item headerNav__item__feed">피드</a>
+        </li>
+        <li
+          class="headerNav__item border-b-[2px] border-transparent px-[7px] -text--lion-contents-content-tertiary hover:border-b-[2px] hover:-border--lion-lightblue-300 hover:-text--lion-lightblue-300"
+        >
+          <a href="" class="headerNav__item headerNav__item__visit">방문</a>
+        </li>
+        <li
+          class="headerNav__item border-b-[2px] border-transparent px-[7px] -text--lion-contents-content-tertiary hover:border-b-[2px] hover:-border--lion-lightblue-300 hover:-text--lion-lightblue-300"
+        >
+          <a href="" class="headerNav__item headerNav__item__review">리뷰</a>
+        </li>
+        <li
+          class="headerNav__item border-b-[2px] border-transparent px-[7px] -text--lion-contents-content-tertiary hover:border-b-[2px] hover:-border--lion-lightblue-300 hover:-text--lion-lightblue-300"
+        >
+          <a href="" class="headerNav__item headerNav__item__book"
+            >예약&#183;주문</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <main class="review h-[467.62px] overflow-hidden">
+      <section class="-bg--lion-gray-100 px-1.5 pb-8 pt-2">
+        <h1 class="sr-only">리뷰 테마 만들기</h1>
+
+        <div class="p-1">
+          <h2 class="sr-only">저장된 테마 목록</h2>
+          <span class="inline font-semibold">테마</span>
+          <span class="font-semibold -text--lion-contents-content-secondary"
+            >1<span class="sr-only">개 저장 중</span></span
+          >
+        </div>
+
+        <div class="swiper swiperTheme">
+          <ul class="swiper-wrapper mt-3">
+            <li class="swiper-slide relative">
+              <a
+                href=""
+                class="saveTheme block h-[184px] w-[148px] rounded-xl bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(255,255,255,1),rgba(255,255,255,1)),url('/assets/images/yedam_review.jpg')] bg-cover"
+              >
+                <span
+                  class="saveDraft absolute ml-[9px] mt-[9px] rounded-[4px] -bg--lion-white px-1 text-[12.003px] font-semibold -text--lion-contents-content-secondary"
+                  >임시저장</span
+                >
+                <div class="absolute ml-[9px] mt-[65px]">
+                  <span class="saveTheme__title block font-semibold"
+                    >맛집 리스트</span
+                  >
+                  <div class="flex items-center gap-x-[3px]">
+                    <span class="text-[12.003px] font-semibold">장소</span>
+                    <span
+                      class="saveTheme__placeCount text-[12.003px] font-semibold"
+                      >2</span
+                    >
+                    <svg aria-hidden="true" class="h-3 w-3">
+                      <use xlink:href="#views-review"></use>
+                    </svg>
+                    <span class="sr-only">조회 수</span>
+                    <span class="saveTheme__views text-[12.003px] font-semibold"
+                      >7</span
+                    >
+                  </div>
+                </div>
+                <ul class="absolute bottom-3.5 left-[9px] flex gap-x-0.5">
+                  <li
+                    class="h-[42px] w-[42px] rounded-[4px] bg-[url('/assets/images/yedam_review.jpg')] bg-cover"
+                  ></li>
+                  <li
+                    class="h-[42px] w-[42px] rounded-[4px] bg-[url('/assets/images/yedam_review.jpg')] bg-cover"
+                  ></li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="swiper-slide">
+              <a
+                href=""
+                class="makeThemeButton flex h-[184px] w-[148px] flex-col items-center justify-center gap-y-[14px] rounded-xl -bg--lion-white"
+              >
+                <svg aria-hidden="true" class="h-[46px] w-[46px]">
+                  <use xlink:href="#addtheme-review-default"></use>
+                </svg>
+                <span
+                  class="makeThemeButton__text w-[68px] text-center text-[12.003px] font-semibold -text--lion-gray-300"
+                  >내 리뷰만 모아 테마만들기</span
+                >
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="swiper swiperReview">
+        <div class="relative z-10 flex justify-between -bg--lion-white p-3">
+          <div class="showListWrapper flex gap-x-4">
+            <button
+              class="showListWrapper__all flex text-[12.003px] font-semibold -text--lion-gray-300"
+            >
+              <svg aria-hidden="true" class="icon mr-2 h-[18px] w-[18px]">
+                <use xlink:href="#hamburger-review-default"></use>
+              </svg>
+              전체<span class="sr-only">보기</span>
+            </button>
+
+            <button
+              class="showListWrapper__photo flex text-[12.003px] font-semibold -text--lion-black"
+            >
+              <svg
+                aria-hidden="true"
+                class="relative top-0.5 mr-2 h-[18px] w-[18px] scale-[1.3] -text--lion-black"
+              >
+                <use xlink:href="#camera-review-clicked"></use>
+              </svg>
+
+              사진<span class="sr-only">보기</span>
+            </button>
+          </div>
+
+          <div
+            class="changeArrangeButton absolute right-3 top-2 z-10 w-[72px] rounded-[10px] -bg--lion-primary"
+          >
+            <button
+              aria-label="정렬 기준 변경"
+              class="arrangeWrapper z-10 flex w-full flex-col"
+            >
+              <span
+                class="arrangeNew order-first flex h-[26px] items-center pl-3 text-[12.003px] font-semibold -text--lion-white transition-all"
+              >
+                최신순
+              </span>
+              <span
+                class="arrangeViews invisible flex h-0 items-center pl-3 text-[12.003px] font-semibold -text--lion-white transition-all"
+              >
+                조회순
+              </span>
+            </button>
+            <svg
+              aria-hidden="true"
+              class="absolute right-0.5 top-0 h-full w-[22px] cursor-pointer"
+            >
+              <use class="arrowIcon" xlink:href="#arrow-review-down"></use>
+            </svg>
+          </div>
+        </div>
+
+        <ul
+          class="swiper-wrapper reviewList .reviewListGap flex flex-row flex-wrap gap-x-1.5 overflow-hidden px-3"
+        ></ul>
+      </section>
+    </main>
+    
+    <nav class="footerNav">
+      <h2 class="footerNav__title sr-only">하단 내비게이션</h2>
+      <ul class="footerNav__list flex h-[67px] justify-around -bg--lion-white">
+        <li
+          class="footer__item flex items-center border-t-[2px] border-transparent px-[7px] hover:border-t-[2px] hover:-border--lion-black"
+        >
+          <a href="" class="footerNav__item__link"
+            ><div class="footerNav__item__wrapper flex h-[24px] items-center">
+              <img
+                src="../assets/icons/Icon/btnMap_common.svg"
+                alt=""
+                class="footerNav__item__icon mx-[auto]"
+              />
+            </div>
+            <span class="footerNav__item__title">지도</span></a
+          >
+        </li>
+        <li
+          class="footer__item flex items-center border-t-[2px] border-transparent px-[7px] hover:border-t-[2px] hover:-border--lion-black"
+        >
+          <a href="" class="footerNav__item__link"
+            ><div class="footerNav__item__wrapper flex h-[24px] items-center">
+              <img
+                src="../assets/icons/Icon/btnSave_common.svg"
+                alt=""
+                class="footerNav__item__icon mx-[auto]"
+              />
+            </div>
+            <span class="footerNav__item__title">저장</span></a
+          >
+        </li>
+        <li
+          class="footer__item flex items-center border-t-[2px] border-transparent px-[7px] hover:border-t-[2px] hover:-border--lion-black"
+        >
+          <a href="" class="footerNav__item__link"
+            ><div class="footerNav__item__wrapper flex h-[24px] items-center">
+              <img
+                src="../assets/icons/Icon/btnTransportation_common.svg"
+                alt=""
+                class="footerNav__item__icon mx-[auto]"
+              />
+            </div>
+            <span class="footerNav__item__title">대중교통</span></a
+          >
+        </li>
+        <li
+          class="footer__item flex items-center border-t-[2px] border-transparent px-[7px] hover:border-t-[2px] hover:-border--lion-black"
+        >
+          <a href="" class="footerNav__item__link">
+            <div class="footerNav__item__wrapper flex h-[24px] items-center">
+              <img
+                src="../assets/icons/Icon/btnNavi_common.svg"
+                alt=""
+                class="footerNav__item__icon mx-[auto]"
+              />
+            </div>
+            <span class="footerNav__item__title">내비게이션</span></a
+          >
+        </li>
+        <li
+          class="footer__item flex items-center border-t-[2px] border-transparent px-[7px] hover:border-t-[2px] hover:-border--lion-black"
+        >
+          <a href="" class="footerNav__item__link">
+            <div class="footerNav__item__wrapper flex h-[24px] items-center">
+              <img
+                src="../assets/icons/Icon/btnMy_common.svg"
+                alt=""
+                class="footerNav__item__icon mx-[auto]"
+              />
+            </div>
+            <span class="footerNav__item__title">MY</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+      <symbol id="addtheme-review-default" viewBox="0 0 18 18">
+        <path
+          fill="#171F31"
+          stroke="#171F31"
+          d="M9 16.875a7.875 7.875 0 1 1 0-15.75 7.875 7.875 0 0 1 0 15.75z"
+        />
+        <path
+          fill="#fff"
+          d="M6.188 8.438h5.625a.562.562 0 1 1 0 1.124H6.186a.563.563 0 1 1 0-1.124z"
+        />
+        <path
+          fill="#fff"
+          d="M8.438 11.813V6.186a.563.563 0 1 1 1.124 0v5.625a.562.562 0 1 1-1.124 0z"
+        />
+      </symbol>
+      <symbol id="arrow-review-down" viewBox="0 0 18 18">
+        <path
+          fill="#fff"
+          d="M9 12.231a.773.773 0 0 1-.525-.206l-3.45-3.45a.711.711 0 0 1-.206-.525c0-.212.069-.387.206-.525a.711.711 0 0 1 .525-.206c.213 0 .388.069.525.206L9 10.45l2.925-2.925a.711.711 0 0 1 .525-.206c.213 0 .388.069.525.206a.711.711 0 0 1 .206.525.711.711 0 0 1-.206.525l-3.45 3.45a.654.654 0 0 1-.244.16.824.824 0 0 1-.28.046z"
+        />
+      </symbol>
+      <symbol id="arrow-review-up" viewBox="0 0 18 18">
+        <path
+          fill="#fff"
+          d="M5.025 11.025a.711.711 0 0 1-.206-.525c0-.212.069-.387.206-.525l3.45-3.45a.662.662 0 0 1 .244-.16.836.836 0 0 1 .572.01.688.688 0 0 1 .234.15l3.45 3.45a.711.711 0 0 1 .206.525.711.711 0 0 1-.206.525.711.711 0 0 1-.525.206.711.711 0 0 1-.525-.206L9 8.1l-2.925 2.925a.711.711 0 0 1-.525.206.711.711 0 0 1-.525-.206z"
+        />
+      </symbol>
+      <symbol id="camera-review-default" viewBox="0 0 24 24">
+        <path
+          fill="#6B6B6B"
+          d="M7.5 12.75h9L13.687 9l-2.25 3L9.75 9.75l-2.25 3zm-1.5 3c-.412 0-.766-.147-1.059-.44a1.445 1.445 0 0 1-.441-1.06v-9c0-.412.147-.766.441-1.059A1.443 1.443 0 0 1 6 3.75h2.363l1.387-1.5h4.5l1.387 1.5H18c.413 0 .766.147 1.06.441.293.293.44.647.44 1.059v9c0 .412-.147.766-.44 1.06-.294.293-.647.44-1.06.44H6zm12-1.5v-9h-3.037l-1.37-1.5h-3.187l-1.369 1.5H6v9h12z"
+          filter="url(#a)"
+        />
+        <defs>
+          <filter
+            id="b"
+            width="23"
+            height="21.5"
+            x=".5"
+            y="2.25"
+            color-interpolation-filters="sRGB"
+            filterUnits="userSpaceOnUse"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              result="hardAlpha"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            />
+            <feOffset dy="4" />
+            <feGaussianBlur stdDeviation="2" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+            />
+            <feBlend
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_11_2145"
+            />
+            <feBlend
+              in="SourceGraphic"
+              in2="effect1_dropShadow_11_2145"
+              result="shape"
+            />
+          </filter>
+        </defs>
+      </symbol>
+      <symbol id="favorite-review-default" viewBox="0 0 18 18">
+        <path
+          fill="#fff"
+          d="M1.8 1.8C1.8.81 2.61 0 3.6 0h10.8a1.8 1.8 0 0 1 1.8 1.8V18L9 14.4 1.8 18V1.8z"
+        />
+      </symbol>
+      <symbol id="favorite-review-clicked" viewBox="0 0 18 18">
+        <path
+          fill="#171F31"
+          d="M1.8 1.8C1.8.81 2.61 0 3.6 0h10.8a1.8 1.8 0 0 1 1.8 1.8V18L9 14.4 1.8 18V1.8z"
+        />
+      </symbol>
+      <symbol id="hamburger-review-default" viewBox="0 0 18 18">
+        <path
+          stroke="#6B6B6B"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M2.981 4.481h12m-12 4.5h12m-12 4.5h12"
+        />
+      </symbol>
+      <symbol id="addtheme-review-clicked" viewBox="0 0 18 18">
+        <path
+          fill="#fff"
+          d="M6.188 8.438h5.625a.562.562 0 1 1 0 1.124H6.186a.563.563 0 1 1 0-1.124z"
+        />
+        <path
+          fill="#fff"
+          d="M8.438 11.813V6.186a.563.563 0 1 1 1.124 0v5.625a.562.562 0 1 1-1.124 0z"
+        />
+        <path
+          fill="#fff"
+          d="M9 15.75a6.75 6.75 0 1 0 0-13.5 6.75 6.75 0 0 0 0 13.5zm0 1.125a7.875 7.875 0 1 1 0-15.75 7.875 7.875 0 0 1 0 15.75z"
+        />
+      </symbol>
+      <symbol id="views-review" viewBox="0 0 12 13">
+        <path
+          d="M6 2.5c2.145 0 3.932 1.215 5.333 3.577l.11.19.022.05.015.041.007.028.007.04.006.05v.056l-.007.055a.494.494 0 0 1-.013.055l-.02.054-.018.038-.008.014c-1.382 2.418-3.15 3.69-5.277 3.75L6 10.5c-2.198 0-4.018-1.274-5.434-3.752a.5.5 0 0 1 0-.496C1.982 3.775 3.802 2.5 6 2.5zM6 5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"
+        />
+      </symbol>
+      <symbol id="camera-review-clicked" viewBox="0 0 24 24">
+        <path
+          d="M7.5 12.75h9L13.687 9l-2.25 3L9.75 9.75l-2.25 3zm-1.5 3c-.412 0-.766-.147-1.059-.44a1.445 1.445 0 0 1-.441-1.06v-9c0-.412.147-.766.441-1.059A1.443 1.443 0 0 1 6 3.75h2.363l1.387-1.5h4.5l1.387 1.5H18c.413 0 .766.147 1.06.441.293.293.44.647.44 1.059v9c0 .412-.147.766-.44 1.06-.294.293-.647.44-1.06.44H6zm12-1.5v-9h-3.037l-1.37-1.5h-3.187l-1.369 1.5H6v9h12z"
+          filter="url(#a)"
+        />
+        <defs>
+          <filter
+            id="c"
+            width="23"
+            height="21.5"
+            x=".5"
+            y="2.25"
+            color-interpolation-filters="sRGB"
+            filterUnits="userSpaceOnUse"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              result="hardAlpha"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            />
+            <feOffset dy="4" />
+            <feGaussianBlur stdDeviation="2" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+            />
+            <feBlend
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_44_1422"
+            />
+            <feBlend
+              in="SourceGraphic"
+              in2="effect1_dropShadow_44_1422"
+              result="shape"
+            />
+          </filter>
+        </defs>
+      </symbol>
+      <symbol id="hamburger-review-clicked" viewBox="0 0 18 18">
+        <path
+          stroke="#000"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M2.981 4.481h12m-12 4.5h12m-12 4.5h12"
+        />
+      </symbol>
+    </svg>
+  </body>
+</html>

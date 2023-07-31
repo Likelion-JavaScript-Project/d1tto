@@ -9,3 +9,11 @@
     @apply -font--lion-family;
   }
 }
+
+.review .swiper-vertical > .swiper-wrapper {
+  @apply flex flex-row gap-y-[5px];
+}
+
+.review .swiper-vertical .swiper-wrapper > .swiper-slide {
+  @apply h-[138px] !important;
+}
