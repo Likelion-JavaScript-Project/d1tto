@@ -11,11 +11,12 @@
   "tailwindCSS.experimental.configFile": "./tailwind.config.js",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
   },
   "editor.quickSuggestions": {
     "strings": true
-    },
-    "css.validate": false,
-    "editor.inlineSuggest.enabled": true
+  },
+  "css.validate": false,
+  "editor.inlineSuggest.enabled": true,
+  "liveServer.settings.port": 5501
 }
