@@ -1,8 +1,7 @@
 import { insertLast } from './insert.js';
 
-function createReviewCard({
+function createReviewCardPhoto({
   id = '',
-  token = '',
   name = '',
   address = '',
   url = '',
@@ -16,28 +15,28 @@ function createReviewCard({
   }
 
   const template = /* html */ `
-  <li data-index=${id} class="swiper-slide reviewList__item">
+  <li data-index=${id} class="swiper-slide h-[138px] w-[145px]">
     <a
       target="_blank"
       noopener noreferrer
       href="${url}"
-      class="relative block bg-cover reviewList__image"
+      class="relative block bg-cover h-[138px] w-[145px] rounded-[3px] p-2"
       style="background-image: url('${image}')"
     >
-      <span aria-label="상단 고정" class="absolute reviewList__icon">
-        <svg aria-hidden="true" class="absolute right-0 top-0 reviewList__svg">
+      <span aria-label="상단 고정 핀" class="absolute right-1.5 h-6 w-6">
+        <svg aria-hidden="true" class="absolute right-0 top-0 h-6 w-6">
           <use
             class="pinButton"
             xlink:href="#favorite-review-${like}"
           ></use>
         </svg>
       </span>
-      <div class="reviewList__textWrapper">
+      <div class="pt-20">
         <span
           class="block text-[12.003px] font-semibold -text--lion-white"
           >${address}</span
         >
-        <span class="block font-semibold -text--lion-white reviewList__text"
+        <span class="block font-semibold -text--lion-white truncate"
           >${name}</span
         >
       </div>
@@ -48,15 +47,64 @@ function createReviewCard({
   return template;
 }
 
-export function renderReviewCard(target, data) {
-  insertLast(target, createReviewCard(data));
+export function renderReviewCardPhoto(target, data) {
+  insertLast(target, createReviewCardPhoto(data));
+}
+
+function createReviewCardAll({
+  id = '',
+  name = '',
+  address = '',
+  url = '',
+  keywords = '',
+}) {
+  keywords = Object.values(keywords);
+  let remainKeywords;
+  if (keywords.length > 1) {
+    keywords = keywords[0];
+    remainKeywords = `+ ${Number(keywords.length - 1)}`;
+  } else if (keywords.length === 1) {
+    keywords = keywords[0];
+  } else {
+    keywords = '';
+  }
+
+  const template = /* html */ `
+  <li data-index=${id} class="swiper-slide h-[138px] w-[145px]">
+    <a
+      target="_blank"
+      noopener noreferrer
+      href="${url}"
+      class="relative block bg-cover h-[138px] w-[145px] rounded-[3px] p-2"
+      style="background: linear-gradient(0deg, rgba(23,31,49,1) 40%, rgba(58,69,93,1) 90%);"
+    >
+    <div class= "relative top-6 -text--lion-white font-semibold text-[12.003px]">${keywords}</div>
+    <div class= "relative top-7 -text--lion-white font-semibold text-[12.003px]">${remainKeywords}</div>
+      <div class="pt-10">
+        <span
+          class="block text-[12.003px] font-semibold -text--lion-white"
+          >${address}</span
+        >
+        <span class="block font-semibold -text--lion-white truncate"
+          >${name}</span
+        >
+      </div>
+    </a>
+  </li>
+  `;
+
+  return template;
+}
+
+export function renderReviewCardAll(target, data) {
+  insertLast(target, createReviewCardAll(data));
 }
 
 function createSpinner(loadingMessage = '리뷰 가져오는 중...') {
   return /* html */ `
   <figure class="loadingSpinner">
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-    style="margin:auto;background:#fff;display:block;" width="320px" height="320px" viewBox="0 0 100 100"
+    style="margin:auto;background:#fff;display:block;" width="300px" height="424px" viewBox="0 0 100 200"
     preserveAspectRatio="xMidYMid">
     <circle cx="30" cy="50" fill="#e90c59" r="20">
       <animate attributeName="cx" repeatCount="indefinite" dur="1s" keyTimes="0;0.5;1" values="30;70;30"
@@ -74,7 +122,7 @@ function createSpinner(loadingMessage = '리뷰 가져오는 중...') {
         repeatCount="indefinite"></animate>
     </circle>
   </svg>
-  <figcaption class= "text-center -text--lion-info-error">${loadingMessage}</figcaption>
+  <figcaption class= "text-center left-[31%] top-48 -text--lion-info-error absolute">${loadingMessage}</figcaption>
 </figure>
   `;
 }
@@ -84,12 +132,11 @@ export function renderSpinner(target) {
 }
 
 function createEmptySvg(
-  size = 200,
-  ErrorMessage = '알 수 없는 오류가 발생했습니다. 😫'
+  ErrorMessage = '리뷰가 존재하지 않습니다.\n리뷰를 남겨보세요.'
 ) {
   return /* html */ `
   <figure class="empty-user-card">
-    <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="270px" height="200px" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M180 100C180 111.881 177.405 123.168 172.746 133.308C160.119 160.865 132.292 180 100 180C67.7081 180 39.8811 160.865 27.2541 133.308C22.5946 123.168 20 111.881 20 100C20 55.8162 55.8162 20 100 20C144.184 20 180 55.8162 180 100Z" fill="#F4F7FC"/>
       <mask id="mask0_50_2137" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="20" y="20" width="160" height="160">
       <path d="M180 100C180 111.881 177.405 123.168 172.746 133.308C160.119 160.865 132.292 180 100 180C67.7081 180 39.8811 160.865 27.2541 133.308C22.5946 123.168 20 111.881 20 100C20 55.8162 55.8162 20 100 20C144.184 20 180 55.8162 180 100Z" fill="#F4F7FC"/>
@@ -124,7 +171,7 @@ function createEmptySvg(
       </defs>
       </svg>
       
-    <figcaption>${ErrorMessage}</figcaption>
+    <figcaption class= "left-[31%] top-48 -text--lion-info-error">${ErrorMessage}</figcaption>
   </figure>
   `;
 }

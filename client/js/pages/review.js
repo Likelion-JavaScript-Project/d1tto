@@ -1,6 +1,7 @@
 import {
   renderEmptySvg,
-  renderReviewCard,
+  renderReviewCardAll,
+  renderReviewCardPhoto,
   renderSpinner,
 } from '../../lib/dom/reviewCard.js';
 import {
@@ -8,6 +9,7 @@ import {
   changeClass,
   changeClickImageName,
   changeImageName,
+  clearContents,
   css,
   getNode,
   removeClass,
@@ -16,15 +18,12 @@ import {
 
 const makeThemeButton = getNode('.makeThemeButton');
 const makeThemeButtonText = getNode('.makeThemeButton__text');
-
 const showListWrapper = getNode('.showListWrapper');
-
 const changeArrangeButton = getNode('.changeArrangeButton');
 const body = getNode('body');
 const arrangeWrapper = getNode('.arrangeWrapper');
 const arrangeNew = getNode('.arrangeNew');
 const arrangeViews = getNode('.arrangeViews');
-
 const reviewList = getNode('.reviewList');
 
 new Swiper('.swiperTheme', {
@@ -41,8 +40,6 @@ new Swiper('.swiperTheme', {
 new Swiper('.swiperReview', {
   direction: 'vertical',
   slidesPerView: '3',
-  // spaceBetween: 8,
-  // autoHeight: true,
   height: '430',
   grid: {
     rows: 2,
@@ -76,7 +73,6 @@ function handleShowList(e) {
   }
 
   const buttonList = showListWrapper.querySelectorAll('button');
-
   buttonList.forEach((item) => {
     removeClass(item, '-text--lion-black');
     addClass(item, '-text--lion-gray-300');
@@ -85,11 +81,12 @@ function handleShowList(e) {
   });
 
   const icon = target.querySelector('use');
-
   if (target.classList.contains('-text--lion-gray-300')) {
     changeClass(target, '-text--lion-gray-300', '-text--lion-black');
     changeImageName(icon, 'default', 'clicked');
   }
+
+  return renderMethodFunction(e);
 }
 
 function handleOpenMenu(e) {
@@ -159,19 +156,48 @@ function handleTogglePin(e) {
   }
 }
 
-// async function modifyDataTogglePin() {
-//   const response = await tiger.put('http://localhost:3000/reviews');
-//   const reviewsData = response.data;
-
-//   console.log(reviewsData);
-// }
-
-// modifyDataTogglePin();
-
-async function renderReviewList() {
+async function renderReviewListPhoto() {
   renderSpinner(reviewList);
-  const loadingSpinner = getNode('.loadingSpinner');
 
+  const loadingSpinner = getNode('.loadingSpinner');
+  try {
+    gsap.to(loadingSpinner, {
+      opacity: 0,
+      onComplete() {
+        loadingSpinner.remove();
+      },
+    });
+    clearContents(reviewList);
+    const users = await tiger.get('http://localhost:3000/users');
+    const response = await tiger.get('http://localhost:3000/reviews');
+    const usersData = users.data;
+    const reviewsData = response.data;
+    usersData.forEach((item, index) => {
+      const usersToken = usersData[index].token;
+
+      reviewsData.forEach((item, index) => {
+        const reviewsToken = reviewsData[index].token;
+
+        if (usersToken === reviewsToken && item.restaurants.length > 1) {
+          reviewsData[index].restaurants.forEach((item) => {
+            renderReviewCardPhoto(reviewList, item);
+          });
+        } else {
+          renderEmptySvg(reviewList);
+        }
+      });
+    });
+  } catch (err) {
+    renderEmptySvg(reviewList);
+  }
+}
+renderReviewListPhoto();
+
+async function renderReviewListAll() {
+  clearContents(reviewList);
+  renderSpinner(reviewList);
+
+  const loadingSpinner = getNode('.loadingSpinner');
   try {
     gsap.to(loadingSpinner, {
       opacity: 0,
@@ -193,8 +219,10 @@ async function renderReviewList() {
 
         if (usersToken === reviewsToken && item.restaurants.length > 1) {
           reviewsData[index].restaurants.forEach((item) => {
-            renderReviewCard(reviewList, item);
+            renderReviewCardAll(reviewList, item);
           });
+        } else {
+          renderEmptySvg(reviewList);
         }
       });
     });
@@ -203,13 +231,17 @@ async function renderReviewList() {
   }
 }
 
+function renderMethodFunction(e) {
+  const target = e.target.closest('button');
+  if (target.classList.contains('showListWrapper__all')) {
+    renderReviewListAll();
+  } else {
+    renderReviewListPhoto();
+  }
+}
+
 makeThemeButton.addEventListener('click', handleMakeTheme);
-
 showListWrapper.addEventListener('click', handleShowList);
-
 changeArrangeButton.addEventListener('click', handleOpenMenu);
 body.addEventListener('click', handleCloseMenu);
-
 reviewList.addEventListener('click', handleTogglePin);
-
-renderReviewList();
