@@ -695,6 +695,10 @@ html {
   height: 100%;
 }
 
+.max-h-\[722px\] {
+  max-height: 722px;
+}
+
 .w-3 {
   width: 0.75rem;
 }
@@ -705,6 +709,10 @@ html {
 
 .w-80 {
   width: 20rem;
+}
+
+.w-\[125px\] {
+  width: 125px;
 }
 
 .w-\[145px\] {
@@ -746,6 +754,10 @@ html {
 .scale-\[1\.3\] {
   --tw-scale-x: 1.3;
   --tw-scale-y: 1.3;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -808,14 +820,6 @@ html {
        column-gap: 3px;
 }
 
-.gap-y-0 {
-  row-gap: 0px;
-}
-
-.gap-y-0\.5 {
-  row-gap: 0.125rem;
-}
-
 .gap-y-2 {
   row-gap: 0.5rem;
 }
@@ -826,6 +830,20 @@ html {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 
 .rounded-\[10px\] {
@@ -865,10 +883,6 @@ html {
 
 .bg-\[url\(\'\/assets\/icons\/Icon\/views_review\.svg\'\)\] {
   background-image: url('/assets/icons/Icon/views_review.svg');
-}
-
-.bg-\[url\(\'\/assets\/images\/foods\.jpg\'\)\] {
-  background-image: url('/assets/images/foods.jpg');
 }
 
 .bg-\[url\(\'\/assets\/images\/yedam_review\.jpg\'\)\] {

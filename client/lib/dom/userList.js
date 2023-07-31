@@ -2,6 +2,7 @@ import { insertLast } from './insert.js';
 
 function createReviewCard({
   id = '',
+  token = '',
   name = '',
   address = '',
   url = '',
@@ -21,7 +22,7 @@ function createReviewCard({
       noopener noreferrer
       href="${url}"
       class="relative block w-[145px] rounded-[3px] bg-cover p-2"
-      style="background-image: url('/assets/images/${image}_review.jpg')"
+      style="background-image: url('${image}')"
     >
       <span aria-label="상단 고정" class="absolute right-1.5 h-6 w-6">
         <svg aria-hidden="true" class="absolute right-0 top-0 h-6 w-6">
@@ -36,7 +37,7 @@ function createReviewCard({
           class="block text-[12.003px] font-semibold -text--lion-white"
           >${address}</span
         >
-        <span class="block font-semibold -text--lion-white overflow-hidden whitespace-nowrap overflow-ellipsis h-6 w-full"
+        <span class="block font-semibold -text--lion-white truncate h-6 w-full"
           >${name}</span
         >
       </div>

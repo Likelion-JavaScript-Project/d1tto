@@ -118,7 +118,7 @@ function handleCloseMenu(e) {
   }
 }
 
-function handleTogglePin(e) {
+async function handleTogglePin(e) {
   const target = e.target.closest('li');
   if (!target) {
     return;
@@ -134,11 +134,23 @@ function handleTogglePin(e) {
 }
 
 async function renderReviewList() {
+  const users = await tiger.get('http://localhost:3000/users');
   const response = await tiger.get('http://localhost:3000/reviews');
-  const userData = response.data;
+  const usersData = users.data;
+  const reviewsData = response.data;
 
-  userData.forEach((item) => {
-    renderReviewCard(reviewList, item);
+  usersData.forEach((item, index) => {
+    const usersToken = usersData[index].token;
+
+    reviewsData.forEach((item, index) => {
+      const reviewsToken = reviewsData[index].token;
+
+      if (usersToken === reviewsToken) {
+        reviewsData[index].restaurants.forEach((item) => {
+          renderReviewCard(reviewList, item);
+        });
+      }
+    });
   });
 }
 
