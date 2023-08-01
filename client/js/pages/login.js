@@ -1,7 +1,7 @@
 import { disableElement, enableElement } from '../../lib/dom/controlElement.js';
 import { addClass, removeClass } from '../../lib/dom/css.js';
 import { getNode } from '../../lib/dom/getNode.js';
-import { saveStorage } from '../../lib/utils/storage.js';
+import { loadStorage, saveStorage } from '../../lib/utils/storage.js';
 import { tiger } from '../../lib/utils/tiger.js';
 
 const id = getNode('.inputId');
@@ -77,16 +77,25 @@ function handleLogin(e) {
   e.preventDefault();
   idPwCheck().then(() => {
     if (loginCheckResult === 'true') {
-      alert('성공');
       tokenPass();
-      window.location.href = '../pages/interests.html';
+      window.location.href = '../pages/review.html';
     } else {
       alert('아이디 또는 비밀번호가 일치하지 않습니다.');
     }
   });
 }
 
+async function autoLogin(e) {
+  e.preventDefault();
+  const token = await loadStorage('token');
+  console.log(token);
+  if (token) {
+    window.location.href = '../pages/review.html';
+  }
+}
+
 id.addEventListener('input', inputCheck);
 pw.addEventListener('input', inputCheck);
 loginButton.addEventListener('click', handleLogin);
 joinButton.addEventListener('click', handleJoin);
+window.addEventListener('DOMContentLoaded', autoLogin);

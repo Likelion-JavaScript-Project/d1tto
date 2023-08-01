@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/pages/logout.js" type="module"></script>
     <script src="../js/pages/review.js" type="module"></script>
     <title>LionPlace - Review</title>
   </head>
@@ -80,15 +81,16 @@
         />
         리뷰작성</a
       >
-      <a
-        href=""
-        class="userInfoMisson userInfoMisson box-border inline-block w-[83px] rounded-md -bg--lion-lightblue-800 py-[5.41px] text-center -text--lion-paragraph-small"
-        ><img
+      <button
+        class="userLogout userLogout box-border inline-block w-[83px] rounded-md -bg--lion-lightblue-800 py-[5.41px] text-center -text--lion-paragraph-small"
+      >
+        <!-- <img
           class="userInfoMisson__icon mr-[10px] inline-block"
           src="../assets/icons/Icon/btnMission_common.svg"
           alt=""
-        />미션</a
-      >
+        /> -->
+        로그아웃
+      </button>
       <a
         href=""
         class="coupon absolute right-[20px] top-[11.5px] rounded-[4px] border border-solid border-white pl-[4.5px] pr-[4.5px] -text--lion-paragraph-small"
@@ -257,7 +259,7 @@
         ></ul>
       </section>
     </main>
-    
+
     <nav class="footerNav">
       <h2 class="footerNav__title sr-only">하단 내비게이션</h2>
       <ul class="footerNav__list flex h-[67px] justify-around -bg--lion-white">
