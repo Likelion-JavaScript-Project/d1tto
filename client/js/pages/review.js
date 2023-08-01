@@ -3,6 +3,7 @@ import {
   renderReviewCardText,
   renderReviewCardPhoto,
   renderSpinner,
+  renderReviewTheme,
 } from '../../lib/dom/renderReview.js';
 import {
   addClass,
@@ -48,9 +49,6 @@ const reviewSlide = new Swiper('.swiperReview', {
   },
 });
 
-/* -------------------------------------------------------------------------- */
-/*                                     완료                                   */
-/* -------------------------------------------------------------------------- */
 function handleTheme(e) {
   e.preventDefault();
   e.stopPropagation();
@@ -81,14 +79,11 @@ function handleTheme(e) {
       addClass(makeThemeButtonText, '-text--lion-gray-300');
 
       changeImageName(icon, 'clicked', 'default');
-      location.href = 'https://www.naver.com';
+      // location.href = 'https://www.naver.com';
     }, 300);
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                     완료                                   */
-/* -------------------------------------------------------------------------- */
 function handleShowList(e) {
   const target = e.target.closest('.showListWrapper button');
   if (!target) {
@@ -114,9 +109,6 @@ function handleShowList(e) {
   return renderShowMethod(e);
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                     완료                                   */
-/* -------------------------------------------------------------------------- */
 function renderShowMethod(e) {
   const target = e.target.closest('button');
 
@@ -127,9 +119,6 @@ function renderShowMethod(e) {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                     완료                                   */
-/* -------------------------------------------------------------------------- */
 function handleOpenMenu(e) {
   const target = e.target.closest('.buttonChangeArrange');
   if (!target) {
@@ -155,9 +144,6 @@ function handleOpenMenu(e) {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                     완료                                   */
-/* -------------------------------------------------------------------------- */
 function handleCloseMenu(e) {
   const icon = getNode('.arrowIcon');
 
@@ -190,9 +176,64 @@ function handleCloseMenu(e) {
   return renderReviewListArrange(e);
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                     완료                                   */
-/* -------------------------------------------------------------------------- */
+function handleTogglePin(e) {
+  e.stopPropagation();
+  const target = e.target.closest('span');
+  if (!target) {
+    return;
+  }
+  e.preventDefault();
+
+  const icon = target.querySelector('use');
+  changeClickImageName(icon, 'default', 'clicked');
+}
+
+async function renderingTheme() {
+  const response = await tiger.get('http://localhost:3000/reviews');
+  const reviewsData = response.data;
+  const users = await tiger.get('http://localhost:3000/users');
+  const usersData = users.data;
+  const localToken = localStorage.getItem('token').slice(1, -1);
+  let isSave;
+  let themeName;
+  let listCount;
+  let viewsCount;
+  let image1;
+  let image2;
+  let image3;
+
+  usersData.forEach((item, index) => {
+    if (item.token === localToken) {
+      item.themeName = `${usersData[index].name}의 맛집 리스트`;
+
+      let keywordsCount = 0;
+
+      reviewsData[index].restaurants.forEach((item) => {
+        keywordsCount += Object.values(item.keywords).length;
+      });
+      if (keywordsCount > 12) {
+        item.isSave = '수정하기';
+      } else {
+        item.isSave = '임시저장';
+      }
+      if (Object.values(reviewsData[index].restaurants).length > 2) {
+        item.image1 = Object.values(reviewsData[index].restaurants)[0].image;
+        item.image2 = Object.values(reviewsData[index].restaurants)[1].image;
+        item.image3 = Object.values(reviewsData[index].restaurants)[2].image;
+      } else {
+        item.image1 = Object.values(reviewsData[index].restaurants)[0].image;
+        item.image2 = Object.values(reviewsData[index].restaurants)[1].image;
+      }
+
+      item.listCount = Object.values(reviewsData[index].restaurants).length;
+      item.viewsCount = Math.floor(Math.random() * 100);
+
+      renderReviewTheme(themeList, item);
+    }
+  });
+}
+renderingTheme();
+
 async function renderReviewListArrange(e) {
   const target = e.target.closest('span');
   if (!target) {
@@ -209,24 +250,6 @@ async function renderReviewListArrange(e) {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                     완료                                   */
-/* -------------------------------------------------------------------------- */
-function handleTogglePin(e) {
-  e.stopPropagation();
-  const target = e.target.closest('span');
-  if (!target) {
-    return;
-  }
-  e.preventDefault();
-
-  const icon = target.querySelector('use');
-  changeClickImageName(icon, 'default', 'clicked');
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                     완료                                   */
-/* -------------------------------------------------------------------------- */
 async function renderReviewListPhoto() {
   clearContents(reviewList);
   renderSpinner(reviewList);
@@ -283,9 +306,6 @@ async function renderReviewListPhoto() {
 }
 renderReviewListPhoto();
 
-/* -------------------------------------------------------------------------- */
-/*                                     완료                                   */
-/* -------------------------------------------------------------------------- */
 async function renderReviewListAll() {
   clearContents(reviewList);
   renderSpinner(reviewList);

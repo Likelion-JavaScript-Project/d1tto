@@ -1,4 +1,60 @@
-import { insertLast } from './insert.js';
+import { insertFirst, insertLast } from './insert.js';
+
+function createReviewTheme({
+  id = '',
+  isSave = '',
+  themeName = '',
+  listCount = '',
+  viewsCount = '',
+  image1 = '/assets/images/likeLion_common.png',
+  image2 = '/assets/images/likeLion_common.png',
+  image3 = '/assets/images/likeLion_common.png',
+}) {
+  const template = /* html */ `
+  <li class="swiper-slide relative" data-index= "${id}">
+  <a
+    href=""
+    class="saveTheme block h-[184px] w-[148px] rounded-xl bg-cover from-inherit bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(255,255,255,1),rgba(255,255,255,1))]" style="background-image: linear-gradient(to bottom,rgba(0,0,0,0),rgba(255,255,255,1),rgba(255,255,255,1)),url(${image1});">
+    <span
+      class="saveDraft absolute ml-[9px] mt-[9px] rounded-[4px] -bg--lion-white px-1 text-[12.003px] font-semibold -text--lion-contents-content-secondary"
+      >${isSave}</span
+    >
+    <div class="absolute ml-[9px] mt-[65px]">
+      <span class="saveTheme__title block font-bold"
+        >${themeName}</span
+      >
+      <div class="flex items-center gap-x-[3px]">
+        <span class="text-[12.003px] font-semibold">장소</span>
+        <span
+          class="saveTheme__placeCount text-[12.003px] font-semibold"
+          >${listCount}</span
+        >
+        <svg aria-hidden="true" class="h-3 w-3">
+          <use xlink:href="#views-review"></use>
+        </svg>
+        <span class="sr-only">조회 수</span>
+        <span class="saveTheme__views text-[12.003px] font-semibold"
+          >${viewsCount}</span
+        >
+      </div>
+    </div>
+    <ul class="absolute bottom-3.5 left-[9px] flex gap-x-0.5">
+      <li
+        class="h-[42px] w-[42px] rounded-[4px] bg-cover" style="background-image: url(${image2})"
+      ></li>
+      <li
+        class="h-[42px] w-[42px] rounded-[4px] bg-cover" style="background-image: url(${image3})"
+      ></li>
+    </ul>
+  </a>
+</li>
+  `;
+
+  return template;
+}
+export function renderReviewTheme(target, data) {
+  insertFirst(target, createReviewTheme(data));
+}
 
 function createReviewCardPhoto({
   id = '',

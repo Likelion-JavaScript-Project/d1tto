@@ -8,16 +8,17 @@ import {
 } from '../../lib/index.js';
 import { renderUserData } from './renderCommon.js';
 
-const headerNavigation = getNode('.headerNav__list');
 const userTemplate = getNode('.userTemplate');
+const coupon = getNode('.coupon');
+const headerNavigation = getNode('.headerNav__list');
 
-(function defaultNavigationColor() {
+function defaultNavigationColor() {
   let tab = headerNavigation.children[getURL()];
 
   addClass(tab, 'border-b-[2px]');
-  addClass(tab, '-border--lion-lightblue-300');
   addClass(tab, '-text--lion-lightblue-300');
-})();
+}
+defaultNavigationColor();
 
 function changeNavigationColor(e) {
   e.preventDefault();
@@ -57,7 +58,7 @@ async function renderingData() {
     }
   });
 
-  usersData.forEach((item, index) => {
+  usersData.forEach((item) => {
     if (item.token === keyToken) {
       item.reviews = reviewCount;
       item.image = reviewCount;
@@ -67,4 +68,39 @@ async function renderingData() {
 }
 renderingData();
 
+coupon.addEventListener('click', (e) => {
+  e.preventDefault();
+});
 headerNavigation.addEventListener('click', changeNavigationColor);
+
+setTimeout(() => {
+  document.querySelector('.footerNav__list').addEventListener('click', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+  });
+
+  document.querySelector('.coupon_count').addEventListener('click', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+  });
+
+  document.querySelector('.userName').addEventListener('click', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+  });
+
+  document.querySelector('.userLink').addEventListener('click', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+  });
+
+  document.querySelector('.userInfo').addEventListener('click', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+  });
+
+  document.querySelector('.preventEvent').addEventListener('click', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+  });
+}, 300);

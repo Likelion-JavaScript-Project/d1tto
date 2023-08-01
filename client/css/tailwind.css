@@ -18,8 +18,8 @@
   @apply h-[138px] !important;
 }
 
-.commonHeader__list {
-  @apply -border--lion-lightblue-300;
+.themeList .swiper-slide {
+  @apply w-[160px];
 }
 
 .reviewList .empty-user-card {

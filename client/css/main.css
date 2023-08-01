@@ -933,10 +933,6 @@ html {
   height: 138px;
 }
 
-.h-\[175px\] {
-  height: 175px;
-}
-
 .h-\[184px\] {
   height: 184px;
 }
@@ -1003,6 +999,10 @@ html {
 
 .h-\[56px\] {
   height: 56px;
+}
+
+.h-\[63\.25px\] {
+  height: 63.25px;
 }
 
 .h-\[66px\] {
@@ -1390,6 +1390,20 @@ html {
   background-image: url('/assets/images/yedam_review.jpg');
 }
 
+.bg-\[linear-gradient\(to_bottom\2c rgba\(0\2c 0\2c 0\2c 0\)\2c rgba\(255\2c 255\2c 255\2c 1\)\2c rgba\(255\2c 255\2c 255\2c 1\)\)\] {
+  background-image: linear-gradient(to bottom,rgba(0,0,0,0),rgba(255,255,255,1),rgba(255,255,255,1));
+}
+
+.from-inherit {
+  --tw-gradient-from: inherit var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-transparent {
+  --tw-gradient-to: transparent var(--tw-gradient-to-position);
+}
+
 .bg-cover {
   background-size: cover;
 }
@@ -1718,9 +1732,8 @@ html {
   height: 138px !important;
 }
 
-.commonHeader__list {
-  --tw-border-opacity: 1;
-  border-color: rgb(170 196 250 / var(--tw-border-opacity));
+.themeList .swiper-slide {
+  width: 160px;
 }
 
 .reviewList .empty-user-card {
