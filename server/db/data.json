@@ -186,17 +186,23 @@
     {
       "id": 2,
       "token": "ceca1a1f950fb",
-      "restaurants": [{}]
+      "restaurants": [
+        {}
+      ]
     },
     {
       "id": 3,
       "token": "4cca95d5a8386",
-      "restaurants": [{}]
+      "restaurants": [
+        {}
+      ]
     },
     {
       "id": 4,
       "token": "b24582dab4219",
-      "restaurants": [{}]
+      "restaurants": [
+        {}
+      ]
     }
   ],
   "interests": [
@@ -213,6 +219,15 @@
           "name": "영종도"
         }
       ]
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
     }
   ],
   "visited": [
