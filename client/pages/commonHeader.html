@@ -10,7 +10,7 @@
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css"
     />
     <link rel="stylesheet" href="../css/main.css" />
-    <script src="./js/main.js" type="module"></script>
+    <script src="../main.js" type="module"></script>
     <title>Lion Place - commonHeader</title>
   </head>
   <body>
@@ -80,15 +80,16 @@
         />
         리뷰작성</a
       >
-      <a
-        href=""
-        class="userInfoMisson userInfoMisson box-border inline-block w-[83px] rounded-md -bg--lion-lightblue-800 py-[5.41px] text-center -text--lion-paragraph-small"
-        ><img
+      <button
+        class="userLogout userLogout box-border inline-block w-[83px] rounded-md -bg--lion-lightblue-800 py-[5.41px] text-center -text--lion-paragraph-small"
+      >
+        <!-- <img
           class="userInfoMisson__icon mr-[10px] inline-block"
           src="../assets/icons/Icon/btnMission_common.svg"
           alt=""
-        />미션</a
-      >
+        /> -->
+        로그아웃
+      </button>
       <a
         href=""
         class="coupon absolute right-[20px] top-[11.5px] rounded-[4px] border border-solid border-white pl-[4.5px] pr-[4.5px] -text--lion-paragraph-small"
@@ -128,7 +129,7 @@
         </li>
       </ul>
     </nav>
-    <nav class="footerNav">
+    <nav class="footerNav fixed bottom-[0] w-[100%]">
       <h2 class="footerNav__title sr-only">하단 내비게이션</h2>
       <ul class="footerNav__list flex h-[67px] justify-around -bg--lion-white">
         <li

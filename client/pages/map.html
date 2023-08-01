@@ -4,47 +4,115 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/main.css"/>
-    <link rel="stylesheet" href="../css/map.css"/>
     <script src="../js/pages/map.js"></script>
-    <title>map</title>
+    <title>LION PLACE - map</title>
 
   </head>
   <body>
     <section class=" w-full map_Wrap">
      <!-- <h3 class="a11yHidden">지도</h3> -->
-      
-          <div class="flex-auto map__bar">
-            <span
+          <div class="map__bar py-3 flex justify-between -bg--lion-white">
+            <div
               type="button"
-              class=""
+              class="block w-[30px] h-[30px]"
               aria-label="뒤로 가기 버튼"
               onclick="history.back()" 
-            ><img src="../assets/icons/Icon/icon-left.svg"></span> 
-            <span class="text-base">연남/합정 데이트</span>
-            <span type="button" class="border-solid border-black border 
-            rounded-full text-xs font-semibold button tempSave__Button">임시저장</span>
-            <span type="button" class="button more__Button">
-                <img src="../assets/icons/Icon/icon-more.svg"></span>
-            </button>
+            ><img class="h-[30px] w-[30px]" src="../assets/icons/Icon/icon-left.svg"></div> 
+            <span class="-text--lion-paragraph-medium -text--lion-contents-content-primary block leading-[30px] absolute left-[30px] top-[14px]">연남/합정 데이트</span>
+            <button type="button" class="absolute right-[30px] -text--lion-label-small border-[0.5px] rounded-[50px] px-2 py-1 -border--lion-contents-content-primary">임시저장</button>
+            <button type="button" class="button w-[28px] h-[28px] more__Button bg-[url('../assets/icons/Icon/icon-more.svg')]"></button>
           </div>
-          
-          <!-- 현재 위치로 가기 버튼, 로드뷰 버튼-->
-          <div class="mapoption_control">
-            <button class=""></button>
-            <button id="roadViewBtn" class="roadView__button"><img src="../assets/icons/Icon/present.svg"></button>
-          </div>
-          
-          <!--지도 확대 축소 버튼-->
-      <div class="custom_zoomcontrol radius_border"> 
-        <button class="w-30px h-30px shadow p-1" onclick="zoomIn()" ><img src="../assets/icons/Icon/icon-plus.svg" alt="확대"></button>  
-        <button class="w-30px h-30px shadow p-1" onclick="zoomOut()" ><img src="../assets/icons/Icon/icon-minus.svg" alt="축소"></button>
-    </div>
-</div>
+
     <!-- 지도를 표시할 div 입니다 -->
+    <div class="mapWrapper relative">
     <div class="h-full" id="map" style="width: 100%; height: 700px"></div>
+          <!-- 현재 위치로 가기 버튼-->
+          <button id="roadViewBtn" class="roadView__button bg-[url('../assets/icons/Icon/present.svg')] fixed z-10 w-[33px] h-[30px] right-[20px] top-[71px]"></button>
+          <!--지도 확대 축소 버튼-->
+          <div class="custom_zoomcontrol radius_border flex flex-col gap-0"> 
+            <button class="fixed left-[280px] top-[540px] w-[30px] h-[30px] shadow p-1  z-10 rounded-t-lg -bg--lion-white" onclick="zoomIn()" ><img src="../assets/icons/Icon/icon-plus.svg" alt="확대" /></button>  
+            <button class="fixed w-[30px] h-[30px] left-[280px] top-[570px] shadow p-1 rounded-b-lg -bg--lion-white z-10" onclick="zoomOut()" ><img src="../assets/icons/Icon/icon-minus.svg" alt="축소" /></button>
+        </div>
+        </div>
+  </section>
+  <nav class="footerNav fixed bottom-[0] w-[100%] z-10">
+    <h2 class="footerNav__title sr-only">하단 내비게이션</h2>
+    <ul class="footerNav__list flex h-[67px] justify-around -bg--lion-white">
+      <li
+        class="footer__item flex items-center border-t-[2px] border-transparent px-[7px] hover:border-t-[2px] hover:-border--lion-black"
+      >
+        <a href="" class="footerNav__item__link"
+          ><div class="footerNav__item__wrapper flex h-[24px] items-center">
+            <img
+              src="../assets/icons/Icon/btnMap_common.svg"
+              alt=""
+              class="footerNav__item__icon mx-[auto]"
+            />
+          </div>
+          <span class="footerNav__item__title">지도</span></a
+        >
+      </li>
+      <li
+        class="footer__item flex items-center border-t-[2px] border-transparent px-[7px] hover:border-t-[2px] hover:-border--lion-black"
+      >
+        <a href="" class="footerNav__item__link"
+          ><div class="footerNav__item__wrapper flex h-[24px] items-center">
+            <img
+              src="../assets/icons/Icon/btnSave_common.svg"
+              alt=""
+              class="footerNav__item__icon mx-[auto]"
+            />
+          </div>
+          <span class="footerNav__item__title">저장</span></a
+        >
+      </li>
+      <li
+        class="footer__item flex items-center border-t-[2px] border-transparent px-[7px] hover:border-t-[2px] hover:-border--lion-black"
+      >
+        <a href="" class="footerNav__item__link"
+          ><div class="footerNav__item__wrapper flex h-[24px] items-center">
+            <img
+              src="../assets/icons/Icon/btnTransportation_common.svg"
+              alt=""
+              class="footerNav__item__icon mx-[auto]"
+            />
+          </div>
+          <span class="footerNav__item__title">대중교통</span></a
+        >
+      </li>
+      <li
+        class="footer__item flex items-center border-t-[2px] border-transparent px-[7px] hover:border-t-[2px] hover:-border--lion-black"
+      >
+        <a href="" class="footerNav__item__link">
+          <div class="footerNav__item__wrapper flex h-[24px] items-center">
+            <img
+              src="../assets/icons/Icon/btnNavi_common.svg"
+              alt=""
+              class="footerNav__item__icon mx-[auto]"
+            />
+          </div>
+          <span class="footerNav__item__title">내비게이션</span></a
+        >
+      </li>
+      <li
+        class="footer__item flex items-center border-t-[2px] border-transparent px-[7px] hover:border-t-[2px] hover:-border--lion-black"
+      >
+        <a href="" class="footerNav__item__link">
+          <div class="footerNav__item__wrapper flex h-[24px] items-center">
+            <img
+              src="../assets/icons/Icon/btnMy_common.svg"
+              alt=""
+              class="footerNav__item__icon mx-[auto]"
+            />
+          </div>
+          <span class="footerNav__item__title">MY</span></a
+        >
+      </li>
+    </ul>
+  </nav>
     <script
       type="text/javascript"
-      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d6dc76a7451cb67d233217452abb62de"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=abee49736c9627769f79d3d80e3fffe5"
     ></script>
       <script>
       let mapContainer = document.getElementById('map'), // 지도를 표시할 div 
