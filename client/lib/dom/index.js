@@ -12,3 +12,4 @@ export * from './getInputValue.js';
 export * from './clearContents.js';
 export * from './controlElement.js';
 export * from './changeClass.js';
+export * from './renderReviewList.js';

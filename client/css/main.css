@@ -965,6 +965,18 @@ html {
   margin-top: 9px;
 }
 
+.mt-\[100px\] {
+  margin-top: 100px;
+}
+
+.mb-\[67px\] {
+  margin-bottom: 67px;
+}
+
+.mb-\[200px\] {
+  margin-bottom: 200px;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -1535,6 +1547,14 @@ html {
   background-image: url('/assets/images/yedam_review.jpg');
 }
 
+.bg-\[url\(\'\$\{image\}\'\)\] {
+  background-image: url('${image}');
+}
+
+.bg-\[url\(\$\{image\}\)\] {
+  background-image: url(${image});
+}
+
 .bg-cover {
   background-size: cover;
 }
@@ -1742,6 +1762,14 @@ html {
 
 .pt-\[62px\] {
   padding-top: 62px;
+}
+
+.pb-\[200px\] {
+  padding-bottom: 200px;
+}
+
+.pb-\[67px\] {
+  padding-bottom: 67px;
 }
 
 .text-center {

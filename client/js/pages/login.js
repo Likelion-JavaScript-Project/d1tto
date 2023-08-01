@@ -73,12 +73,13 @@ function handleJoin(e) {
   window.location.href = '../pages/join.html';
 }
 
-function handleLogin(e) {
+async function handleLogin(e) {
   e.preventDefault();
   idPwCheck().then(() => {
     if (loginCheckResult === 'true') {
-      tokenPass();
-      window.location.href = '../pages/review.html';
+      tokenPass().then(() => {
+        window.location.href = '../pages/review.html';
+      });
     } else {
       alert('아이디 또는 비밀번호가 일치하지 않습니다.');
     }
@@ -88,7 +89,6 @@ function handleLogin(e) {
 async function autoLogin(e) {
   e.preventDefault();
   const token = await loadStorage('token');
-  console.log(token);
   if (token) {
     window.location.href = '../pages/review.html';
   }
