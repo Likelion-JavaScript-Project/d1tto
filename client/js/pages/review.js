@@ -1,9 +1,9 @@
 import {
   renderEmptySvg,
-  renderReviewCardAll,
+  renderReviewCardText,
   renderReviewCardPhoto,
   renderSpinner,
-} from '../../lib/dom/renderRivew.js';
+} from '../../lib/dom/renderReview.js';
 import {
   addClass,
   changeClass,
@@ -17,10 +17,9 @@ import {
   tiger,
 } from '../../lib/index.js';
 
-const makeThemeButton = getNode('.makeThemeButton');
-const makeThemeButtonText = getNode('.makeThemeButton__text');
+const themeList = getNode('.themeList');
 const showListWrapper = getNode('.showListWrapper');
-const changeArrangeButton = getNode('.changeArrangeButton');
+const buttonChangeArrange = getNode('.buttonChangeArrange');
 const body = getNode('body');
 const arrangeWrapper = getNode('.arrangeWrapper');
 const arrangeNew = getNode('.arrangeNew');
@@ -47,28 +46,47 @@ const reviewSlide = new Swiper('.swiperReview', {
   },
 });
 
-console.log((reviewSlide.initialSlide = 1));
-
-function handleMakeTheme(e) {
+/* -------------------------------------------------------------------------- */
+/*                                     완료                                   */
+/* -------------------------------------------------------------------------- */
+function handleTheme(e) {
   e.preventDefault();
+  e.stopPropagation();
+  const target = e.target.closest('a');
+  if (!target) {
+    return;
+  }
 
-  const icon = getNode('.makeThemeButton use');
+  if (checkHasClass(target, 'makeThemeButton__link')) {
+    const makeThemeButtonLink = getNode('.makeThemeButton__link');
+    const makeThemeButtonText = getNode('.makeThemeButton__text');
+    const icon = getNode('.makeThemeButton use');
 
-  changeClass(makeThemeButton, '-bg--lion-white', '-bg--lion-primary');
-  changeClass(makeThemeButtonText, '-text--lion-gray-300', '-text--lion-white');
-  changeClickImageName(icon, 'default', 'clicked');
+    changeClass(makeThemeButtonLink, '-bg--lion-white', '-bg--lion-primary');
+    changeClass(
+      makeThemeButtonText,
+      '-text--lion-gray-300',
+      '-text--lion-white'
+    );
 
-  setTimeout(() => {
-    removeClass(makeThemeButton, '-bg--lion-primary');
-    removeClass(makeThemeButtonText, '-text--lion-white');
+    changeClickImageName(icon, 'default', 'clicked');
 
-    addClass(makeThemeButton, '-bg--lion-white');
-    addClass(makeThemeButtonText, '-text--lion-gray-300');
+    setTimeout(() => {
+      removeClass(makeThemeButtonLink, '-bg--lion-primary');
+      addClass(makeThemeButtonLink, '-bg--lion-white');
 
-    changeImageName(icon, 'clicked', 'default');
-  }, 300);
+      removeClass(makeThemeButtonText, '-text--lion-white');
+      addClass(makeThemeButtonText, '-text--lion-gray-300');
+
+      changeImageName(icon, 'clicked', 'default');
+      location.href = 'https://www.naver.com';
+    }, 300);
+  }
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                     완료                                   */
+/* -------------------------------------------------------------------------- */
 function handleShowList(e) {
   const target = e.target.closest('.showListWrapper button');
   if (!target) {
@@ -76,6 +94,7 @@ function handleShowList(e) {
   }
 
   const buttonList = showListWrapper.querySelectorAll('button');
+
   buttonList.forEach((item) => {
     removeClass(item, '-text--lion-black');
     addClass(item, '-text--lion-gray-300');
@@ -84,15 +103,19 @@ function handleShowList(e) {
   });
 
   const icon = target.querySelector('use');
-  if (target.classList.contains('-text--lion-gray-300')) {
+
+  if (checkHasClass(target, '-text--lion-gray-300')) {
     changeClass(target, '-text--lion-gray-300', '-text--lion-black');
     changeImageName(icon, 'default', 'clicked');
   }
 
-  return renderShowMethodFunction(e);
+  return renderShowMethod(e);
 }
 
-function renderShowMethodFunction(e) {
+/* -------------------------------------------------------------------------- */
+/*                                     완료                                   */
+/* -------------------------------------------------------------------------- */
+function renderShowMethod(e) {
   const target = e.target.closest('button');
 
   if (checkHasClass(target, 'showListWrapper__all')) {
@@ -102,8 +125,11 @@ function renderShowMethodFunction(e) {
   }
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                     완료                                   */
+/* -------------------------------------------------------------------------- */
 function handleOpenMenu(e) {
-  const target = e.target.closest('.changeArrangeButton');
+  const target = e.target.closest('.buttonChangeArrange');
   if (!target) {
     return;
   }
@@ -115,22 +141,28 @@ function handleOpenMenu(e) {
   if (css(arrangeViews, 'visibility') === 'hidden') {
     removeClass(arrangeViews, 'invisible');
     removeClass(arrangeViews, 'h-0');
+
     addClass(arrangeViews, 'h-[26px]');
     e.stopPropagation();
   } else if (css(arrangeNew, 'visibility') === 'hidden') {
     removeClass(arrangeNew, 'invisible');
     removeClass(arrangeNew, 'h-0');
+
     addClass(arrangeNew, 'h-[26px]');
     e.stopPropagation();
   }
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                     완료                                   */
+/* -------------------------------------------------------------------------- */
 function handleCloseMenu(e) {
   const icon = getNode('.arrowIcon');
-  const isItem = e.target.closest('.changeArrangeButton span');
-  const menuItem = [...arrangeWrapper.children];
 
   changeImageName(icon, 'up', 'down');
+
+  const isItem = e.target.closest('.buttonChangeArrange span');
+  const menuItem = [...arrangeWrapper.children];
 
   if (!isItem) {
     menuItem.forEach((item) => {
@@ -153,10 +185,13 @@ function handleCloseMenu(e) {
     });
   }
 
-  return renderReviewListChange(e);
+  return renderReviewListArrange(e);
 }
 
-async function renderReviewListChange(e) {
+/* -------------------------------------------------------------------------- */
+/*                                     완료                                   */
+/* -------------------------------------------------------------------------- */
+async function renderReviewListArrange(e) {
   const target = e.target.closest('span');
   if (!target) {
     return;
@@ -172,21 +207,24 @@ async function renderReviewListChange(e) {
   }
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                     완료                                   */
+/* -------------------------------------------------------------------------- */
 function handleTogglePin(e) {
-  const target = e.target.closest('li');
+  e.stopPropagation();
+  const target = e.target.closest('span');
   if (!target) {
     return;
   }
-  const isSvg = e.target.closest('svg');
-  const isUse = e.target.closest('use');
-  const icon = target.querySelector('use');
+  e.preventDefault();
 
-  if (isSvg || isUse) {
-    e.preventDefault();
-    changeClickImageName(icon, 'default', 'clicked');
-  }
+  const icon = target.querySelector('use');
+  changeClickImageName(icon, 'default', 'clicked');
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                     완료                                   */
+/* -------------------------------------------------------------------------- */
 async function renderReviewListPhoto() {
   clearContents(reviewList);
   renderSpinner(reviewList);
@@ -218,8 +256,10 @@ async function renderReviewListPhoto() {
           if (usersToken === reviewsToken && item.restaurants.length > 1) {
             reviewsData[index].restaurants.forEach((item) => {
               renderReviewCardPhoto(reviewList, item);
-              reviewSlide.slideTo(0);
             });
+            reviewSlide.slideTo(0);
+          } else {
+            renderEmptySvg(reviewList);
           }
         });
       });
@@ -238,6 +278,10 @@ async function renderReviewListPhoto() {
                 renderReviewCardPhoto(reviewList, item);
               });
             reviewSlide.slideTo(0);
+
+            return handleTogglePin(e);
+          } else {
+            renderEmptySvg(reviewList);
           }
         });
       });
@@ -248,6 +292,9 @@ async function renderReviewListPhoto() {
 }
 renderReviewListPhoto();
 
+/* -------------------------------------------------------------------------- */
+/*                                     완료                                   */
+/* -------------------------------------------------------------------------- */
 async function renderReviewListAll() {
   clearContents(reviewList);
   renderSpinner(reviewList);
@@ -278,9 +325,9 @@ async function renderReviewListAll() {
 
           if (usersToken === reviewsToken && item.restaurants.length > 1) {
             reviewsData[index].restaurants.forEach((item) => {
-              renderReviewCardAll(reviewList, item);
-              reviewSlide.slideTo(0);
+              renderReviewCardText(reviewList, item);
             });
+            reviewSlide.slideTo(0);
           } else {
             renderEmptySvg(reviewList);
           }
@@ -298,9 +345,9 @@ async function renderReviewListAll() {
               .slice()
               .reverse()
               .forEach((item) => {
-                renderReviewCardAll(reviewList, item);
-                reviewSlide.slideTo(0);
+                renderReviewCardText(reviewList, item);
               });
+            reviewSlide.slideTo(0);
           } else {
             renderEmptySvg(reviewList);
           }
@@ -312,11 +359,8 @@ async function renderReviewListAll() {
   }
 }
 
-document.querySelector('.swiperTheme li').addEventListener('click', (e) => {
-  e.preventDefault();
-});
-makeThemeButton.addEventListener('click', handleMakeTheme);
+themeList.addEventListener('click', handleTheme);
 showListWrapper.addEventListener('click', handleShowList);
-changeArrangeButton.addEventListener('click', handleOpenMenu);
+buttonChangeArrange.addEventListener('click', handleOpenMenu);
 body.addEventListener('click', handleCloseMenu);
 reviewList.addEventListener('click', handleTogglePin);

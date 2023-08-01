@@ -1327,6 +1327,11 @@ html {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.-border--lion-lightblue-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(170 196 250 / var(--tw-border-opacity));
+}
+
 .-bg--lion-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(225 225 225 / var(--tw-bg-opacity));
@@ -1676,6 +1681,11 @@ html {
 .text-\[\#FD8D14\] {
   --tw-text-opacity: 1;
   color: rgb(253 141 20 / var(--tw-text-opacity));
+}
+
+.-text--lion-lightblue-300 {
+  --tw-text-opacity: 1;
+  color: rgb(170 196 250 / var(--tw-text-opacity));
 }
 
 .shadow {

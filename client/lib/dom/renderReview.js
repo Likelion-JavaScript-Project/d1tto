@@ -23,10 +23,9 @@ function createReviewCardPhoto({
       class="relative block bg-cover h-[138px] w-[145px] rounded-[3px] p-2"
       style="background-image: url('${image}')"
     >
-      <span aria-label="상단 고정 핀" class="absolute right-1.5 h-6 w-6">
+      <span aria-label="상단 고정 핀" class="pinButton absolute right-1.5 h-6 w-6">
         <svg aria-hidden="true" class="absolute right-0 top-0 h-6 w-6">
           <use
-            class="pinButton"
             xlink:href="#favorite-review-${like}"
           ></use>
         </svg>
@@ -46,12 +45,11 @@ function createReviewCardPhoto({
 
   return template;
 }
-
 export function renderReviewCardPhoto(target, data) {
   insertLast(target, createReviewCardPhoto(data));
 }
 
-function createReviewCardAll({
+function createReviewCarText({
   id = '',
   name = '',
   address = '',
@@ -95,9 +93,8 @@ function createReviewCardAll({
 
   return template;
 }
-
-export function renderReviewCardAll(target, data) {
-  insertLast(target, createReviewCardAll(data));
+export function renderReviewCardText(target, data) {
+  insertLast(target, createReviewCarText(data));
 }
 
 function createSpinner(loadingMessage = '리뷰 가져오는 중...') {
@@ -126,7 +123,6 @@ function createSpinner(loadingMessage = '리뷰 가져오는 중...') {
 </figure>
   `;
 }
-
 export function renderSpinner(target) {
   insertLast(target, createSpinner());
 }
@@ -175,7 +171,6 @@ function createEmptySvg(
   </figure>
   `;
 }
-
 export function renderEmptySvg(target) {
   insertLast(target, createEmptySvg());
 }
