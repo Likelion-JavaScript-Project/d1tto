@@ -606,6 +606,14 @@ html {
   bottom: 0;
 }
 
+.left-0 {
+  left: 0px;
+}
+
+.left-2 {
+  left: 0.5rem;
+}
+
 .left-3 {
   left: 0.75rem;
 }
@@ -614,12 +622,20 @@ html {
   left: 156px;
 }
 
+.left-\[250px\] {
+  left: 250px;
+}
+
 .left-\[255px\] {
   left: 255px;
 }
 
 .left-\[280px\] {
   left: 280px;
+}
+
+.left-\[288px\] {
+  left: 288px;
 }
 
 .left-\[30px\] {
@@ -658,6 +674,10 @@ html {
   right: -4px;
 }
 
+.right-\[10px\] {
+  right: 10px;
+}
+
 .right-\[12px\] {
   right: 12px;
 }
@@ -678,8 +698,20 @@ html {
   top: 0.125rem;
 }
 
+.top-1 {
+  top: 0.25rem;
+}
+
 .top-2 {
   top: 0.5rem;
+}
+
+.top-3 {
+  top: 0.75rem;
+}
+
+.top-4 {
+  top: 1rem;
 }
 
 .top-48 {
@@ -698,6 +730,10 @@ html {
   top: -6px;
 }
 
+.top-\[10px\] {
+  top: 10px;
+}
+
 .top-\[11\.5px\] {
   top: 11.5px;
 }
@@ -708,6 +744,10 @@ html {
 
 .top-\[15px\] {
   top: 15px;
+}
+
+.top-\[2px\] {
+  top: 2px;
 }
 
 .top-\[406px\] {
@@ -833,6 +873,14 @@ html {
   margin-bottom: 64px;
 }
 
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.ml-\[104px\] {
+  margin-left: 104px;
+}
+
 .ml-\[10px\] {
   margin-left: 10px;
 }
@@ -847,6 +895,10 @@ html {
 
 .mr-2 {
   margin-right: 0.5rem;
+}
+
+.mr-4 {
+  margin-right: 1rem;
 }
 
 .mr-5 {
@@ -953,6 +1005,10 @@ html {
   height: 1.5rem;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
 .h-\[12px\] {
   height: 12px;
 }
@@ -1025,6 +1081,10 @@ html {
   height: 54px;
 }
 
+.h-\[560px\] {
+  height: 560px;
+}
+
 .h-\[56px\] {
   height: 56px;
 }
@@ -1045,6 +1105,10 @@ html {
   height: 722px;
 }
 
+.h-\[91px\] {
+  height: 91px;
+}
+
 .h-full {
   height: 100%;
 }
@@ -1055,6 +1119,10 @@ html {
 
 .w-6 {
   width: 1.5rem;
+}
+
+.w-8 {
+  width: 2rem;
 }
 
 .w-80 {
@@ -1167,6 +1235,10 @@ html {
 
 .w-\[83px\] {
   width: 83px;
+}
+
+.w-\[92px\] {
+  width: 92px;
 }
 
 .w-full {
@@ -1291,6 +1363,10 @@ html {
   border-radius: 0.25rem;
 }
 
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
 .rounded-\[10px\] {
   border-radius: 10px;
 }
@@ -1326,6 +1402,11 @@ html {
 .rounded-b-lg {
   border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
+}
+
+.rounded-l-2xl {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 
 .rounded-t-lg {
@@ -1414,12 +1495,20 @@ html {
   background-image: url('../assets/icons/Icon/close_interests.svg');
 }
 
+.bg-\[url\(\'\.\.\/assets\/icons\/Icon\/close_reviewSelect\.svg\'\)\] {
+  background-image: url('../assets/icons/Icon/close_reviewSelect.svg');
+}
+
 .bg-\[url\(\'\.\.\/assets\/icons\/Icon\/heart_visited\.svg\'\)\] {
   background-image: url('../assets/icons/Icon/heart_visited.svg');
 }
 
 .bg-\[url\(\'\.\.\/assets\/icons\/Icon\/icon-more\.svg\'\)\] {
   background-image: url('../assets/icons/Icon/icon-more.svg');
+}
+
+.bg-\[url\(\'\.\.\/assets\/icons\/Icon\/left_reviewSelect\.svg\'\)\] {
+  background-image: url('../assets/icons/Icon/left_reviewSelect.svg');
 }
 
 .bg-\[url\(\'\.\.\/assets\/icons\/Icon\/more_visited\.svg\'\)\] {
@@ -1432,6 +1521,14 @@ html {
 
 .bg-\[url\(\'\.\.\/assets\/icons\/Icon\/present\.svg\'\)\] {
   background-image: url('../assets/icons/Icon/present.svg');
+}
+
+.bg-\[url\(\'\.\.\/assets\/icons\/icon\/call_reviewSelect\.svg\'\)\] {
+  background-image: url('../assets/icons/icon/call_reviewSelect.svg');
+}
+
+.bg-\[url\(\'\.\.\/assets\/images\/yedam_review\.jpg\'\)\] {
+  background-image: url('../assets/images/yedam_review.jpg');
 }
 
 .bg-\[url\(\'\/assets\/images\/yedam_review\.jpg\'\)\] {
@@ -1485,6 +1582,11 @@ html {
 .px-\[100px\] {
   padding-left: 100px;
   padding-right: 100px;
+}
+
+.px-\[15px\] {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .px-\[20px\] {
@@ -1562,6 +1664,14 @@ html {
   padding-bottom: 5.41px;
 }
 
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
 .pb-8 {
   padding-bottom: 2rem;
 }
@@ -1590,8 +1700,16 @@ html {
   padding-left: 10px;
 }
 
+.pl-\[20px\] {
+  padding-left: 20px;
+}
+
 .pl-\[4\.5px\] {
   padding-left: 4.5px;
+}
+
+.pr-3 {
+  padding-right: 0.75rem;
 }
 
 .pr-\[4\.5px\] {
@@ -1608,6 +1726,10 @@ html {
 
 .pt-20 {
   padding-top: 5rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .pt-9 {
