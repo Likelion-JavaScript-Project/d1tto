@@ -6,7 +6,7 @@ function createReviewCardPhoto({
   address = '',
   url = '',
   like = false,
-  image = '',
+  image = '/assets/images/likeLion_common.png',
 }) {
   if (like === true) {
     like = 'clicked';
@@ -56,18 +56,8 @@ function createReviewCarText({
   address = '',
   url = '',
   keywords = '',
+  remainKeywords = '',
 }) {
-  keywords = Object.values(keywords);
-  let remainKeywords;
-  if (keywords.length > 1) {
-    keywords = keywords[0];
-    remainKeywords = `+ ${Number(keywords.length - 1)}`;
-  } else if (keywords.length === 1) {
-    keywords = keywords[0];
-  } else {
-    keywords = '';
-  }
-
   const template = /* html */ `
   <li data-index=${id} class="swiper-slide h-[138px] w-[145px]">
     <a

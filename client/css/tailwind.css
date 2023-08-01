@@ -18,6 +18,10 @@
   @apply h-[138px] !important;
 }
 
-/* .commonHeader__list {
+.commonHeader__list {
   @apply -border--lion-lightblue-300;
-} */
+}
+
+.reviewList .empty-user-card {
+  @apply h-[175px];
+}

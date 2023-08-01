@@ -933,6 +933,10 @@ html {
   height: 138px;
 }
 
+.h-\[175px\] {
+  height: 175px;
+}
+
 .h-\[184px\] {
   height: 184px;
 }
@@ -1714,9 +1718,14 @@ html {
   height: 138px !important;
 }
 
-/* .commonHeader__list {
-  @apply -border--lion-lightblue-300;
-} */
+.commonHeader__list {
+  --tw-border-opacity: 1;
+  border-color: rgb(170 196 250 / var(--tw-border-opacity));
+}
+
+.reviewList .empty-user-card {
+  height: 175px;
+}
 
 .hover\:border-b-\[2px\]:hover {
   border-bottom-width: 2px;

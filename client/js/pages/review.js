@@ -31,6 +31,7 @@ const themeSlide = new Swiper('.swiperTheme', {
   slidesPerView: '2',
   width: '320',
   grabCursor: true,
+  mousewheel: true,
   freeMode: {
     enabled: true,
     sticky: true,
@@ -41,6 +42,7 @@ const reviewSlide = new Swiper('.swiperReview', {
   direction: 'vertical',
   slidesPerView: '1',
   height: '144',
+  mousewheel: true,
   grid: {
     rows: 2,
   },
@@ -238,70 +240,31 @@ async function renderReviewListPhoto() {
       },
     });
 
-    const users = await tiger.get('http://localhost:3000/users');
     const response = await tiger.get('http://localhost:3000/reviews');
-    const usersData = users.data;
     const reviewsData = response.data;
+    const localToken = localStorage.getItem('token').slice(1, -1);
 
     const hasNewFirst = checkHasClass(arrangeNew, 'order-first');
     const hasViewsFirst = checkHasClass(arrangeViews, 'order-first');
-    const localToken = localStorage.getItem('token');
 
     if (hasNewFirst) {
-      // reviewsData.forEach((item, index) => {
-      //   const reviewsToken = reviewsData[index].token;
-
-      //   if (localToken === reviewsToken && item.restaurants.length > 1) {
-      //     reviewsData[index].restaurants.forEach((item) => {
-      //       renderReviewCardPhoto(reviewList, item);
-      //     });
-      //     reviewSlide.slideTo(0);
-      //   } else {
-      //     renderEmptySvg(reviewList);
-      //   }
-      // });
-
-      usersData.forEach((item, index) => {
-        const usersToken = usersData[index].token;
-
-        reviewsData.forEach((item, index) => {
-          const reviewsToken = reviewsData[index].token;
-
-          if (usersToken === reviewsToken && item.restaurants.length > 1) {
-            reviewsData[index].restaurants.forEach((item) => {
+      reviewsData.forEach((item) => {
+        if (item.token === localToken) {
+          if (item.restaurants.length > 1) {
+            item.restaurants.forEach((item) => {
               renderReviewCardPhoto(reviewList, item);
             });
             reviewSlide.slideTo(0);
           } else {
             renderEmptySvg(reviewList);
           }
-        });
+        }
       });
     } else if (hasViewsFirst) {
-      // reviewsData.forEach((item, index) => {
-      //   const reviewsToken = reviewsData[index].token;
-
-      //   if (localToken === reviewsToken && item.restaurants.length > 1) {
-      //     reviewsData[index].restaurants
-      //       .slice()
-      //       .reverse()
-      //       .forEach((item) => {
-      //         renderReviewCardPhoto(reviewList, item);
-      //       });
-      //     reviewSlide.slideTo(0);
-      //   } else {
-      //     renderEmptySvg(reviewList);
-      //   }
-      // });
-
-      usersData.forEach((item, index) => {
-        const usersToken = usersData[index].token;
-
-        reviewsData.forEach((item, index) => {
-          const reviewsToken = reviewsData[index].token;
-
-          if (usersToken === reviewsToken && item.restaurants.length > 1) {
-            reviewsData[index].restaurants
+      reviewsData.forEach((item) => {
+        if (item.token === localToken) {
+          if (item.restaurants.length > 1) {
+            item.restaurants
               .slice()
               .reverse()
               .forEach((item) => {
@@ -311,7 +274,7 @@ async function renderReviewListPhoto() {
           } else {
             renderEmptySvg(reviewList);
           }
-        });
+        }
       });
     }
   } catch (err) {
@@ -335,81 +298,72 @@ async function renderReviewListAll() {
         loadingSpinner.remove();
       },
     });
-
-    const users = await tiger.get('http://localhost:3000/users');
     const response = await tiger.get('http://localhost:3000/reviews');
-    const usersData = users.data;
     const reviewsData = response.data;
+    const localToken = localStorage.getItem('token').slice(1, -1);
 
     const hasNewFirst = checkHasClass(arrangeNew, 'order-first');
     const hasViewsFirst = checkHasClass(arrangeViews, 'order-first');
-    const localToken = localStorage.getItem('token');
 
     if (hasNewFirst) {
-      // reviewsData.forEach((item, index) => {
-      //   const reviewsToken = reviewsData[index].token;
+      reviewsData.forEach((item) => {
+        if (item.token === localToken) {
+          if (item.restaurants.length > 1) {
+            item.restaurants.forEach((item) => {
+              let keywords = Object.values(item.keywords);
+              let remainKeywords;
 
-      //   if (localToken === reviewsToken && item.restaurants.length > 1) {
-      //     reviewsData[index].restaurants.forEach((item) => {
-      //       renderReviewCardText(reviewList, item);
-      //     });
-      //     reviewSlide.slideTo(0);
-      //   } else {
-      //     renderEmptySvg(reviewList);
-      //   }
-      // });
+              if (keywords.length > 1) {
+                remainKeywords = `+ ${keywords.length - 1}`;
+                keywords = keywords[0];
+              } else if (keywords.length === 1) {
+                keywords = keywords[0];
+                remainKeywords = '';
+              } else {
+                keywords = '키워드가 없습니다.';
+              }
 
-      usersData.forEach((item, index) => {
-        const usersToken = usersData[index].token;
-
-        reviewsData.forEach((item, index) => {
-          const reviewsToken = reviewsData[index].token;
-
-          if (usersToken === reviewsToken && item.restaurants.length > 1) {
-            reviewsData[index].restaurants.forEach((item) => {
+              item.keywords = keywords;
+              item.remainKeywords = remainKeywords;
               renderReviewCardText(reviewList, item);
             });
             reviewSlide.slideTo(0);
           } else {
             renderEmptySvg(reviewList);
           }
-        });
+        }
       });
     } else if (hasViewsFirst) {
-      // reviewsData.forEach((item, index) => {
-      //   const reviewsToken = reviewsData[index].token;
-
-      //   if (localToken === reviewsToken && item.restaurants.length > 1) {
-      //     reviewsData[index].restaurants
-      //       .slice()
-      //       .reverse()
-      //       .forEach((item) => {
-      //         renderReviewCardText(reviewList, item);
-      //       });
-      //     reviewSlide.slideTo(0);
-      //   } else {
-      //     renderEmptySvg(reviewList);
-      //   }
-      // });
-
-      usersData.forEach((item, index) => {
-        const usersToken = usersData[index].token;
-
-        reviewsData.forEach((item, index) => {
-          const reviewsToken = reviewsData[index].token;
-
-          if (usersToken === reviewsToken && item.restaurants.length > 1) {
-            reviewsData[index].restaurants
+      reviewsData.forEach((item) => {
+        if (item.token === localToken) {
+          if (item.restaurants.length > 1) {
+            item.restaurants
               .slice()
               .reverse()
               .forEach((item) => {
+                let keywords = Object.values(item.keywords);
+                let remainKeywords;
+
+                if (keywords.length > 1) {
+                  remainKeywords = `+ ${keywords.length - 1}`;
+                  keywords = keywords[0];
+                } else if (keywords.length === 1) {
+                  keywords = keywords[0];
+                  remainKeywords = '';
+                } else {
+                  keywords = '키워드가 없습니다.';
+                }
+
+                item.keywords = keywords;
+                item.remainKeywords = remainKeywords;
+
                 renderReviewCardText(reviewList, item);
               });
             reviewSlide.slideTo(0);
           } else {
             renderEmptySvg(reviewList);
           }
-        });
+        }
       });
     }
   } catch (err) {
