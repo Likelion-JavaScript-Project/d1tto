@@ -1390,20 +1390,6 @@ html {
   background-image: url('/assets/images/yedam_review.jpg');
 }
 
-.bg-\[linear-gradient\(to_bottom\2c rgba\(0\2c 0\2c 0\2c 0\)\2c rgba\(255\2c 255\2c 255\2c 1\)\2c rgba\(255\2c 255\2c 255\2c 1\)\)\] {
-  background-image: linear-gradient(to bottom,rgba(0,0,0,0),rgba(255,255,255,1),rgba(255,255,255,1));
-}
-
-.from-inherit {
-  --tw-gradient-from: inherit var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.to-transparent {
-  --tw-gradient-to: transparent var(--tw-gradient-to-position);
-}
-
 .bg-cover {
   background-size: cover;
 }

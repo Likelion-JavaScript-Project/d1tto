@@ -14,7 +14,7 @@ function createReviewTheme({
   <li class="swiper-slide relative" data-index= "${id}">
   <a
     href=""
-    class="saveTheme block h-[184px] w-[148px] rounded-xl bg-cover from-inherit bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(255,255,255,1),rgba(255,255,255,1))]" style="background-image: linear-gradient(to bottom,rgba(0,0,0,0),rgba(255,255,255,1),rgba(255,255,255,1)),url(${image1});">
+    class="saveTheme block h-[184px] w-[148px] rounded-xl bg-cover" style="background-image: linear-gradient(to bottom,rgba(0,0,0,0),rgba(255,255,255,1),rgba(255,255,255,1)),url(${image1});">
     <span
       class="saveDraft absolute ml-[9px] mt-[9px] rounded-[4px] -bg--lion-white px-1 text-[12.003px] font-semibold -text--lion-contents-content-secondary"
       >${isSave}</span

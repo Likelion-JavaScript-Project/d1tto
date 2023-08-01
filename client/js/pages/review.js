@@ -29,8 +29,8 @@ const reviewList = getNode('.reviewList');
 
 const themeSlide = new Swiper('.swiperTheme', {
   direction: 'horizontal',
-  slidesPerView: '2',
-  width: '320',
+  slidesPerView: '1',
+  width: '160',
   grabCursor: true,
   mousewheel: true,
   freeMode: {
