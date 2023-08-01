@@ -72,11 +72,11 @@ function handleJoin(e) {
   e.preventDefault();
   window.location.href = '../pages/join.html';
 }
-
-function handleLogin(e) {
+async function handleLogin(e) {
   e.preventDefault();
   idPwCheck().then(() => {
     if (loginCheckResult === 'true') {
+
       tokenPass();
       window.location.href = '../pages/review.html';
     } else {
