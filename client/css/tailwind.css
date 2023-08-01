@@ -17,3 +17,7 @@
 .review .swiper-vertical .swiper-wrapper > .swiper-slide {
   @apply h-[138px] !important;
 }
+
+/* .commonHeader__list {
+  @apply -border--lion-lightblue-300;
+} */

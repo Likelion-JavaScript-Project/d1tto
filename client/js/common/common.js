@@ -1,63 +1,33 @@
-import { addClass, getNode, removeClass, getNodes } from '../../lib/index.js';
-
-function createUserData({
-  id = '',
-  token = '',
-  name = '',
-  profileImage = '',
-  following = '',
-  follower = '',
-}) {}
+import {
+  addClass,
+  getNode,
+  removeClass,
+  getNodes,
+  tiger,
+  getURL,
+} from '../../lib/index.js';
+import { renderUserData } from './renderCommon.js';
 
 const headerNavigation = getNode('.headerNav__list');
-
-// if (URL.includes('review')) {
-//   const tab = headerNavigation.children[2];
-//   changeNavigationColor();
-// } else if (URL.includes('visited')) {
-//   const tab = headerNavigation.children[1];
-//   changeNavigationColor();
-// }
-
-function getURL() {
-  const URL = window.location.href;
-
-  if (URL.includes('feed')) {
-    return 0;
-  }
-  if (URL.includes('visited')) {
-    return 1;
-  }
-  if (URL.includes('review')) {
-    return 2;
-  }
-  if (URL.includes('reservation')) {
-    return 3;
-  }
-}
+const userTemplate = getNode('.userTemplate');
 
 (function defaultNavigationColor() {
   let tab = headerNavigation.children[getURL()];
-
-  removeClass(tab, 'hover:border-b-[2px]');
-  removeClass(tab, 'hover:-border--lion-lightblue-300');
-  removeClass(tab, 'hover:-text--lion-lightblue-300');
 
   addClass(tab, 'border-b-[2px]');
   addClass(tab, '-border--lion-lightblue-300');
   addClass(tab, '-text--lion-lightblue-300');
 })();
 
-export function changeNavigation(e) {
+function changeNavigationColor(e) {
   e.preventDefault();
   const target = e.target.closest('li');
   if (!target) {
     return;
   }
+
   const navigationList = getNodes('.headerNav__list li');
   navigationList.forEach((item) => {
-    removeClass(item, 'hover:-border--lion-lightblue-300');
-    removeClass(item, 'hover:-text--lion-lightblue-300');
     removeClass(item, 'border-b-[2px]');
     removeClass(item, '-border--lion-lightblue-300');
     removeClass(item, '-text--lion-lightblue-300');
@@ -68,4 +38,33 @@ export function changeNavigation(e) {
   addClass(target, '-text--lion-lightblue-300');
 }
 
-headerNavigation.addEventListener('click', changeNavigation);
+async function renderingData() {
+  const users = await tiger.get('http://localhost:3000/users');
+  const usersData = users.data;
+
+  const response = await tiger.get('http://localhost:3000/reviews');
+  const reviewsData = response.data;
+
+  const localToken = localStorage.getItem('token').slice(1, -1);
+
+  let keyToken;
+  let reviewCount;
+
+  reviewsData.forEach((item) => {
+    if (item.token === localToken) {
+      reviewCount = item.restaurants.length;
+      keyToken = item.token;
+    }
+  });
+
+  usersData.forEach((item, index) => {
+    if (item.token === keyToken) {
+      item.reviews = reviewCount;
+      item.image = reviewCount;
+      renderUserData(userTemplate, item);
+    }
+  });
+}
+renderingData();
+
+headerNavigation.addEventListener('click', changeNavigationColor);

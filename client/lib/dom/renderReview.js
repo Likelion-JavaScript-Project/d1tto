@@ -45,6 +45,7 @@ function createReviewCardPhoto({
 
   return template;
 }
+
 export function renderReviewCardPhoto(target, data) {
   insertLast(target, createReviewCardPhoto(data));
 }

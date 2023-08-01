@@ -245,8 +245,22 @@ async function renderReviewListPhoto() {
 
     const hasNewFirst = checkHasClass(arrangeNew, 'order-first');
     const hasViewsFirst = checkHasClass(arrangeViews, 'order-first');
+    const localToken = localStorage.getItem('token');
 
     if (hasNewFirst) {
+      // reviewsData.forEach((item, index) => {
+      //   const reviewsToken = reviewsData[index].token;
+
+      //   if (localToken === reviewsToken && item.restaurants.length > 1) {
+      //     reviewsData[index].restaurants.forEach((item) => {
+      //       renderReviewCardPhoto(reviewList, item);
+      //     });
+      //     reviewSlide.slideTo(0);
+      //   } else {
+      //     renderEmptySvg(reviewList);
+      //   }
+      // });
+
       usersData.forEach((item, index) => {
         const usersToken = usersData[index].token;
 
@@ -264,6 +278,22 @@ async function renderReviewListPhoto() {
         });
       });
     } else if (hasViewsFirst) {
+      // reviewsData.forEach((item, index) => {
+      //   const reviewsToken = reviewsData[index].token;
+
+      //   if (localToken === reviewsToken && item.restaurants.length > 1) {
+      //     reviewsData[index].restaurants
+      //       .slice()
+      //       .reverse()
+      //       .forEach((item) => {
+      //         renderReviewCardPhoto(reviewList, item);
+      //       });
+      //     reviewSlide.slideTo(0);
+      //   } else {
+      //     renderEmptySvg(reviewList);
+      //   }
+      // });
+
       usersData.forEach((item, index) => {
         const usersToken = usersData[index].token;
 
@@ -278,8 +308,6 @@ async function renderReviewListPhoto() {
                 renderReviewCardPhoto(reviewList, item);
               });
             reviewSlide.slideTo(0);
-
-            return handleTogglePin(e);
           } else {
             renderEmptySvg(reviewList);
           }
@@ -315,8 +343,22 @@ async function renderReviewListAll() {
 
     const hasNewFirst = checkHasClass(arrangeNew, 'order-first');
     const hasViewsFirst = checkHasClass(arrangeViews, 'order-first');
+    const localToken = localStorage.getItem('token');
 
     if (hasNewFirst) {
+      // reviewsData.forEach((item, index) => {
+      //   const reviewsToken = reviewsData[index].token;
+
+      //   if (localToken === reviewsToken && item.restaurants.length > 1) {
+      //     reviewsData[index].restaurants.forEach((item) => {
+      //       renderReviewCardText(reviewList, item);
+      //     });
+      //     reviewSlide.slideTo(0);
+      //   } else {
+      //     renderEmptySvg(reviewList);
+      //   }
+      // });
+
       usersData.forEach((item, index) => {
         const usersToken = usersData[index].token;
 
@@ -334,6 +376,22 @@ async function renderReviewListAll() {
         });
       });
     } else if (hasViewsFirst) {
+      // reviewsData.forEach((item, index) => {
+      //   const reviewsToken = reviewsData[index].token;
+
+      //   if (localToken === reviewsToken && item.restaurants.length > 1) {
+      //     reviewsData[index].restaurants
+      //       .slice()
+      //       .reverse()
+      //       .forEach((item) => {
+      //         renderReviewCardText(reviewList, item);
+      //       });
+      //     reviewSlide.slideTo(0);
+      //   } else {
+      //     renderEmptySvg(reviewList);
+      //   }
+      // });
+
       usersData.forEach((item, index) => {
         const usersToken = usersData[index].token;
 
