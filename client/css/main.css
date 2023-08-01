@@ -1177,6 +1177,10 @@ html {
   background-color: rgb(51 51 51 / var(--tw-bg-opacity));
 }
 
+.bg-\[url\(\'\.\.\/assets\/icons\/Icon\/check_interests\.svg\'\)\] {
+  background-image: url('../assets/icons/Icon/check_interests.svg');
+}
+
 .bg-\[url\(\'\.\.\/assets\/icons\/Icon\/close_interests\.svg\'\)\] {
   background-image: url('../assets/icons/Icon/close_interests.svg');
 }
@@ -1191,10 +1195,6 @@ html {
 
 .bg-\[url\(\'\.\.\/assets\/icons\/Icon\/plus_interests\.svg\'\)\] {
   background-image: url('../assets/icons/Icon/plus_interests.svg');
-}
-
-.bg-\[url\(\'\.\.\/assets\/icons\/Icon\/check_interests\.svg\'\)\] {
-  background-image: url('../assets/icons/Icon/check_interests.svg');
 }
 
 .p-1 {
@@ -1437,20 +1437,24 @@ html {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-\[\#FD8D14\] {
-  --tw-text-opacity: 1;
-  color: rgb(253 141 20 / var(--tw-text-opacity));
-}
-
 .text-\[\#D1D2D6\] {
   --tw-text-opacity: 1;
   color: rgb(209 210 214 / var(--tw-text-opacity));
+}
+
+.text-\[\#FD8D14\] {
+  --tw-text-opacity: 1;
+  color: rgb(253 141 20 / var(--tw-text-opacity));
 }
 
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .hover\:border-b-\[2px\]:hover {
