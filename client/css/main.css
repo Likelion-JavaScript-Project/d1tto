@@ -1308,11 +1308,6 @@ html {
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
-.-border--lion-lightblue-300 {
-  --tw-border-opacity: 1;
-  border-color: rgb(170 196 250 / var(--tw-border-opacity));
-}
-
 .-border--lion-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -1661,11 +1656,6 @@ html {
 .-text--lion-info-error {
   --tw-text-opacity: 1;
   color: rgb(240 63 64 / var(--tw-text-opacity));
-}
-
-.-text--lion-lightblue-300 {
-  --tw-text-opacity: 1;
-  color: rgb(170 196 250 / var(--tw-text-opacity));
 }
 
 .-text--lion-lightblue-400 {

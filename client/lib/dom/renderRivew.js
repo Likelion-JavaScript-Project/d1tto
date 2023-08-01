@@ -104,7 +104,7 @@ function createSpinner(loadingMessage = '리뷰 가져오는 중...') {
   return /* html */ `
   <figure class="loadingSpinner">
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-    style="margin:auto;background:#fff;display:block;" width="300px" height="424px" viewBox="0 0 100 200"
+    style="margin:auto;background:#fff;display:block;" width="300px" height="150px" viewBox="0 0 100 100"
     preserveAspectRatio="xMidYMid">
     <circle cx="30" cy="50" fill="#e90c59" r="20">
       <animate attributeName="cx" repeatCount="indefinite" dur="1s" keyTimes="0;0.5;1" values="30;70;30"
@@ -122,7 +122,7 @@ function createSpinner(loadingMessage = '리뷰 가져오는 중...') {
         repeatCount="indefinite"></animate>
     </circle>
   </svg>
-  <figcaption class= "text-center left-[31%] top-48 -text--lion-info-error absolute">${loadingMessage}</figcaption>
+  <figcaption class= "text-center -text--lion-info-error">${loadingMessage}</figcaption>
 </figure>
   `;
 }
@@ -132,11 +132,11 @@ export function renderSpinner(target) {
 }
 
 function createEmptySvg(
-  ErrorMessage = '리뷰가 존재하지 않습니다.\n리뷰를 남겨보세요.'
+  ErrorMessage = '리뷰가 존재하지 않습니다😫 리뷰를 남겨보세요.'
 ) {
   return /* html */ `
   <figure class="empty-user-card">
-    <svg width="270px" height="200px" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="300px" height="150px" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M180 100C180 111.881 177.405 123.168 172.746 133.308C160.119 160.865 132.292 180 100 180C67.7081 180 39.8811 160.865 27.2541 133.308C22.5946 123.168 20 111.881 20 100C20 55.8162 55.8162 20 100 20C144.184 20 180 55.8162 180 100Z" fill="#F4F7FC"/>
       <mask id="mask0_50_2137" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="20" y="20" width="160" height="160">
       <path d="M180 100C180 111.881 177.405 123.168 172.746 133.308C160.119 160.865 132.292 180 100 180C67.7081 180 39.8811 160.865 27.2541 133.308C22.5946 123.168 20 111.881 20 100C20 55.8162 55.8162 20 100 20C144.184 20 180 55.8162 180 100Z" fill="#F4F7FC"/>

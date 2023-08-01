@@ -9,6 +9,7 @@ import {
   changeClass,
   changeClickImageName,
   changeImageName,
+  checkHasClass,
   clearContents,
   css,
   getNode,
@@ -26,7 +27,7 @@ const arrangeNew = getNode('.arrangeNew');
 const arrangeViews = getNode('.arrangeViews');
 const reviewList = getNode('.reviewList');
 
-new Swiper('.swiperTheme', {
+const themeSlide = new Swiper('.swiperTheme', {
   direction: 'horizontal',
   slidesPerView: '2',
   width: '320',
@@ -37,7 +38,7 @@ new Swiper('.swiperTheme', {
   },
 });
 
-new Swiper('.swiperReview', {
+const reviewSlide = new Swiper('.swiperReview', {
   direction: 'vertical',
   slidesPerView: '1',
   height: '144',
@@ -46,10 +47,12 @@ new Swiper('.swiperReview', {
   },
 });
 
+console.log((reviewSlide.initialSlide = 1));
+
 function handleMakeTheme(e) {
   e.preventDefault();
 
-  const icon = document.querySelector('.makeThemeButton use');
+  const icon = getNode('.makeThemeButton use');
 
   changeClass(makeThemeButton, '-bg--lion-white', '-bg--lion-primary');
   changeClass(makeThemeButtonText, '-text--lion-gray-300', '-text--lion-white');
@@ -91,7 +94,8 @@ function handleShowList(e) {
 
 function renderShowMethodFunction(e) {
   const target = e.target.closest('button');
-  if (target.classList.contains('showListWrapper__all')) {
+
+  if (checkHasClass(target, 'showListWrapper__all')) {
     renderReviewListAll();
   } else {
     renderReviewListPhoto();
@@ -160,91 +164,11 @@ async function renderReviewListChange(e) {
 
   const buttonAll = getNode('.showListWrapper__all');
   const buttonPhoto = getNode('.showListWrapper__photo');
-  if (buttonAll.classList.contains('-text--lion-black')) {
-    if (target.classList.contains('arrangeNew')) {
-      renderReviewListAll();
-    } else if (target.classList.contains('arrangeViews')) {
-      clearContents(reviewList);
-      renderSpinner(reviewList);
 
-      const loadingSpinner = getNode('.loadingSpinner');
-      try {
-        gsap.to(loadingSpinner, {
-          opacity: 0,
-          onComplete() {
-            loadingSpinner.remove();
-          },
-        });
-
-        const users = await tiger.get('http://localhost:3000/users');
-        const response = await tiger.get('http://localhost:3000/reviews');
-        const usersData = users.data;
-        const reviewsData = response.data;
-
-        usersData.forEach((item, index) => {
-          const usersToken = usersData[index].token;
-
-          reviewsData.forEach((item, index) => {
-            const reviewsToken = reviewsData[index].token;
-
-            if (usersToken === reviewsToken && item.restaurants.length > 1) {
-              reviewsData[index].restaurants
-                .slice()
-                .reverse()
-                .forEach((item) => {
-                  renderReviewCardAll(reviewList, item);
-                });
-            } else {
-              renderEmptySvg(reviewList);
-            }
-          });
-        });
-      } catch (err) {
-        renderEmptySvg(reviewList);
-      }
-    }
-  } else if (buttonPhoto.classList.contains('-text--lion-black')) {
-    if (target.classList.contains('arrangeNew')) {
-      renderReviewListPhoto();
-    } else if (target.classList.contains('arrangeViews')) {
-      clearContents(reviewList);
-      renderSpinner(reviewList);
-
-      const loadingSpinner = getNode('.loadingSpinner');
-      try {
-        gsap.to(loadingSpinner, {
-          opacity: 0,
-          onComplete() {
-            loadingSpinner.remove();
-          },
-        });
-        clearContents(reviewList);
-        const users = await tiger.get('http://localhost:3000/users');
-        const response = await tiger.get('http://localhost:3000/reviews');
-        const usersData = users.data;
-        const reviewsData = response.data;
-        usersData.forEach((item, index) => {
-          const usersToken = usersData[index].token;
-
-          reviewsData.forEach((item, index) => {
-            const reviewsToken = reviewsData[index].token;
-
-            if (usersToken === reviewsToken && item.restaurants.length > 1) {
-              reviewsData[index].restaurants
-                .slice()
-                .reverse()
-                .forEach((item) => {
-                  renderReviewCardPhoto(reviewList, item);
-                });
-            } else {
-              renderEmptySvg(reviewList);
-            }
-          });
-        });
-      } catch (err) {
-        renderEmptySvg(reviewList);
-      }
-    }
+  if (checkHasClass(buttonAll, '-text--lion-black')) {
+    renderReviewListAll();
+  } else if (checkHasClass(buttonPhoto, '-text--lion-black')) {
+    renderReviewListPhoto();
   }
 }
 
@@ -275,24 +199,49 @@ async function renderReviewListPhoto() {
         loadingSpinner.remove();
       },
     });
-    clearContents(reviewList);
+
     const users = await tiger.get('http://localhost:3000/users');
     const response = await tiger.get('http://localhost:3000/reviews');
     const usersData = users.data;
     const reviewsData = response.data;
-    usersData.forEach((item, index) => {
-      const usersToken = usersData[index].token;
 
-      reviewsData.forEach((item, index) => {
-        const reviewsToken = reviewsData[index].token;
+    const hasNewFirst = checkHasClass(arrangeNew, 'order-first');
+    const hasViewsFirst = checkHasClass(arrangeViews, 'order-first');
 
-        if (usersToken === reviewsToken && item.restaurants.length > 1) {
-          reviewsData[index].restaurants.forEach((item) => {
-            renderReviewCardPhoto(reviewList, item);
-          });
-        } 
+    if (hasNewFirst) {
+      usersData.forEach((item, index) => {
+        const usersToken = usersData[index].token;
+
+        reviewsData.forEach((item, index) => {
+          const reviewsToken = reviewsData[index].token;
+
+          if (usersToken === reviewsToken && item.restaurants.length > 1) {
+            reviewsData[index].restaurants.forEach((item) => {
+              renderReviewCardPhoto(reviewList, item);
+              reviewSlide.slideTo(0);
+            });
+          }
+        });
       });
-    });
+    } else if (hasViewsFirst) {
+      usersData.forEach((item, index) => {
+        const usersToken = usersData[index].token;
+
+        reviewsData.forEach((item, index) => {
+          const reviewsToken = reviewsData[index].token;
+
+          if (usersToken === reviewsToken && item.restaurants.length > 1) {
+            reviewsData[index].restaurants
+              .slice()
+              .reverse()
+              .forEach((item) => {
+                renderReviewCardPhoto(reviewList, item);
+              });
+            reviewSlide.slideTo(0);
+          }
+        });
+      });
+    }
   } catch (err) {
     renderEmptySvg(reviewList);
   }
@@ -317,21 +266,47 @@ async function renderReviewListAll() {
     const usersData = users.data;
     const reviewsData = response.data;
 
-    usersData.forEach((item, index) => {
-      const usersToken = usersData[index].token;
+    const hasNewFirst = checkHasClass(arrangeNew, 'order-first');
+    const hasViewsFirst = checkHasClass(arrangeViews, 'order-first');
 
-      reviewsData.forEach((item, index) => {
-        const reviewsToken = reviewsData[index].token;
+    if (hasNewFirst) {
+      usersData.forEach((item, index) => {
+        const usersToken = usersData[index].token;
 
-        if (usersToken === reviewsToken && item.restaurants.length > 1) {
-          reviewsData[index].restaurants.forEach((item) => {
-            renderReviewCardAll(reviewList, item);
-          });
-        } else {
-          renderEmptySvg(reviewList);
-        }
+        reviewsData.forEach((item, index) => {
+          const reviewsToken = reviewsData[index].token;
+
+          if (usersToken === reviewsToken && item.restaurants.length > 1) {
+            reviewsData[index].restaurants.forEach((item) => {
+              renderReviewCardAll(reviewList, item);
+              reviewSlide.slideTo(0);
+            });
+          } else {
+            renderEmptySvg(reviewList);
+          }
+        });
       });
-    });
+    } else if (hasViewsFirst) {
+      usersData.forEach((item, index) => {
+        const usersToken = usersData[index].token;
+
+        reviewsData.forEach((item, index) => {
+          const reviewsToken = reviewsData[index].token;
+
+          if (usersToken === reviewsToken && item.restaurants.length > 1) {
+            reviewsData[index].restaurants
+              .slice()
+              .reverse()
+              .forEach((item) => {
+                renderReviewCardAll(reviewList, item);
+                reviewSlide.slideTo(0);
+              });
+          } else {
+            renderEmptySvg(reviewList);
+          }
+        });
+      });
+    }
   } catch (err) {
     renderEmptySvg(reviewList);
   }
