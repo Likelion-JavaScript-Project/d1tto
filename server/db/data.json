@@ -34,6 +34,27 @@
       "name": "asdf",
       "email": "asdf@asdfasdf",
       "pw": "asdfasdf!"
+    },
+    {
+      "id": "6",
+      "token": "5842a36cb2644",
+      "name": "d1tto",
+      "email": "asdf@asdfasdf",
+      "pw": "asdfasdf!"
+    },
+    {
+      "id": "7",
+      "token": "f7a34fa3e1da",
+      "name": "lion",
+      "email": "asdf@asdfasdf",
+      "pw": "asdfasdf!"
+    },
+    {
+      "id": "8",
+      "token": "7f67440a5ec7d",
+      "name": "happylion",
+      "email": "asdf@adsfasdf",
+      "pw": "asdfasdf!"
     }
   ],
   "reviews": [
@@ -186,17 +207,23 @@
     {
       "id": 2,
       "token": "ceca1a1f950fb",
-      "restaurants": [{}]
+      "restaurants": [
+        {}
+      ]
     },
     {
       "id": 3,
       "token": "4cca95d5a8386",
-      "restaurants": [{}]
+      "restaurants": [
+        {}
+      ]
     },
     {
       "id": 4,
       "token": "b24582dab4219",
-      "restaurants": [{}]
+      "restaurants": [
+        {}
+      ]
     }
   ],
   "interests": [

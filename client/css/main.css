@@ -933,6 +933,10 @@ html {
   margin-top: 100.21px;
 }
 
+.mt-\[100px\] {
+  margin-top: 100px;
+}
+
 .mt-\[10px\] {
   margin-top: 10px;
 }
@@ -963,18 +967,6 @@ html {
 
 .mt-\[9px\] {
   margin-top: 9px;
-}
-
-.mt-\[100px\] {
-  margin-top: 100px;
-}
-
-.mb-\[67px\] {
-  margin-bottom: 67px;
-}
-
-.mb-\[200px\] {
-  margin-bottom: 200px;
 }
 
 .box-border {
@@ -1539,20 +1531,8 @@ html {
   background-image: url('../assets/icons/icon/call_reviewSelect.svg');
 }
 
-.bg-\[url\(\'\.\.\/assets\/images\/yedam_review\.jpg\'\)\] {
-  background-image: url('../assets/images/yedam_review.jpg');
-}
-
 .bg-\[url\(\'\/assets\/images\/yedam_review\.jpg\'\)\] {
   background-image: url('/assets/images/yedam_review.jpg');
-}
-
-.bg-\[url\(\'\$\{image\}\'\)\] {
-  background-image: url('${image}');
-}
-
-.bg-\[url\(\$\{image\}\)\] {
-  background-image: url(${image});
 }
 
 .bg-cover {
@@ -1708,6 +1688,10 @@ html {
   padding-bottom: 52px;
 }
 
+.pb-\[67px\] {
+  padding-bottom: 67px;
+}
+
 .pb-\[6px\] {
   padding-bottom: 6px;
 }
@@ -1762,14 +1746,6 @@ html {
 
 .pt-\[62px\] {
   padding-top: 62px;
-}
-
-.pb-\[200px\] {
-  padding-bottom: 200px;
-}
-
-.pb-\[67px\] {
-  padding-bottom: 67px;
 }
 
 .text-center {
