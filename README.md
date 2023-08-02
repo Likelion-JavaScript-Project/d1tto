@@ -15,7 +15,7 @@
 2. <a href="#a2">관심지역 설정</a>
 3. <a href="#a3">방문 탭</a>
 4. <a href="#a4">리뷰 탭</a>
-   > <a href="#a1">➡️ 테마 추가하기</a>
+   > ➡️ 테마 추가하기
 5. <a href="#a3">지도 페이지</a>
 
 - 기간 : 2023 / 07 / 23 ~ 2023 / 08 / 02
@@ -27,19 +27,58 @@
 #### 조장
 
 - 김다연 : <a>https://github.com/dani-day</a>
-  <br> ➡️ 메인 페이지 | 로그인 페이지 | 회원가입 페이지 | 테마 추가하기 페이지
+
+  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white" height="30px"> <img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white" height="30px"> <img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" height="30px">
+
+  👉 메인 페이지 | 로그인 페이지 | 회원가입 페이지 | 테마 추가하기 페이지 | 방문 탭 | 관심지역 설정
+
+  <br>
+
+  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" height="30px">
+
+  👉 메인 페이지 | 로그인 페이지 | 회원가입 페이지 | 테마 추가하기 페이지
 
 #### 스크럼 마스터
 
 - 김경아 : <a>https://github.com/201810902</a>
-  <br> ➡️ 지도 페이지 / 방문 탭
+
+  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white" height="30px"> <img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white" height="30px"> <img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" height="30px"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" height="30px">
+
+  👉 지도 페이지
+
+  <br>
+
+  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" height="30px">
+
+  👉 방문 탭
 
 #### 팀원
 
 - 이준석 : <a>https://github.com/ljunseok0514</a>
-  <br> ➡️ 공통 Header, 하단 Navigation | 관심지역 설정
+
+  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white" height="30px"> <img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white" height="30px"> <img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" height="30px">
+
+  👉 공통 Header, 하단 Navigation
+
+  <br>
+
+  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" height="30px">
+
+  👉 관심지역 설정
+
+<br>
+
 - 김태일 : <a>https://github.com/seumomo</a>
-  <br> ➡️ 리뷰 탭
+
+  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white" height="30px"> <img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white" height="30px"> <img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" height="30px"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" height="30px">
+
+  👉 리뷰 탭
+
+  <br>
+
+  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" height="30px">
+
+  👉 공통 Header, 하단 Navigation
 
 ## 프로젝트 진행 시 준수사항
 
@@ -74,22 +113,18 @@
 
 ## 환경
 
-<div align="center"><img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
-<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"><img src="https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"></div>
-
+<img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
 ## 사용 기술
 
-<div align="center">
   <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
   <img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
   <img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white">
   <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-  
-</div>
 
 ## 소통
 
-<div align="center"><img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=black"></div>
+<img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=black">
 
 # 시작 가이드
 
@@ -102,7 +137,7 @@
 * `prettier` ➡️ 3.0.0
 * `prettier-plugin-tailwindcss` ➡️ 0.4.1
 * `tailwindcss` ➡️ 3.3.3
-  => `npm i`
+  👉 `npm i`
 
 ## 결과물
 
@@ -140,10 +175,18 @@
   ➡️ 회원가입 완료 시, 해당 아이디의 고유한 `token` 생성됨
   ➡️ `token과` 함께 회원정보 `data.json`에 저장됨
   ➡️ 모두 완료 시, 로그인 페이지로 이동
+
+<div align="center">
+
+![login](https://github.com/Likelion-JavaScript-Project/d1tto/assets/127176650/afa7d7d8-ae91-447e-978c-dcec39447bfd)
+
+</div>
+
 - 로그인
   ➡️ 아이디 및 비밀번호 입력칸이 공란이 아닐 경우, 로그인 버튼 활성화
   ➡️ 로그인 버튼 클릭 시 `json` 데이터 활용하여 아이디, 비밀번호 확인
   ➡️ 로그인 성공한 경우, 해당 계정의 고유 `token을` `localStorage에` 저장
+
 - 자동로그인 & 로그아웃
   ➡️ `localStorage`에 고유 `token`이 있는 경우, 로그인 화면을 생략하고 자동로그인
   ➡️ 로그아웃 버튼을 클릭하면 `localStorage`의 `token` 삭제
@@ -198,7 +241,7 @@
 
 <div align="center">
   
-## <h2 id="a4">리뷰 탭</h2>
+## <h2 id="a4">리뷰 탭 | 공통 header, 하단 navigation</h2>
 
 (김태일)
 
@@ -211,7 +254,11 @@
 
 </div>
 
-- 이미지 / 리뷰, 이미지 개수 / 팔로잉 / 팔로워를 계정이 가지고 있는 데이터에 따라 랜더링 되도록 구현
+- 로그인한 User의 Data와 일치하는 정보를 랜더링
+  ➡️ `forEach` 반복문을 통해 User의 `name`, `profile image`, `review count`, `photo count`, `following`, `follower`의 `item`을 만들어 랜더링
+  👉 `review count`는 해당 User가 가지고 있는 Data의 리뷰의 수를 랜더링하도록 함
+  👉 `photo count`는 User의 리뷰 중 이미지의 경로가 존재하는 것만을 카운팅하려고 하였으나, 시간 관계상 시도하지 못함
+  👉 `following`과 `follower`는 Data에 임의의 값을 넣음
 
 <br>
 
@@ -222,7 +269,13 @@
 </div>
 
 - 페이지별로 해당하는 네비게이션의 탭에 컬러가 변경
+  ➡️ 현재 접속한 URL에 `html` 파일 명이 포함하는지의 여부를 파악하여 네비게이션의 배열의 `index`로 활용하여 스타일 적용
+
 - 다른 네비게이션의 탭을 클릭 시, 활성화돼 있던 컬러 활성화 => 클릭한 탭의 컬러 활성화
+  ➡️ 다른 탭을 클릭한 경우에 모든 탭의 스타일을 제거
+  ➡️ 클릭한 탭에 스타일을 적용
+  👉 `hover`될 때와 동일하게 `border-bottom`에도 스타일을 적용하였으나 구현되지 않는 이슈가 있음
+
 - 네비게이션 탭마다 해당하는 페이지로 이동
 
 <br>
@@ -234,6 +287,11 @@
 </div>
 
 - 리뷰 / 테마 리스트 계정별로 랜더링
+  ➡️ User의 Data와 localStorage의 `token`을 일치하는지 비교하여 해당하는 Data를 랜더링함
+  ➡️ 로그인 한 ID의 Data의 `name`을 가져와 `name`의 맛집 리스트라는 테마를 기본적으로 출력되도록 함
+  👉 해당 ID의 `keywords`가 12개가 넘으면 `수정하기`를 랜더링하고, 그렇지 않으면 `임시저장`이 랜더링되도록 함
+  👉 해당 ID의 리뷰가 3개 이상 있다면, 배경에 이미지 1개, 작은 이미지 2개를 랜더링, 그렇지 않으면 배경과 작은 이미지 각 1개를 랜더링되도록 함
+  👉 조회수는 `Math.random()`을 이용하여 100 이하의 난수를 생성하여 랜더링함
 
 <br>
 
@@ -245,8 +303,17 @@
 </div>
 
 - 정렬방법을 바꿀 수 있는 드롭다운 메뉴 추가(드롭다운 외부 영역을 클릭해도 메뉴가 닫힘)
+  ➡️ 처음엔 `hidden`을 이용하였으나 `transition`이 적용되지 않는 이슈가 있어 `invisible`을 사용함
+  ➡️ `body`에 이벤트를 부여하고, 위임을 이용하여 드롭다운 메뉴가 아니면 드롭다운 메뉴가 닫히도록 함
+  👉 예상하지 못한 `span` 요소에서 리뷰 목록이 리랜더링 되는 이벤트가 발생하였는데, `body`에 적용된 이벤트 때문이었음
+  👉 이유는 찾지 못하였으나, 리랜더링을 유발하는 모든 요소에 `stopPropagation`과 `preventDefault`를 적용하여 리랜더링을 방지함
+
 - 정렬방법 변경 시 리랜더링
+  ➡️ 정렬방법을 변경하였을 때, 하단으로 슬라이드 되었을 때 상단으로 올라가지 않는 이슈가 발생함
+  👉 `swiper`의 `slideTo(0)` 메소드를 활용하여 리랜더링 되었을 때 상단으로 위치하도록 함
 - 전체 / 사진 보기 모드별로 랜더링(정렬방법 유지)
+  ➡️ 정렬방법을 바꾼 상태에서 모드를 변경하였을 때에 기본값인 최신순으로 리랜더링 되는 이슈가 발생함
+  👉 모드 변경 버튼이 클릭되었을 때 조건문을 사용하여 어떤 값이 `order-first`를 가지는지 찾아 해당하는 방법으로 리랜더링되도록 함
 
 ---
 
