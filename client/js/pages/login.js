@@ -78,7 +78,7 @@ async function handleLogin(e) {
   idPwCheck().then(() => {
     if (loginCheckResult === 'true') {
       tokenPass().then(() => {
-        window.location.href = '../pages/review.html';
+        window.location.href = '../pages/theme.html';
       });
     } else {
       alert('아이디 또는 비밀번호가 일치하지 않습니다.');

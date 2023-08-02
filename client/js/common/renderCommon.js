@@ -1,4 +1,4 @@
-import { insertLast, tiger } from '../../lib/index.js';
+import { insertLast } from '../../lib/index.js';
 
 function createUserData({
   id = '',

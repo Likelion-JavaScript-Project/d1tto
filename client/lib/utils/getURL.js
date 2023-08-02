@@ -7,7 +7,7 @@ export function getURL() {
   if (URL.includes('visited')) {
     return 1;
   }
-  if (URL.includes('review')) {
+  if (URL.includes('theme')) {
     return 2;
   }
   if (URL.includes('reservation')) {

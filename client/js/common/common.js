@@ -11,6 +11,7 @@ import { renderUserData } from './renderCommon.js';
 const userTemplate = getNode('.userTemplate');
 const coupon = getNode('.coupon');
 const headerNavigation = getNode('.headerNav__list');
+const footerNav__list = getNode('.footerNav__list');
 
 function defaultNavigationColor() {
   let tab = headerNavigation.children[getURL()];
@@ -38,6 +39,17 @@ function changeNavigationColor(e) {
   addClass(target, '-border--lion-lightblue-300');
   addClass(target, '-text--lion-lightblue-300');
 }
+
+// function handelPageToMap(e) {
+//   const target = e.target.closest('li');
+//   if (!target) {
+//     return;
+//   }
+//   const NavigationMap = getNode('.footer__item');
+//   if (target === NavigationMap) {
+//     location.href('')
+//   }
+// }
 
 async function renderingData() {
   const users = await tiger.get('http://localhost:3000/users');
@@ -72,6 +84,7 @@ coupon.addEventListener('click', (e) => {
   e.preventDefault();
 });
 headerNavigation.addEventListener('click', changeNavigationColor);
+// footerNav__list.addEventListener('click', handelPageToMap);
 
 setTimeout(() => {
   document.querySelector('.footerNav__list').addEventListener('click', (e) => {
@@ -103,4 +116,4 @@ setTimeout(() => {
     e.stopPropagation();
     e.preventDefault();
   });
-}, 300);
+}, 400);
