@@ -90,7 +90,7 @@ async function autoLogin(e) {
   e.preventDefault();
   const token = await loadStorage('token');
   if (token) {
-    window.location.href = '../pages/review.html';
+    window.location.href = '../pages/theme.html';
   }
 }
 
