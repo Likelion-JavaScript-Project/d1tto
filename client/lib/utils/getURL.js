@@ -1,8 +1,8 @@
 export function getURL() {
   const URL = window.location.href;
 
-  if (URL.includes('feed')) {
-    return 0;
+  if (URL.includes('interests')) {
+    return '0';
   }
   if (URL.includes('visited')) {
     return 1;

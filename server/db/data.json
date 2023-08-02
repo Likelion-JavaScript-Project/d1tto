@@ -56,6 +56,13 @@
       "name": "asdff",
       "email": "as@naver.com",
       "pw": "asdfasdf!"
+    },
+    {
+      "id": "7",
+      "token": "eb44bb08f1c9a",
+      "name": "asdfsadf",
+      "email": "aeste@naver.cm",
+      "pw": "asdasd1!"
     }
   ],
   "reviews": [
@@ -392,7 +399,7 @@
     {
       "token": "ceca1a1f950fb",
       "location": [
-        "부천 상동"
+        "부천역"
       ],
       "id": 4
     }

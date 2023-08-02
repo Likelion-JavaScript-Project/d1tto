@@ -51,7 +51,9 @@ function handelToPage(e) {
   }
   const headerNavigationItem = getNodes('.commonHeader__list');
   const footerNavigationItem = getNodes('.footer__item');
-  if (target === headerNavigationItem[1]) {
+  if (target === headerNavigationItem[0]) {
+    location.href = '../pages/interests.html';
+  } else if (target === headerNavigationItem[1]) {
     location.href = '../pages/visited.html';
   } else if (target === headerNavigationItem[2]) {
     location.href = '../pages/theme.html';
