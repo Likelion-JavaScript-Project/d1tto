@@ -145,7 +145,7 @@ email.addEventListener('input', submitActive);
 pw.addEventListener('input', submitActive);
 pwCheck.addEventListener('input', submitActive);
 form.addEventListener('submit', saveUserInfo);
-
+// submitButton.addEventListener('submit', pageToLogin)
 //---------------------------------------------------------------
 //-local data 로 처리하는 법----------------------------------------
 //---------------------------------------------------------------

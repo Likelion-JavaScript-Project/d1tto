@@ -12,5 +12,7 @@ export function getURL() {
   }
   if (URL.includes('reservation')) {
     return 3;
+  } else {
+    return;
   }
 }

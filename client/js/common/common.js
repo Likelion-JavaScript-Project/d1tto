@@ -14,10 +14,14 @@ const headerNavigation = getNode('.headerNav__list');
 const footerNav__list = getNode('.footerNav__list');
 
 function defaultNavigationColor() {
-  let tab = headerNavigation.children[getURL()];
+  if (getURL()) {
+    let tab = headerNavigation.children[getURL()];
 
-  addClass(tab, 'border-b-[2px]');
-  addClass(tab, '-text--lion-lightblue-300');
+    addClass(tab, 'border-b-[2px]');
+    addClass(tab, '-text--lion-lightblue-300');
+  } else {
+    return;
+  }
 }
 defaultNavigationColor();
 
@@ -40,16 +44,23 @@ function changeNavigationColor(e) {
   addClass(target, '-text--lion-lightblue-300');
 }
 
-// function handelPageToMap(e) {
-//   const target = e.target.closest('li');
-//   if (!target) {
-//     return;
-//   }
-//   const NavigationMap = getNode('.footer__item');
-//   if (target === NavigationMap) {
-//     location.href('')
-//   }
-// }
+function handelToPage(e) {
+  const target = e.target.closest('li');
+  if (!target) {
+    return;
+  }
+  const headerNavigationItem = getNodes('.commonHeader__list');
+  const footerNavigationItem = getNodes('.footer__item');
+  if (target === headerNavigationItem[1]) {
+    location.href = '../pages/visited.html';
+  } else if (target === headerNavigationItem[2]) {
+    location.href = '../pages/theme.html';
+  } else if (target === footerNavigationItem[0]) {
+    location.href = '../pages/map.html';
+  } else if (target === footerNavigationItem[4]) {
+    location.href = '../pages/visited.html';
+  }
+}
 
 async function renderingData() {
   const users = await tiger.get('http://localhost:3000/users');
@@ -69,22 +80,27 @@ async function renderingData() {
       keyToken = item.token;
     }
   });
-
-  usersData.forEach((item) => {
-    if (item.token === keyToken) {
-      item.reviews = reviewCount;
-      item.image = reviewCount;
-      renderUserData(userTemplate, item);
-    }
-  });
+  if (getURL()) {
+    usersData.forEach((item) => {
+      if (item.token === keyToken) {
+        item.reviews = reviewCount;
+        item.image = reviewCount;
+        renderUserData(userTemplate, item);
+      }
+    });
+  }
 }
 renderingData();
 
-coupon.addEventListener('click', (e) => {
-  e.preventDefault();
-});
-headerNavigation.addEventListener('click', changeNavigationColor);
-// footerNav__list.addEventListener('click', handelPageToMap);
+if (getURL()) {
+  coupon.addEventListener('click', (e) => {
+    e.preventDefault();
+  });
+  headerNavigation.addEventListener('click', changeNavigationColor);
+  headerNavigation.addEventListener('click', handelToPage);
+}
+
+footerNav__list.addEventListener('click', handelToPage);
 
 setTimeout(() => {
   document.querySelector('.footerNav__list').addEventListener('click', (e) => {
@@ -92,28 +108,30 @@ setTimeout(() => {
     e.preventDefault();
   });
 
-  document.querySelector('.coupon_count').addEventListener('click', (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-  });
-
-  document.querySelector('.userName').addEventListener('click', (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-  });
-
-  document.querySelector('.userLink').addEventListener('click', (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-  });
-
-  document.querySelector('.userInfo').addEventListener('click', (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-  });
-
-  document.querySelector('.preventEvent').addEventListener('click', (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-  });
+  if (getURL()) {
+    document.querySelector('.coupon_count').addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+    });
+    document.querySelector('.userName').addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+    });
+    document.querySelector('.userLink').addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+    });
+    document.querySelector('.userInfo').addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+    });
+    document.querySelector('.userInfoReview').addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+    });
+    document.querySelector('.preventEvent').addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+    });
+  }
 }, 400);

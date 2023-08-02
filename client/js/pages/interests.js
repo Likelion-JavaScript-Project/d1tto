@@ -60,6 +60,7 @@ async function postInterestList() {
     token: token,
     location: interestList,
   });
+  location.href = '../pages/visited.html';
 }
 
 container.addEventListener('click', handleInterest);
