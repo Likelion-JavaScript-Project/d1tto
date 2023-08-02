@@ -136,4 +136,4 @@ setTimeout(() => {
       e.preventDefault();
     });
   }
-}, 400);
+}, 1000);
