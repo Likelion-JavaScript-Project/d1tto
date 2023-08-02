@@ -534,6 +534,40 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
 html {
   font-family: Pretendard, sans-serif;
 }
@@ -604,6 +638,10 @@ html {
 
 .bottom-\[0\] {
   bottom: 0;
+}
+
+.bottom-\[81px\] {
+  bottom: 81px;
 }
 
 .left-0 {
@@ -1093,6 +1131,10 @@ html {
   height: 56px;
 }
 
+.h-\[63\.25px\] {
+  height: 63.25px;
+}
+
 .h-\[66px\] {
   height: 66px;
 }
@@ -1447,6 +1489,11 @@ html {
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
+.-border--lion-lightblue-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(170 196 250 / var(--tw-border-opacity));
+}
+
 .-border--lion-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -1493,6 +1540,10 @@ html {
 
 .bg-\[linear-gradient\(to_bottom\2c rgba\(0\2c 0\2c 0\2c 0\)\2c rgba\(255\2c 255\2c 255\2c 1\)\2c rgba\(255\2c 255\2c 255\2c 1\)\)\2c url\(\'\/assets\/images\/yedam_review\.jpg\'\)\] {
   background-image: linear-gradient(to bottom,rgba(0,0,0,0),rgba(255,255,255,1),rgba(255,255,255,1)),url('/assets/images/yedam_review.jpg');
+}
+
+.bg-\[url\(\'\.\.\/assets\/icons\/Icon\/check_interests\.svg\'\)\] {
+  background-image: url('../assets/icons/Icon/check_interests.svg');
 }
 
 .bg-\[url\(\'\.\.\/assets\/icons\/Icon\/close_interests\.svg\'\)\] {
@@ -1850,6 +1901,11 @@ html {
   color: rgb(240 63 64 / var(--tw-text-opacity));
 }
 
+.-text--lion-lightblue-300 {
+  --tw-text-opacity: 1;
+  color: rgb(170 196 250 / var(--tw-text-opacity));
+}
+
 .-text--lion-lightblue-400 {
   --tw-text-opacity: 1;
   color: rgb(141 176 249 / var(--tw-text-opacity));
@@ -1863,6 +1919,11 @@ html {
 .-text--lion-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-\[\#D1D2D6\] {
+  --tw-text-opacity: 1;
+  color: rgb(209 210 214 / var(--tw-text-opacity));
 }
 
 .text-\[\#FD8D14\] {
@@ -1894,6 +1955,14 @@ html {
 
 .review .swiper-vertical .swiper-wrapper > .swiper-slide {
   height: 138px !important;
+}
+
+.themeList .swiper-slide {
+  width: 160px;
+}
+
+.reviewList .empty-user-card {
+  height: 175px;
 }
 
 .hover\:border-b-\[2px\]:hover {

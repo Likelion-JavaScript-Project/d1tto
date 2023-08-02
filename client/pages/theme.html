@@ -9,68 +9,16 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <link rel="stylesheet" href="../css/main.css" />
     <script src="../js/pages/logout.js" type="module"></script>
-    <script src="../js/pages/review.js" type="module"></script>
-    <title>LionPlace - Review</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/common/common.js" type="module"></script>
+    <script src="../js/pages/theme.js" type="module"></script>
+    <title>LionPlace - Theme</title>
   </head>
   <body class="h-[722px] w-80 overflow-hidden">
     <header class="relative -bg--lion-primary p-5 pt-9 -text--lion-white">
       <h2 class="sr-only">헤더</h2>
-      <span class="userName -text--lion-label-medium">COOLION</span>
-      <img
-        class="userNameShare inline-block pb-[6px]"
-        src="../assets/icons/Icon/btnShare_common.svg"
-        alt="공유하기"
-      />
-      <a
-        href=""
-        class="userLink relative float-left mr-5 inline-block h-[56px] w-[56px] rounded-full border-4 border-solid border-white text-center -text--lion-label-small leading-[44px]"
-        >img
-        <img
-          src="../assets/icons/Icon/userImgPencil_common.svg"
-          alt=""
-          class="absolute bottom-[-4px] right-[-4px] rounded-full -bg--lion-white p-[4px]"
-      /></a>
-      <ul class="userInfo mb-[12px]">
-        <li
-          class="userInfo__tab userInfo__tabReview inline-block h-[37.5px] pl-[10px] text-center"
-        >
-          <a href="" class="uerInfo__title inline-block -text--lion-label-small"
-            >리뷰
-            <span class="userInfo__count userInfo__countReview block">17</span>
-          </a>
-          <span
-            class="userInfo__divider ml-[10px] inline-block h-[28px] w-[1px] -bg--lion-white"
-          ></span>
-        </li>
-        <li
-          class="userInfo__tab userInfo__tabReview inline-block h-[37.5px] pl-[10px] text-center"
-        >
-          <a href="" class="uerInfo__title inline-block -text--lion-label-small"
-            >사진 <span class="userInfo__countPicture block">19</span></a
-          ><span
-            class="userInfo__divider ml-[10px] inline-block h-[28px] w-[1px] -bg--lion-white"
-          ></span>
-        </li>
-        <li
-          class="userInfo__tab userInfo__tabReview inline-block h-[37.5px] pl-[10px] text-center"
-        >
-          <a href="" class="uerInfo__title inline-block -text--lion-label-small"
-            >팔로잉 <span class="userInfo__countFollwing block">0</span></a
-          ><span
-            class="userInfo__divider ml-[10px] inline-block h-[28px] w-[1px] -bg--lion-white"
-          ></span>
-        </li>
-        <li
-          class="userInfo__tab userInfo__tabReview inline-block h-[37.5px] pl-[10px] text-center"
-        >
-          <a href="" class="uerInfo__title inline-block -text--lion-label-small"
-            >팔로워
-            <span class="userInfo__countFollwer block">2</span>
-          </a>
-        </li>
-      </ul>
+      <div class="userTemplate h-[63.25px]"></div>
       <a
         href=""
         class="userInfoReview inline-block w-[187px] rounded-md -bg--lion-lightblue-800 py-[5.41px] text-center -text--lion-paragraph-small"
@@ -84,11 +32,6 @@
       <button
         class="userLogout userLogout box-border inline-block w-[83px] rounded-md -bg--lion-lightblue-800 py-[5.41px] text-center -text--lion-paragraph-small"
       >
-        <!-- <img
-          class="userInfoMisson__icon mr-[10px] inline-block"
-          src="../assets/icons/Icon/btnMission_common.svg"
-          alt=""
-        /> -->
         로그아웃
       </button>
       <a
@@ -96,7 +39,7 @@
         class="coupon absolute right-[20px] top-[11.5px] rounded-[4px] border border-solid border-white pl-[4.5px] pr-[4.5px] -text--lion-paragraph-small"
         >쿠폰
         <span
-          class="coupun_count absolute top-[-6px] h-[12px] w-[12px] rounded-[50px] -bg--lion-white text-center -text--lion-paragraph-small leading-3 -text--lion-primary"
+          class="coupon_count absolute top-[-6px] h-[12px] w-[12px] rounded-[50px] -bg--lion-white text-center -text--lion-paragraph-small leading-3 -text--lion-primary"
           >1</span
         ></a
       >
@@ -107,22 +50,22 @@
         class="headerNav__list flex justify-around -bg--lion-primary -text--lion-white"
       >
         <li
-          class="headerNav__item border-b-[2px] border-transparent px-[7px] -text--lion-contents-content-tertiary hover:border-b-[2px] hover:-border--lion-lightblue-300 hover:-text--lion-lightblue-300"
+          class="commonHeader__list headerNav__item border-b-[2px] border-transparent px-[7px] -text--lion-contents-content-tertiary hover:border-b-[2px] hover:-border--lion-lightblue-300 hover:-text--lion-lightblue-300"
         >
           <a href="" class="headerNav__item headerNav__item__feed">피드</a>
         </li>
         <li
-          class="headerNav__item border-b-[2px] border-transparent px-[7px] -text--lion-contents-content-tertiary hover:border-b-[2px] hover:-border--lion-lightblue-300 hover:-text--lion-lightblue-300"
+          class="commonHeader__list headerNav__item border-b-[2px] border-transparent px-[7px] -text--lion-contents-content-tertiary hover:border-b-[2px] hover:-border--lion-lightblue-300 hover:-text--lion-lightblue-300"
         >
           <a href="" class="headerNav__item headerNav__item__visit">방문</a>
         </li>
         <li
-          class="headerNav__item border-b-[2px] border-transparent px-[7px] -text--lion-contents-content-tertiary hover:border-b-[2px] hover:-border--lion-lightblue-300 hover:-text--lion-lightblue-300"
+          class="commonHeader__list headerNav__item border-b-[2px] border-transparent px-[7px] -text--lion-contents-content-tertiary hover:border-b-[2px] hover:-border--lion-lightblue-300 hover:-text--lion-lightblue-300"
         >
           <a href="" class="headerNav__item headerNav__item__review">리뷰</a>
         </li>
         <li
-          class="headerNav__item border-b-[2px] border-transparent px-[7px] -text--lion-contents-content-tertiary hover:border-b-[2px] hover:-border--lion-lightblue-300 hover:-text--lion-lightblue-300"
+          class="commonHeader__list headerNav__item border-b-[2px] border-transparent px-[7px] -text--lion-contents-content-tertiary hover:border-b-[2px] hover:-border--lion-lightblue-300 hover:-text--lion-lightblue-300"
         >
           <a href="" class="headerNav__item headerNav__item__book"
             >예약&#183;주문</a
@@ -134,16 +77,17 @@
       <section class="-bg--lion-gray-100 px-1.5 pb-8 pt-2">
         <h1 class="sr-only">리뷰 테마 만들기</h1>
 
-        <div class="p-1">
+        <div class="preventEvent p-1">
           <h2 class="sr-only">저장된 테마 목록</h2>
-          <span class="inline font-semibold">테마</span>
-          <span class="font-semibold -text--lion-contents-content-secondary"
+          <span class="preventEvent inline font-semibold">테마</span>
+          <span
+            class="preventEvent font-semibold -text--lion-contents-content-secondary"
             >1<span class="sr-only">개 저장 중</span></span
           >
         </div>
 
         <div class="swiper swiperTheme">
-          <ul class="swiper-wrapper mt-3">
+          <ul class="swiper-wrapper themeList mt-3">
             <li class="swiper-slide relative">
               <a
                 href=""
@@ -154,7 +98,7 @@
                   >임시저장</span
                 >
                 <div class="absolute ml-[9px] mt-[65px]">
-                  <span class="saveTheme__title block font-semibold"
+                  <span class="saveTheme__title block font-bold"
                     >맛집 리스트</span
                   >
                   <div class="flex items-center gap-x-[3px]">
@@ -183,10 +127,10 @@
               </a>
             </li>
 
-            <li class="swiper-slide">
+            <li class="makeThemeButton swiper-slide">
               <a
                 href=""
-                class="makeThemeButton flex h-[184px] w-[148px] flex-col items-center justify-center gap-y-[14px] rounded-xl -bg--lion-white"
+                class="makeThemeButton__link flex h-[184px] w-[148px] flex-col items-center justify-center gap-y-[14px] rounded-xl -bg--lion-white"
               >
                 <svg aria-hidden="true" class="h-[46px] w-[46px]">
                   <use xlink:href="#addtheme-review-default"></use>
@@ -228,7 +172,7 @@
           </div>
 
           <div
-            class="changeArrangeButton absolute right-3 top-2 z-10 w-[72px] rounded-[10px] -bg--lion-primary"
+            class="buttonChangeArrange absolute right-3 top-2 z-10 w-[72px] rounded-[10px] -bg--lion-primary"
           >
             <button
               aria-label="정렬 기준 변경"

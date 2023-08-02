@@ -1,4 +1,60 @@
-import { insertLast } from './insert.js';
+import { insertFirst, insertLast } from './insert.js';
+
+function createReviewTheme({
+  id = '',
+  isSave = '',
+  themeName = '',
+  listCount = '',
+  viewsCount = '',
+  image1 = '/assets/images/likeLion_common.png',
+  image2 = '/assets/images/likeLion_common.png',
+  image3 = '/assets/images/likeLion_common.png',
+}) {
+  const template = /* html */ `
+  <li class="swiper-slide relative" data-index= "${id}">
+  <a
+    href=""
+    class="saveTheme block h-[184px] w-[148px] rounded-xl bg-cover" style="background-image: linear-gradient(to bottom,rgba(0,0,0,0),rgba(255,255,255,1),rgba(255,255,255,1)),url(${image1});">
+    <span
+      class="saveDraft absolute ml-[9px] mt-[9px] rounded-[4px] -bg--lion-white px-1 text-[12.003px] font-semibold -text--lion-contents-content-secondary"
+      >${isSave}</span
+    >
+    <div class="absolute ml-[9px] mt-[65px]">
+      <span class="saveTheme__title block font-bold"
+        >${themeName}</span
+      >
+      <div class="flex items-center gap-x-[3px]">
+        <span class="text-[12.003px] font-semibold">장소</span>
+        <span
+          class="saveTheme__placeCount text-[12.003px] font-semibold"
+          >${listCount}</span
+        >
+        <svg aria-hidden="true" class="h-3 w-3">
+          <use xlink:href="#views-review"></use>
+        </svg>
+        <span class="sr-only">조회 수</span>
+        <span class="saveTheme__views text-[12.003px] font-semibold"
+          >${viewsCount}</span
+        >
+      </div>
+    </div>
+    <ul class="absolute bottom-3.5 left-[9px] flex gap-x-0.5">
+      <li
+        class="h-[42px] w-[42px] rounded-[4px] bg-cover" style="background-image: url(${image2})"
+      ></li>
+      <li
+        class="h-[42px] w-[42px] rounded-[4px] bg-cover" style="background-image: url(${image3})"
+      ></li>
+    </ul>
+  </a>
+</li>
+  `;
+
+  return template;
+}
+export function renderReviewTheme(target, data) {
+  insertFirst(target, createReviewTheme(data));
+}
 
 function createReviewCardPhoto({
   id = '',
@@ -6,7 +62,7 @@ function createReviewCardPhoto({
   address = '',
   url = '',
   like = false,
-  image = '',
+  image = '/assets/images/likeLion_common.png',
 }) {
   if (like === true) {
     like = 'clicked';
@@ -23,10 +79,9 @@ function createReviewCardPhoto({
       class="relative block bg-cover h-[138px] w-[145px] rounded-[3px] p-2"
       style="background-image: url('${image}')"
     >
-      <span aria-label="상단 고정 핀" class="absolute right-1.5 h-6 w-6">
+      <span aria-label="상단 고정 핀" class="pinButton absolute right-1.5 h-6 w-6">
         <svg aria-hidden="true" class="absolute right-0 top-0 h-6 w-6">
           <use
-            class="pinButton"
             xlink:href="#favorite-review-${like}"
           ></use>
         </svg>
@@ -51,24 +106,14 @@ export function renderReviewCardPhoto(target, data) {
   insertLast(target, createReviewCardPhoto(data));
 }
 
-function createReviewCardAll({
+function createReviewCarText({
   id = '',
   name = '',
   address = '',
   url = '',
   keywords = '',
+  remainKeywords = '',
 }) {
-  keywords = Object.values(keywords);
-  let remainKeywords;
-  if (keywords.length > 1) {
-    keywords = keywords[0];
-    remainKeywords = `+ ${Number(keywords.length - 1)}`;
-  } else if (keywords.length === 1) {
-    keywords = keywords[0];
-  } else {
-    keywords = '';
-  }
-
   const template = /* html */ `
   <li data-index=${id} class="swiper-slide h-[138px] w-[145px]">
     <a
@@ -95,16 +140,15 @@ function createReviewCardAll({
 
   return template;
 }
-
-export function renderReviewCardAll(target, data) {
-  insertLast(target, createReviewCardAll(data));
+export function renderReviewCardText(target, data) {
+  insertLast(target, createReviewCarText(data));
 }
 
 function createSpinner(loadingMessage = '리뷰 가져오는 중...') {
   return /* html */ `
   <figure class="loadingSpinner">
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-    style="margin:auto;background:#fff;display:block;" width="300px" height="424px" viewBox="0 0 100 200"
+    style="margin:auto;background:#fff;display:block;" width="300px" height="150px" viewBox="0 0 100 100"
     preserveAspectRatio="xMidYMid">
     <circle cx="30" cy="50" fill="#e90c59" r="20">
       <animate attributeName="cx" repeatCount="indefinite" dur="1s" keyTimes="0;0.5;1" values="30;70;30"
@@ -122,21 +166,20 @@ function createSpinner(loadingMessage = '리뷰 가져오는 중...') {
         repeatCount="indefinite"></animate>
     </circle>
   </svg>
-  <figcaption class= "text-center left-[31%] top-48 -text--lion-info-error absolute">${loadingMessage}</figcaption>
+  <figcaption class= "text-center -text--lion-info-error">${loadingMessage}</figcaption>
 </figure>
   `;
 }
-
 export function renderSpinner(target) {
   insertLast(target, createSpinner());
 }
 
 function createEmptySvg(
-  ErrorMessage = '리뷰가 존재하지 않습니다.\n리뷰를 남겨보세요.'
+  ErrorMessage = '리뷰가 존재하지 않습니다😫 리뷰를 남겨보세요.'
 ) {
   return /* html */ `
   <figure class="empty-user-card">
-    <svg width="270px" height="200px" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="300px" height="150px" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M180 100C180 111.881 177.405 123.168 172.746 133.308C160.119 160.865 132.292 180 100 180C67.7081 180 39.8811 160.865 27.2541 133.308C22.5946 123.168 20 111.881 20 100C20 55.8162 55.8162 20 100 20C144.184 20 180 55.8162 180 100Z" fill="#F4F7FC"/>
       <mask id="mask0_50_2137" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="20" y="20" width="160" height="160">
       <path d="M180 100C180 111.881 177.405 123.168 172.746 133.308C160.119 160.865 132.292 180 100 180C67.7081 180 39.8811 160.865 27.2541 133.308C22.5946 123.168 20 111.881 20 100C20 55.8162 55.8162 20 100 20C144.184 20 180 55.8162 180 100Z" fill="#F4F7FC"/>
@@ -175,7 +218,6 @@ function createEmptySvg(
   </figure>
   `;
 }
-
 export function renderEmptySvg(target) {
   insertLast(target, createEmptySvg());
 }

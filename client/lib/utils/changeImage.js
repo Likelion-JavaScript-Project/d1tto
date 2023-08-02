@@ -1,6 +1,13 @@
 import { attr } from '../dom/attr.js';
 import { typeError } from '../error/typeError.js';
 
+/**
+ * 해당하는 icon의 파일 명을 2번째 인수에서 3번째 인수로 변환시키는 함수
+ * @param {*} icon
+ * @param {*} beforeName
+ * @param {*} AfterName
+ * @returns
+ */
 export function changeImageName(icon, beforeName, AfterName) {
   if (typeof icon === 'string') {
     typeError(
@@ -20,6 +27,13 @@ export function changeImageName(icon, beforeName, AfterName) {
   return attr(icon, 'xlink:href', result);
 }
 
+/**
+ * 해당하는 icon의 파일 명에 2번째 인수가 포함된다면 3번째 인수로, 3번째 인수가 포함된다면 2번째 인수로 변환시키는 함수
+ * @param {*} icon
+ * @param {*} beforeName
+ * @param {*} AfterName
+ * @returns
+ */
 export function changeClickImageName(icon, beforeName, AfterName) {
   if (typeof icon === 'string') {
     typeError(
