@@ -5,7 +5,7 @@ import { renderReviewList } from '../../lib/dom/renderReviewList.js';
 
 const reviewListTarget = getNode('.reviewList');
 
-async function RenderReviewData() {
+async function renderReviewData() {
   const users = await tiger.get('http://localhost:3000/users');
   const response = await tiger.get('http://localhost:3000/reviews');
   const usersData = users.data;
@@ -31,4 +31,4 @@ async function RenderReviewData() {
   });
 }
 
-window.addEventListener('DOMContentLoaded', RenderReviewData);
+window.addEventListener('DOMContentLoaded', renderReviewData);
