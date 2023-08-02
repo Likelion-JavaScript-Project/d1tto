@@ -6,3 +6,4 @@ export * from './typeOf.js';
 export * from './tiger.js';
 export * from './storage.js';
 export * from './changeImage.js';
+export * from './getURL.js';
