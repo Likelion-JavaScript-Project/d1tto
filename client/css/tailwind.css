@@ -17,3 +17,11 @@
 .review .swiper-vertical .swiper-wrapper > .swiper-slide {
   @apply h-[138px] !important;
 }
+
+.themeList .swiper-slide {
+  @apply w-[160px];
+}
+
+.reviewList .empty-user-card {
+  @apply h-[175px];
+}
