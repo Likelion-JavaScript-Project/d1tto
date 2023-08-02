@@ -49,6 +49,20 @@
       "profileImage": "/assets/images/likeLion_common.png",
       "following": "0",
       "follower": "0"
+    },
+    {
+      "id": "6",
+      "token": "539860060d98c",
+      "name": "asdff",
+      "email": "as@naver.com",
+      "pw": "asdfasdf!"
+    },
+    {
+      "id": "7",
+      "token": "eb44bb08f1c9a",
+      "name": "asdfsadf",
+      "email": "aeste@naver.cm",
+      "pw": "asdasd1!"
     }
   ],
   "reviews": [
@@ -366,13 +380,10 @@
   "interests": [
     {
       "token": "5c542cf3e0f0a",
-      "location": ["부천역"],
+      "location": [
+        "부천역"
+      ],
       "id": 1
-    },
-    {
-      "token": "ceca1a1f950fb",
-      "location": ["홍대입구역", "합정역"],
-      "id": 2
     },
     {
       "token": "4cca95d5a8386",
@@ -384,6 +395,13 @@
         "망원 한강공원"
       ],
       "id": 3
+    },
+    {
+      "token": "ceca1a1f950fb",
+      "location": [
+        "부천역"
+      ],
+      "id": 4
     }
   ],
   "visited": [

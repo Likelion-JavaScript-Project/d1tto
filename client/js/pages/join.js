@@ -119,6 +119,7 @@ async function saveUserInfo(e) {
       });
       alert('회원가입이 완료되었습니다!');
       clearJoinContents('success');
+      location.href = '../pages/login.html';
     } else {
       clearJoinContents('fail');
     }
@@ -166,7 +167,7 @@ email.addEventListener('input', submitActive);
 pw.addEventListener('input', submitActive);
 pwCheck.addEventListener('input', submitActive);
 form.addEventListener('submit', saveUserInfo);
-
+// submitButton.addEventListener('submit', pageToLogin)
 //---------------------------------------------------------------
 //-local data 로 처리하는 법----------------------------------------
 //---------------------------------------------------------------

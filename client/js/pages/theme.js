@@ -79,7 +79,7 @@ function handleTheme(e) {
       addClass(makeThemeButtonText, '-text--lion-gray-300');
 
       changeImageName(icon, 'clicked', 'default');
-      // location.href = 'https://www.naver.com';
+      location.href = '../pages/reviewSelect.html';
     }, 300);
   }
 }

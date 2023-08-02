@@ -23,7 +23,6 @@ async function renderReviewData() {
             item.month = date.slice(5, 7);
             item.day = date.slice(8, 10);
             renderReviewList(reviewListTarget, item);
-            console.log(item);
           });
         }
       });
