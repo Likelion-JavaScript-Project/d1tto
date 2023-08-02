@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/pages/reviewSelect.js" type="module"></script>
+    <title>LionPlace - Review</title>
+  </head>
+  <body class="-bg--lion-gray-100">
+    <div class="pageWrapper relative">
+      <div class="headerWrapper fixed top-0 z-10">
+        <div
+          class="titelWrapper relative h-[56px] w-[320px] -bg--lion-white px-2 pb-3 pt-4"
+        >
+          <h1 class="title block text-center">리뷰 선택</h1>
+          <a
+            href="../pages/review.html"
+            class="back absolute left-2 top-3 h-8 w-8 bg-[url('../assets/icons/Icon/left_reviewSelect.svg')] bg-cover"
+          ></a>
+          <a
+            href="../pages/review.html"
+            class="close absolute left-[288px] top-4 h-6 w-6 bg-[url('../assets/icons/Icon/close_reviewSelect.svg')] bg-cover"
+          ></a>
+        </div>
+        <div
+          class="filterWrapper relative h-[42px] w-[320px] -bg--lion-gray-100 py-3 pb-3 pt-2"
+        >
+          <button class="totalList relative ml-4 -text--lion-label-small">
+            <img
+              class="py1 not-sr-only absolute left-0 mr-2 inline-block h-[18px] w-[18px] px-1 py-1"
+              src="../assets/icons/Icon/burger_reviewSelect.svg"
+              alt=""
+            />
+            <span class="totalList__name pl-[20px]">전체</span>
+          </button>
+          <button
+            class="photos relative -text--lion-label-small -text--lion-contents-content-tertiary"
+          >
+            <img
+              class="not-sr-only absolute left-0 top-[2px] mr-2 inline-block h-[18px] w-[18px]"
+              src="../assets/icons/Icon/photo_reviewSelect.png"
+              alt=""
+            /><span class="photos__name pl-[20px]">사진</span>
+          </button>
+          <ul
+            class="absolute left-[250px] top-1 mr-4 h-[28px] overflow-hidden -bg--lion-gray-100 pt-2 -text--lion-label-small -text--lion-contents-content-secondary filter"
+          >
+            <li class="filter__latest inline-block -bg--lion-gray-100">
+              최신순
+              <span
+                ><img
+                  class="not-sr-only inline-block h-[18px] w-[18px]"
+                  src="../assets//icons/Icon/down_reviewSelect.svg"
+                  alt=""
+              /></span>
+            </li>
+            <li class="filter__mostPopular -bg--lion-gray-100">인기순</li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="reviewListwrapper mt-[100px] h-[560px] w-[320px] -bg--lion-gray-100 px-[15px] py-2"
+      >
+        <ul class="reviewList pb-[67px]"></ul>
+      </div>
+    </div>
+    <nav class="footerNav fixed bottom-[0] w-[100%]">
+      <h2 class="footerNav__title sr-only">하단 내비게이션</h2>
+      <ul class="footerNav__list flex h-[67px] justify-around -bg--lion-white">
+        <li
+          class="footer__item flex items-center border-t-[2px] border-transparent px-[7px] hover:border-t-[2px] hover:-border--lion-black"
+        >
+          <a href="" class="footerNav__item__link"
+            ><div class="footerNav__item__wrapper flex h-[24px] items-center">
+              <img
+                src="../assets/icons/Icon/btnMap_common.svg"
+                alt=""
+                class="footerNav__item__icon mx-[auto]"
+              />
+            </div>
+            <span class="footerNav__item__title">지도</span></a
+          >
+        </li>
+        <li
+          class="footer__item flex items-center border-t-[2px] border-transparent px-[7px] hover:border-t-[2px] hover:-border--lion-black"
+        >
+          <a href="" class="footerNav__item__link"
+            ><div class="footerNav__item__wrapper flex h-[24px] items-center">
+              <img
+                src="../assets/icons/Icon/btnSave_common.svg"
+                alt=""
+                class="footerNav__item__icon mx-[auto]"
+              />
+            </div>
+            <span class="footerNav__item__title">저장</span></a
+          >
+        </li>
+        <li
+          class="footer__item flex items-center border-t-[2px] border-transparent px-[7px] hover:border-t-[2px] hover:-border--lion-black"
+        >
+          <a href="" class="footerNav__item__link"
+            ><div class="footerNav__item__wrapper flex h-[24px] items-center">
+              <img
+                src="../assets/icons/Icon/btnTransportation_common.svg"
+                alt=""
+                class="footerNav__item__icon mx-[auto]"
+              />
+            </div>
+            <span class="footerNav__item__title">대중교통</span></a
+          >
+        </li>
+        <li
+          class="footer__item flex items-center border-t-[2px] border-transparent px-[7px] hover:border-t-[2px] hover:-border--lion-black"
+        >
+          <a href="" class="footerNav__item__link">
+            <div class="footerNav__item__wrapper flex h-[24px] items-center">
+              <img
+                src="../assets/icons/Icon/btnNavi_common.svg"
+                alt=""
+                class="footerNav__item__icon mx-[auto]"
+              />
+            </div>
+            <span class="footerNav__item__title">내비게이션</span></a
+          >
+        </li>
+        <li
+          class="footer__item flex items-center border-t-[2px] border-transparent px-[7px] hover:border-t-[2px] hover:-border--lion-black"
+        >
+          <a href="" class="footerNav__item__link">
+            <div class="footerNav__item__wrapper flex h-[24px] items-center">
+              <img
+                src="../assets/icons/Icon/btnMy_common.svg"
+                alt=""
+                class="footerNav__item__icon mx-[auto]"
+              />
+            </div>
+            <span class="footerNav__item__title">MY</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
