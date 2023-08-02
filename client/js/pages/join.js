@@ -3,6 +3,7 @@ import { addClass, removeClass } from '../../lib/dom/css.js';
 import { getNode } from '../../lib/dom/getNode.js';
 import { insertAfter } from '../../lib/dom/insert.js';
 import { tiger } from '../../lib/utils/tiger.js';
+import { clearContents } from '../../lib/dom/clearContents.js';
 
 //---------------------------------------------------------------
 //-입력 조건 확인---------------------------------------------------
@@ -116,9 +117,29 @@ async function saveUserInfo(e) {
         email: email.value,
         pw: pw.value,
       });
-      console.log('성공!');
+      alert('회원가입이 완료되었습니다!');
+      clearJoinContents('success');
+    } else {
+      clearJoinContents('fail');
     }
   });
+}
+
+function clearJoinContents(state) {
+  const inputId = getNode('.inputId');
+  const inputEmail = getNode('.inputEmail');
+  const inputPw = getNode('.inputPw');
+  const inputPwCheck = getNode('.inputPwCheck');
+  if (state === 'fail') {
+    inputEmail.value = '';
+    inputPw.value = '';
+    inputPwCheck.value = '';
+  } else {
+    inputId.value = '';
+    inputEmail.value = '';
+    inputPw.value = '';
+    inputPwCheck.value = '';
+  }
 }
 
 async function checkJoinId() {
